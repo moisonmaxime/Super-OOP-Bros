@@ -6,7 +6,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include "Character.hpp"
-#include "Gravity.hpp"
 
 using namespace std;
 

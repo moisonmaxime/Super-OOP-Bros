@@ -1,7 +1,6 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
-#include "Gravity.hpp"
 #include <string>
 
 using namespace std;
