@@ -43,7 +43,7 @@ public:
 	}
 
 	virtual void jump(){
-		if (y = -0.4){ // if on ground (we will need to be aware of other platforms. deal with this later.)
+		if (y == -0.4){ // if on ground (we will need to be aware of other platforms. deal with this later.)
 			// todo
 		}
 	}

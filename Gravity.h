@@ -1,12 +1,28 @@
 #ifndef GRAVITY_H
 #define GRAVITY_H
 
-class Gravity(){
+#include "Character.h"
+
+class Gravity{
 	int force;
 
 public:
-	setForce(int force){
+
+	Gravity(){
+		force = 0.5;
+	}
+
+	Gravity(int force){
+			this->force = force;
+	}
+
+	// Maybe a powerup can disable gravity or something... probably wont use this though.
+	void setForce(int force){
 		this->force = force;
+	}
+
+	void jump(Character* player, int jumpForce){
+		// todo
 	}
 
 };
