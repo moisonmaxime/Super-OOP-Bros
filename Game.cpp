@@ -27,15 +27,16 @@ void Game::keyUp(int key) {
     keyStates[key] = false;
 }
 
-void Game::draw(){
-    
+void Game::calculateNextFrame() {
     for (int i=0; i<256; i++) {
         if (keyStates[i]) {
             cout << "Key " << i << " is being pressed" << endl;
         }
     }
-    
-    //cout << "Frame " << frame << endl;
+}
+
+void Game::draw(){
+    calculateNextFrame();
     frame++;
     if (frame == 11){ frame = 0; }
 }
