@@ -35,6 +35,9 @@ public:
     
     void keyDown(int key) {
         keyStates[key] = true;
+        if (key == 27) {
+            exit(0);
+        }
     }
     
     void keyUp(int key) {
