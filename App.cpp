@@ -1,5 +1,5 @@
-#include "App.h"
-#include "Game.h"
+#include "App.hpp"
+#include "Game.hpp"
 #include <time.h>
 
 using namespace std;

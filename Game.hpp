@@ -5,9 +5,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "Character.h"
-#include "Gravity.h"
-#include "Menu.h"
+#include "Character.hpp"
+#include "Gravity.hpp"
 
 using namespace std;
 

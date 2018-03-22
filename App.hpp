@@ -1,8 +1,8 @@
 #ifndef App_hpp
 #define App_hpp
 
-#include "GlutApp.h"
-#include "Game.h"
+#include "GlutApp.hpp"
+#include "Game.hpp"
 
 using namespace std;
 

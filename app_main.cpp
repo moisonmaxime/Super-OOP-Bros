@@ -1,4 +1,4 @@
-#include "App.h"
+#include "App.hpp"
 
 int main(int argc, char** argv) {
 	// Initialize GLUT

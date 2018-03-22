@@ -38,7 +38,6 @@
 		1BD2B1B02064343000BB5D4F /* Character.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Character.hpp; sourceTree = "<group>"; };
 		1BD2B1B12064343600BB5D4F /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
 		1BD2B1B22064343B00BB5D4F /* Gravity.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Gravity.hpp; sourceTree = "<group>"; };
-		1BD2B1B32064343F00BB5D4F /* Menu.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Menu.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +63,6 @@
 				1BD2B1B02064343000BB5D4F /* Character.hpp */,
 				1BD2B1B12064343600BB5D4F /* Game.hpp */,
 				1BD2B1B22064343B00BB5D4F /* Gravity.hpp */,
-				1BD2B1B32064343F00BB5D4F /* Menu.hpp */,
 				1799B7E31E5E3A83006D7CBD /* GlutApp.cpp */,
 				1799B7E41E5E3A83006D7CBD /* GlutApp.hpp */,
 				173FEF0B1AA63AC4006CCB85 /* app_main.cpp */,

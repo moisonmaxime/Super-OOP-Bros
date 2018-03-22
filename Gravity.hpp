@@ -1,7 +1,7 @@
 #ifndef GRAVITY_H
 #define GRAVITY_H
 
-#include "Character.h"
+#include "Character.hpp"
 
 class Gravity{
 	int force;

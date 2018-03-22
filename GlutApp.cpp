@@ -1,4 +1,4 @@
-#include "GlutApp.h"
+#include "GlutApp.hpp"
 
 // Make this static so that it will not be accessible in other source files
 static GlutApp* app;
