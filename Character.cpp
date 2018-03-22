@@ -37,3 +37,7 @@ void Character::attack(){
 void Character::die(){
     // todo
 }
+
+void Character::draw() {
+    
+}
