@@ -13,6 +13,7 @@
 		1799B7E51E5E3A83006D7CBD /* GlutApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1799B7E31E5E3A83006D7CBD /* GlutApp.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		1799B7E81E5ECD67006D7CBD /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1799B7E61E5ECD67006D7CBD /* App.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		1BD2B1B82064404F00BB5D4F /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2B1B72064404F00BB5D4F /* Game.cpp */; };
+		1BD2B1BA206441AC00BB5D4F /* Character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2B1B9206441AC00BB5D4F /* Character.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		1BD2B1B02064343000BB5D4F /* Character.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Character.hpp; sourceTree = "<group>"; };
 		1BD2B1B12064343600BB5D4F /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
 		1BD2B1B72064404F00BB5D4F /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		1BD2B1B9206441AC00BB5D4F /* Character.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Character.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				1BD2B1B12064343600BB5D4F /* Game.hpp */,
 				1BD2B1B72064404F00BB5D4F /* Game.cpp */,
 				1BD2B1B02064343000BB5D4F /* Character.hpp */,
+				1BD2B1B9206441AC00BB5D4F /* Character.cpp */,
 				1799B7E41E5E3A83006D7CBD /* GlutApp.hpp */,
 				1799B7E31E5E3A83006D7CBD /* GlutApp.cpp */,
 				173FEF0B1AA63AC4006CCB85 /* app_main.cpp */,
@@ -138,6 +141,7 @@
 				1799B7E81E5ECD67006D7CBD /* App.cpp in Sources */,
 				173FEF0C1AA63AC4006CCB85 /* app_main.cpp in Sources */,
 				1799B7E51E5E3A83006D7CBD /* GlutApp.cpp in Sources */,
+				1BD2B1BA206441AC00BB5D4F /* Character.cpp in Sources */,
 				1BD2B1B82064404F00BB5D4F /* Game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
