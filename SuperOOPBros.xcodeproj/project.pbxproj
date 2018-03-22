@@ -37,7 +37,6 @@
 		1799B7E71E5ECD67006D7CBD /* App.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = App.hpp; sourceTree = "<group>"; };
 		1BD2B1B02064343000BB5D4F /* Character.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Character.hpp; sourceTree = "<group>"; };
 		1BD2B1B12064343600BB5D4F /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
-		1BD2B1B22064343B00BB5D4F /* Gravity.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Gravity.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +59,10 @@
 				173FEF151AA63B1B006CCB85 /* OpenGL.framework */,
 				1799B7E61E5ECD67006D7CBD /* App.cpp */,
 				1799B7E71E5ECD67006D7CBD /* App.hpp */,
-				1BD2B1B02064343000BB5D4F /* Character.hpp */,
 				1BD2B1B12064343600BB5D4F /* Game.hpp */,
-				1BD2B1B22064343B00BB5D4F /* Gravity.hpp */,
-				1799B7E31E5E3A83006D7CBD /* GlutApp.cpp */,
+				1BD2B1B02064343000BB5D4F /* Character.hpp */,
 				1799B7E41E5E3A83006D7CBD /* GlutApp.hpp */,
+				1799B7E31E5E3A83006D7CBD /* GlutApp.cpp */,
 				173FEF0B1AA63AC4006CCB85 /* app_main.cpp */,
 				173FEF021AA63A07006CCB85 /* Products */,
 			);
