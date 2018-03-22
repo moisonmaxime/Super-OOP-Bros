@@ -18,6 +18,8 @@ Character::Character(){
 Character::Character(float x, float y){
     this->x = x;
     this->y = y;
+    this->vx = 0;
+    this->vy = 0;
 }
 
 void Character::setPostion(int x, int y){

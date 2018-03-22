@@ -1,9 +1,12 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
+#include "Frame.hpp"
+
 class Character{
 	float x, y;     // Location
 	float vx, vy;   // Velocity
+    Frame frame, hitbox;
 public:
     Character();
     Character(float x, float y);
