@@ -22,6 +22,9 @@ public:
     Game(){
         frame = 0;
         keyStates = new bool[256];
+        for (int i=0; i<256; i++) {
+            keyStates[i] = false;
+        }
     }
     
     // the Menu class will set players.
@@ -46,7 +49,7 @@ public:
             }
         }
         
-        cout << "Frame " << frame << endl;
+        //cout << "Frame " << frame << endl;
         frame++;
         if (frame == 11){ frame = 0; }
     }
