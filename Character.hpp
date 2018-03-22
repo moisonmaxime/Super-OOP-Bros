@@ -4,9 +4,7 @@
 class Character{
 	float x, y;     // Location
 	float vx, vy;   // Velocity
-
 public:
-
     Character();
     Character(float x, float y);
     void setPostion(int x, int y);
