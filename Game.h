@@ -2,6 +2,9 @@
 #define GAME_H
 
 #include <vector>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "Character.h"
 #include "Gravity.h"
 #include "Menu.h"
@@ -13,12 +16,14 @@ class Game{
     Gravity g;
     Character* winner;
     bool isFirstGame;
+    int frame;
 
 public:
 
   // Default game constructor
   Game(){
     g = Gravity(); // default gravity
+    frame = 0;
   }
 
   // the Menu class will set players.
@@ -28,7 +33,9 @@ public:
   }
 
   void draw(){
-
+    cout << "Frame " << frame << endl;
+    frame++;
+    if (frame == 11){ frame = 0; }
   }
 
 };

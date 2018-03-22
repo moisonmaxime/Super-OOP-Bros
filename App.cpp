@@ -1,5 +1,6 @@
 #include "App.h"
 #include "Game.h"
+#include <time.h>
 
 using namespace std;
 
@@ -8,6 +9,13 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     mx = 0.0;
     my = 0.0;
     super_OOP_Bros = Game();
+}
+
+void wait ( int seconds )
+{
+  clock_t endwait;
+  endwait = clock () + seconds * CLOCKS_PER_SEC ;
+  while (clock() < endwait) {}
 }
 
 void App::draw() {
@@ -28,6 +36,8 @@ void App::draw() {
     // Swap the buffers to see the result of what we drew
     glFlush();
     glutSwapBuffers();
+    wait(0.1);
+    redraw();
 }
 
 void App::mouseDown(float x, float y){
@@ -53,4 +63,7 @@ void App::keyPress(unsigned char key) {
         // Exit the app when Esc key or ctr+c is pressed
         exit(0);
     }
+
+    // todo if right, call setVelocity(int vx, int vy)
+
 }

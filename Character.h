@@ -10,8 +10,16 @@ class Character{
 	string name;
 	int health;
 	int x, y; // location in window where x&y | [a, b]
+	int vx, vy;
 
 public:
+
+	Character(){
+		this->name = "default name";
+		this->health = 10;
+		this->x = 1;
+		this->y = 1;
+	}
 
 	// constructor
 	Character(string name, int health, int x, int y){
@@ -30,29 +38,28 @@ public:
 	void increase_health(int inc){ health = health + inc; }
 
 	// Character actions are virtual in case we want some characters to have special implimentations later.
-	virtual void move_left(){
+	void move_left(){
 		if (x > -0.95){
 			x -= 0.05;
 		}
 	}
 
-	virtual void right(){
+	void right(){
 		if (x < 0.95){
 			x += 0.05;
 		}
 	}
 
-	virtual void jump(){
-		if (y == -0.4){ // if on ground (we will need to be aware of other platforms. deal with this later.)
-			// todo
-		}
+	void setVelocity(int vx, int vy){
+		this->vx = vx;
+		this->vy = vy;
 	}
 
-	virtual void attack(){
+	void attack(){
 		// todo
 	}
 
-	virtual void die(){
+	void die(){
 		// todo
 	}
 

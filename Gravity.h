@@ -21,10 +21,6 @@ public:
 		this->force = force;
 	}
 
-	void jump(Character* player, int jumpForce){
-		// todo
-	}
-
 };
 
 #endif
