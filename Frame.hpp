@@ -9,6 +9,8 @@
 #ifndef Frame_hpp
 #define Frame_hpp
 
+#include "GlutApp.hpp"
+
 class Frame {
     float x, y, width, height;
 public:
@@ -24,6 +26,7 @@ public:
     void getY(float y) { this->y = y; }
     void getHeight(float height) { this->height = height; }
     void getWidth(float width) { this->width = width; }
+    void draw();
     
     bool collidesWith(Frame f);
 };

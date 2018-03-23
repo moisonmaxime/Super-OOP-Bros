@@ -38,5 +38,5 @@ void Game::calculateNextFrame() {
 void Game::draw(){
     calculateNextFrame();
     frame++;
-    if (frame == 11){ frame = 0; }
+    if (frame == 31){ frame = 0; }
 }
