@@ -25,10 +25,6 @@ void Game::keyDown(int key) {
     if (key == 3) {
         exit(0);
     }
-    
-    if (key == 107 && player->getY() == 0){
-        player->setVY(1.0);
-    }
 }
 
 void Game::keyUp(int key) {
@@ -38,10 +34,14 @@ void Game::keyUp(int key) {
 void Game::calculateNextFrame() {
     
     if (keyStates[108]){
-        player->setVX(.1);
+        player->move(Direction::Right);
     }
     if (keyStates[106]){
-        player->setVX(-.1);
+        player->move(Direction::Left);
+    }
+    
+    if (keyStates[107] && player->getVY() >= 0){
+        player->jump();
     }
     
     physics->applyforces(player);

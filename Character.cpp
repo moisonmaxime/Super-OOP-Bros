@@ -12,6 +12,7 @@ Character::Character(){
     this->y = 0;
     this->vx = 0;
     this->vy = 0;
+    this->jumpTime = 0;
     this->frame = Frame(0.0, 0.0, .05, .10);
     this->hitbox = Frame(0.0, 0.0, .04, .09);
 }
@@ -21,6 +22,7 @@ Character::Character(float x, float y){
     this->y = y;
     this->vx = 0;
     this->vy = 0;
+    this->jumpTime = 0;
     this->frame = Frame(x, y, .15, .3);
     this->hitbox = Frame(x+.1, y-.05, .13, .3);
     //this->frame = Frame(x, y, .05, .10);
@@ -45,6 +47,22 @@ void Character::setVY(float vy){
     this->vy = vy;
 }
 
+
+void Character::jump() {
+    if (vy >= 0 && vy <= 0.1 && jumpTime <= 10) {
+        vy += 0.05;
+    } else if (vy <= 0.1 && jumpTime > 10) {
+        jumpTime = 0;
+    }
+    jumpTime++;
+}
+
+void Character::move(Direction direction) {
+    if (vx <= 0.03 && vx >= -0.03) {
+        vx += direction * 0.01;
+    }
+}
+
 void Character::attack(){
     // todo
 }
@@ -63,6 +81,24 @@ void Character::calculateNextFrame() {
     
     this->x += vx;
     this->y += vy;
+    
+    if (this->y <= -1) {
+        this->y = -1;
+        this->vy = 0;
+    }
+    if (this->y >= 1-frame.getHeight()) {
+        this->y = 1-frame.getHeight();
+        this->vy = 0;
+    }
+    
+    if (this->x <= -1) {
+        this->x = -1;
+        this->vx = 0;
+    }
+    if (this->x >= 1-frame.getWidth()) {
+        this->x = 1-frame.getWidth();
+        this->vx = 0;
+    }
     
     // update frames
     this->frame.setX(x);

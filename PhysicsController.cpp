@@ -26,16 +26,19 @@ void PhysicsController::applyforces(MovingObject* obj) {
 }
 
 void PhysicsController::applyGravity(MovingObject* obj) {
-    //obj->setVY(obj->getVY() + gravity * 0.01);
+    if (obj->getVY() >= -0.2) {
+        obj->setVY(obj->getVY() + gravity * 0.01);
+    }
+    std::cout << "Speed Y: " << obj->getVY() << std::endl;
 }
 
 void PhysicsController::applyDrag(MovingObject* obj) {
-    std::cout << "Speed: " << obj->getVX() << std::endl;
-    if (obj->getVX() < 0.01 && obj->getVX() > -0.01) {
+    std::cout << "Speed X: " << obj->getVX() << std::endl;
+    if (obj->getVX() < 0.005 && obj->getVX() > -0.005) {
         obj->setVX(0);
         return;
     }
     float multiplier = (obj->getVX() < 0 ? -1 : 1);
-    float newSpeed = obj->getVX() + multiplier * drag * 0.1;
+    float newSpeed = obj->getVX() + multiplier * drag * 0.01;
     obj->setVX(newSpeed);
 }
