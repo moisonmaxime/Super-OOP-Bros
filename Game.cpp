@@ -12,6 +12,7 @@
 
 Game::Game(){
     player = new Character(0.0, 0.0);
+    physics = new PhysicsController(-0.1, -1);
     frame = 0;
     keyStates = new bool[256];
     for (int i=0; i<256; i++) {
@@ -36,13 +37,14 @@ void Game::keyUp(int key) {
 
 void Game::calculateNextFrame() {
     
-    if (keyStates[108] && player->getX() < .2){
-        player->setVX(player->getVX() + .1);
+    if (keyStates[108]){
+        player->setVX(.1);
     }
-    if (keyStates[106] && player->getX() > -.4){
-        player->setVX(player->getVX() - .1);
+    if (keyStates[106]){
+        player->setVX(-.1);
     }
     
+    physics->applyforces(player);
     player->calculateNextFrame();
     /*
     for (int i=0; i<256; i++) {
