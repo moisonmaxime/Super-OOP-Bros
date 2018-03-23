@@ -27,12 +27,12 @@ Character::Character(float x, float y){
     //this->hitbox = Frame(x, y, .04, .09);
 }
 
-void Character::setPostion(int x, int y){
+void Character::setPosition(float x, float y){
     this->x = x;
     this->y = y;
 }
 
-void Character::setVelocity(int vx, int vy){
+void Character::setVelocity(float vx, float vy){
     this->vx = vx;
     this->vy = vy;
 }
@@ -61,32 +61,14 @@ float Character::getVY(){ return this->vy; }
 void Character::calculateNextFrame() {
     // implement velocity handling
     
-    // X velocity
-    if (vx != 0){
-        if (vx > 1){ vx = 1.0; } // Max speed
-        if (vx < -1){ vx = -1.0; } // Maxx speed
-        if (vx > 0){ vx -= .05*vx; } //max dist
-        if (vx < 0){ vx -= .05*vx; } //max dist
-        x += vx*.05; // Finally adjust x
-        vx -= vx*.1; // decrease velocity
-        
-        // update frames
-        this->frame.setX(x);
-        this->hitbox.setX(x);
-    }
+    this->x += vx;
+    this->y += vy;
     
-    // Y velocity
-    if (vy != 0){
-        if (y < 0){ vy = 0; y = 0; } // set VY == 0 (hits ground)
-        if (vy > 0){ vy -= .01*vy; } //max dist
-        if (vy < 0){ vy += .01*vy; } //max dist
-        y += vy*.1; // Finally adjust y
-        vy -= .05 + vy*vy*.1; // decrease velocity
-        
-        // update frames
-        this->frame.setY(y);
-        this->hitbox.setY(y);
-    }
+    // update frames
+    this->frame.setX(x);
+    this->hitbox.setX(x);
+    this->frame.setY(y);
+    this->hitbox.setY(y);
 }
 
 void Character::draw() {

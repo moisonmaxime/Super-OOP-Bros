@@ -5,7 +5,7 @@
 #include "MovingObject.hpp"
 
 class Character: public MovingObject{
-	float x, y;     // Location
+    float x, y;     // Location
 	float vx, vy;   // Velocity
     Frame frame, hitbox;
 public:
@@ -15,8 +15,8 @@ public:
     float getY();
     float getVX();
     float getVY();
-    void setPostion(int x, int y);
-    void setVelocity(int vx, int vy);
+    void setPosition(float x, float y);
+    void setVelocity(float vx, float vy);
     void setVX(float vx);
     void setVY(float vy);
     void attack();
