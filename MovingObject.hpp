@@ -15,8 +15,8 @@ public:
     virtual float getY() = 0;
     virtual float getVX() = 0;
     virtual float getVY() = 0;
-    virtual void setPostion(int x, int y) = 0;
-    virtual void setVelocity(int vx, int vy) = 0;
+    virtual void setPosition(float x, float y) = 0;
+    virtual void setVelocity(float vx, float vy) = 0;
     virtual void setVX(float vx) = 0;
     virtual void setVY(float vy) = 0;
 };
