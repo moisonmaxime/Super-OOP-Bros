@@ -36,7 +36,7 @@ void App::draw() {
     // Swap the buffers to see the result of what we drew
     glFlush();
     glutSwapBuffers();
-    wait(0.03);
+    wait(0.05);
     redraw();
 }
 

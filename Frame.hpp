@@ -22,10 +22,10 @@ public:
     float getHeight() { return height; }
     float getWidth() { return width; }
     
-    void getX(float x) { this->x = x; }
-    void getY(float y) { this->y = y; }
-    void getHeight(float height) { this->height = height; }
-    void getWidth(float width) { this->width = width; }
+    void setX(float x) { this->x = x; }
+    void setY(float y) { this->y = y; }
+    void setHeight(float height) { this->height = height; }
+    void setWidth(float width) { this->width = width; }
     void draw();
     
     bool collidesWith(Frame f);

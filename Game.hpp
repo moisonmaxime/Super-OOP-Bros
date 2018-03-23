@@ -9,6 +9,7 @@ using namespace std;
 class Game{
     int frame;
     bool* keyStates;
+    Character* player;
 public:
     Game();
     void keyDown(int key);

@@ -11,8 +11,8 @@
 Frame::Frame(){
     x = 0.0f;
     y = 0.0f;
-    width = 0.0f;
-    height = 0.0f;
+    width = 0.5f;
+    height = 0.5f;
 }
 
 Frame::Frame(float x, float y, float width, float height){
@@ -23,7 +23,7 @@ Frame::Frame(float x, float y, float width, float height){
 }
 
 void Frame::draw(){
-    glColor3f(1, 1, 1);
+    glColor3f(.1, .1, .1);
     glBegin(GL_POLYGON);
     glVertex2f(x, y);
     glVertex2f(x+width, y);
