@@ -25,7 +25,7 @@ void Game::keyDown(int key) {
         exit(0);
     }
     
-    if (key = 107 && player->getY() == 0){
+    if (key == 107 && player->getY() == 0){
         player->setVY(1.0);
     }
 }
@@ -43,14 +43,12 @@ void Game::calculateNextFrame() {
         player->setVX(player->getVX() - .1);
     }
     
-/*
     for (int i=0; i<256; i++) {
         if (keyStates[i]) {
             cout << "Key " << i << " is being pressed" << endl;
         }
 
     }
-*/
 }
 
 void Game::draw(){

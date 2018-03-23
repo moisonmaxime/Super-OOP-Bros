@@ -16,6 +16,7 @@ public:
     void keyUp(int key);
     void calculateNextFrame();
     void draw();
+    void applyGravity();
 };
 
 #endif

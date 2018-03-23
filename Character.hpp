@@ -2,8 +2,9 @@
 #define CHARACTER_H
 
 #include "Frame.hpp"
+#include "MovingObject.hpp"
 
-class Character{
+class Character: public MovingObject{
 	float x, y;     // Location
 	float vx, vy;   // Velocity
     Frame frame, hitbox;

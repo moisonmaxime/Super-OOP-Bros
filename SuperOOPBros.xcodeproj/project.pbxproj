@@ -38,6 +38,7 @@
 		1799B7E41E5E3A83006D7CBD /* GlutApp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GlutApp.hpp; sourceTree = "<group>"; };
 		1799B7E61E5ECD67006D7CBD /* App.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = App.cpp; sourceTree = "<group>"; };
 		1799B7E71E5ECD67006D7CBD /* App.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = App.hpp; sourceTree = "<group>"; };
+		1BA312D820656E5400C4662A /* MovingObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MovingObject.hpp; sourceTree = "<group>"; };
 		1BD2B1B02064343000BB5D4F /* Character.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Character.hpp; sourceTree = "<group>"; };
 		1BD2B1B12064343600BB5D4F /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
 		1BD2B1B72064404F00BB5D4F /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 				1799B7E61E5ECD67006D7CBD /* App.cpp */,
 				1BD2B1B12064343600BB5D4F /* Game.hpp */,
 				1BD2B1B72064404F00BB5D4F /* Game.cpp */,
+				1BA312D820656E5400C4662A /* MovingObject.hpp */,
 				1BD2B1B02064343000BB5D4F /* Character.hpp */,
 				1BD2B1B9206441AC00BB5D4F /* Character.cpp */,
 				1BD2B1BC206451F900BB5D4F /* Frame.hpp */,

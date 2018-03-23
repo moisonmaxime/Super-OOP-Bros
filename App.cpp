@@ -60,8 +60,6 @@ void App::mouseDrag(float x, float y){
 
 void App::keyPress(unsigned char key) {
     super_OOP_Bros.keyDown(key);
-    // todo if right, call setVelocity(int vx, int vy)
-    
 }
 
 void App::keyUp(unsigned char key) {
