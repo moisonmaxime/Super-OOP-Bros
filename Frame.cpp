@@ -27,7 +27,7 @@ void Frame::draw(){
     glBegin(GL_POLYGON);
     glVertex2f(x, y);
     glVertex2f(x+width, y);
-    glVertex2f(x+width, y-height);
-    glVertex2f(x, y-height);
+    glVertex2f(x+width, y+height);
+    glVertex2f(x, y+height);
     glEnd();
 }
