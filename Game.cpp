@@ -43,12 +43,15 @@ void Game::calculateNextFrame() {
         player->setVX(player->getVX() - .1);
     }
     
+    player->calculateNextFrame();
+    /*
     for (int i=0; i<256; i++) {
         if (keyStates[i]) {
             cout << "Key " << i << " is being pressed" << endl;
         }
 
     }
+     */
 }
 
 void Game::draw(){

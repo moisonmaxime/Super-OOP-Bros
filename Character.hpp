@@ -21,6 +21,7 @@ public:
     void setVY(float vy);
     void attack();
     void die();
+    void calculateNextFrame();
     void draw();
 };
 

@@ -10,6 +10,7 @@
 #define MovingObject_hpp
 
 class MovingObject {
+public:
     virtual float getX() = 0;
     virtual float getY() = 0;
     virtual float getVX() = 0;
@@ -18,7 +19,6 @@ class MovingObject {
     virtual void setVelocity(int vx, int vy) = 0;
     virtual void setVX(float vx) = 0;
     virtual void setVY(float vy) = 0;
-    
 };
 
 #endif /* MovingObject_hpp */
