@@ -12,23 +12,15 @@
 #include "GlutApp.hpp"
 
 class Frame {
-    float x, y, width, height;
 public:
+    float x, y, width, height;
+    
     Frame();
     Frame(float x, float y, float width, float height);
-    
-    float getX() { return x; }
-    float getY() { return y; }
-    float getHeight() { return height; }
-    float getWidth() { return width; }
-    
-    void setX(float x) { this->x = x; }
-    void setY(float y) { this->y = y; }
-    void setHeight(float height) { this->height = height; }
-    void setWidth(float width) { this->width = width; }
     void draw();
     
     bool collidesWith(Frame f);
+    bool contains(float x, float y);
 };
 
 #endif /* Frame_hpp */
