@@ -12,7 +12,7 @@
 
 Game::Game(){
     player = new Character(0.0, 0.0);
-    physics = new PhysicsController(-0.1, -1);
+    physics = new PhysicsController(-0.005, -0.005);
     frame = 0;
     keyStates = new bool[256];
     for (int i=0; i<256; i++) {
@@ -33,14 +33,14 @@ void Game::keyUp(int key) {
 
 void Game::calculateNextFrame() {
     
-    if (keyStates[108]){
+    if (keyStates[100]){
         player->move(Direction::Right);
     }
-    if (keyStates[106]){
+    if (keyStates[97]){
         player->move(Direction::Left);
     }
     
-    if (keyStates[107] && player->getVY() >= 0){
+    if (keyStates[32] && player->getVY() >= 0){
         player->jump();
     }
     
