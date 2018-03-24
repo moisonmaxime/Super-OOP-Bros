@@ -7,7 +7,6 @@
 //
 
 #include "Game.hpp"
-#include <stdio.h>
 #include <iostream>
 
 Game::Game(){
