@@ -9,10 +9,10 @@
 #ifndef MovingObject_hpp
 #define MovingObject_hpp
 
-class MovingObject {
+#include "Object.hpp"
+
+class MovingObject: public Object {
 public:
-    virtual float getX() = 0;
-    virtual float getY() = 0;
     virtual float getVX() = 0;
     virtual float getVY() = 0;
     virtual void setPosition(float x, float y) = 0;
