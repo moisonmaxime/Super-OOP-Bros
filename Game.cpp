@@ -11,6 +11,7 @@
 
 Game::Game(){
     player = new Character(0.0, 0.0);
+    myBox = new Box(-1, -1, 0.5, 0.5);
     physics = new PhysicsController(-0.005, -0.005);
     frame = 0;
     keyStates = new bool[256];
@@ -56,6 +57,7 @@ void Game::calculateNextFrame() {
 }
 
 void Game::draw(){
+    myBox->draw();
     player->draw();
     calculateNextFrame();
     frame++;

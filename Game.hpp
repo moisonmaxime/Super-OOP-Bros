@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Character.hpp"
+#include "Box.hpp"
 #include "PhysicsController.hpp"
 
 using namespace std;
@@ -12,6 +13,7 @@ class Game{
     bool* keyStates;
     Character* player;
     PhysicsController* physics;
+    Box* myBox;
 public:
     Game();
     void keyDown(int key);
