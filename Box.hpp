@@ -14,6 +14,8 @@
 class Box: public Object {
     Frame hitbox;
 public:
+    Box();
+    Box(float x, float y, float width, float height);
     float getX();
     float getY();
     Frame getHitbox();

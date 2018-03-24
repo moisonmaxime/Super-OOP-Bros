@@ -8,6 +8,15 @@
 
 #include "Box.hpp"
 
+
+Box::Box() {
+    this->hitbox = Frame(0, 0, 1, 1);
+}
+
+Box::Box(float x, float y, float width, float height) {
+    this->hitbox = Frame(x, y, width, height);
+}
+
 float Box::getX() {
     return this->hitbox.x;
 }
@@ -30,7 +39,7 @@ bool Box::collidesWith(Object* other) {
 }
 
 void Box::draw() {
-    glColor3f(.1, .1, .1);
+    glColor3f(1, 0, 0);
     glBegin(GL_POLYGON);
     glVertex2f(hitbox.x, hitbox.y);
     glVertex2f(hitbox.x+hitbox.width, hitbox.y);
