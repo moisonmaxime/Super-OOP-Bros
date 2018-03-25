@@ -17,7 +17,7 @@ public:
     virtual float getY() = 0;
     virtual Frame getHitbox() = 0;
     virtual void setPosition(float x, float y) = 0;
-    virtual bool collidesWith(Object* other) = 0;
+    virtual Side collidesWith(Object* other) = 0;
 };
 
 #endif /* Object_h */
