@@ -11,7 +11,7 @@
 
 Game::Game(){
     player = new Character(0.0, 0.0);
-    myBox = new Box(-1, -1, 0.5, 0.5);
+    objects.push_back(new Box(0, -1, 0.5, 0.5));
     physics = new PhysicsController(-0.005, -0.005);
     frame = 0;
     keyStates = new bool[256];
@@ -46,18 +46,13 @@ void Game::calculateNextFrame() {
     
     physics->applyforces(player);
     player->calculateNextFrame();
-    /*
-    for (int i=0; i<256; i++) {
-        if (keyStates[i]) {
-            cout << "Key " << i << " is being pressed" << endl;
-        }
-
-    }
-     */
+    for (auto it = objects.cbegin(); it != objects.cend(); it++)
+        player->handleCollisionWith(*it);
 }
 
 void Game::draw(){
-    myBox->draw();
+    for (auto it = objects.cbegin(); it != objects.cend(); it++)
+        (*it)->draw();
     player->draw();
     calculateNextFrame();
     frame++;

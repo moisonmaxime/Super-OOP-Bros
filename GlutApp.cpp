@@ -30,7 +30,6 @@ GlutApp::GlutApp(const char* label, int x, int y, int w, int h) {
     glutIdleFunc(idleCB);
     glutReshapeFunc(reshapeCB);
     glutPassiveMotionFunc(passiveCB);
-    glutSetKeyRepeat(GLUT_KEY_REPEAT_OFF);
     glutKeyboardUpFunc(keyboardUpCB);
 }
 

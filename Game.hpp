@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include <iostream>
+#include <vector>
 #include "Character.hpp"
 #include "Box.hpp"
 #include "PhysicsController.hpp"
@@ -13,7 +14,7 @@ class Game{
     bool* keyStates;
     Character* player;
     PhysicsController* physics;
-    Box* myBox;
+    vector<Box*> objects;
 public:
     Game();
     void keyDown(int key);
