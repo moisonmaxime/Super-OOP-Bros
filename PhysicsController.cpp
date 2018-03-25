@@ -32,7 +32,7 @@ void PhysicsController::applyGravity(MovingObject* obj) {
 }
 
 void PhysicsController::applyDrag(MovingObject* obj) {
-    if (obj->getVX() < 0.005 && obj->getVX() > -0.005) {
+    if (obj->getVX() < 0.0005 && obj->getVX() > -0.0005) {
         obj->setVX(0);
         return;
     }
