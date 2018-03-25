@@ -18,7 +18,7 @@ Game::Game(){
     objects.push_back(new Box(0.5, 0.5, 0.12, 0.24));
     objects.push_back(new Box(-1, 0.5, 0.12, 0.24));
     objects.push_back(new Box(-0.5, 0.25, 0.12, 0.24));
-    objects.push_back(new Box(0.5, -0.25, 0.12, 0.24));
+    objects.push_back(new Box(0.5, -1.15, 0.12, 0.24));
     objects.push_back(new Box(-1, -1.25, 2, 0.27));
     keyStates = new bool[256];
     for (int i=0; i<256; i++) {
