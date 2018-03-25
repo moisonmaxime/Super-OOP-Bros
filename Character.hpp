@@ -25,7 +25,9 @@ public:
     void setVX(float vx);
     void setVY(float vy);
     
-    bool collidesWith(Object* other);
+    Side collidesWith(Object* other);
+    void handleCollisionWith(Object *other);
+    
     void jump();
     void move(Direction direction);
     void attack();

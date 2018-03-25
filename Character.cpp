@@ -66,11 +66,36 @@ void Character::die(){
 }
 
 Frame Character::getHitbox() {
-    return this->frame;
+    return this->hitbox;
 }
 
-bool Character::collidesWith(Object *other) {
-    return this->frame.collidesWith(other->getHitbox());
+Side Character::collidesWith(Object *other) {
+    return this->hitbox.collidesWith(other->getHitbox());
+}
+
+void Character::handleCollisionWith(Object *other) {
+    Side collision = collidesWith(other);
+    if (collision != NoSide) {
+        switch (collision) {
+            case TopSide:
+                frame.y = other->getHitbox().getMinY() - frame.height;
+                vy = 0;
+                break;
+            case BottomSide:
+                frame.y = other->getHitbox().getMaxY();
+                vy = 0;
+                jumpTime = 0;
+                break;
+            case LeftSide:
+                frame.x = other->getHitbox().getMaxX();
+                vx = 0;
+                break;
+            case RightSide:
+                frame.x = other->getHitbox().getMinX() - frame.width;
+                vx = 0;
+                break;
+        }
+    }
 }
 
 float Character::getX(){ return this->frame.x; }
