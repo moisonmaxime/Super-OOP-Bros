@@ -13,7 +13,13 @@ Game::Game(){
     frame = 0;
     physics = new PhysicsController(-0.005, -0.005);
     player = new Character(0.0, 0.0);
-    objects.push_back(new Box(0, -2, 1, 1.5));
+    objects.push_back(new Box(-1, -1, 0.12, 0.24));
+    objects.push_back(new Box(0, 0, 0.12, 0.24));
+    objects.push_back(new Box(0.5, 0.5, 0.12, 0.24));
+    objects.push_back(new Box(-1, 0.5, 0.12, 0.24));
+    objects.push_back(new Box(-0.5, 0.25, 0.12, 0.24));
+    objects.push_back(new Box(0.5, -0.25, 0.12, 0.24));
+    objects.push_back(new Box(-1, -1.25, 2, 0.27));
     keyStates = new bool[256];
     for (int i=0; i<256; i++) {
         keyStates[i] = false;
@@ -42,6 +48,10 @@ void Game::calculateNextFrame() {
     
     if (keyStates[32] && player->getVY() >= 0){
         player->jump();
+    }
+    
+    if (keyStates[114]) {
+        player->setPosition(0, 0);
     }
     
     physics->applyforces(player);
