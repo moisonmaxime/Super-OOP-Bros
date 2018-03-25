@@ -94,6 +94,8 @@ void Character::handleCollisionWith(Object *other) {
                 frame.x = other->getHitbox().getMinX() - frame.width;
                 vx = 0;
                 break;
+            default:
+                break;
         }
     }
 }
