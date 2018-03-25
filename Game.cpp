@@ -10,10 +10,10 @@
 #include <iostream>
 
 Game::Game(){
-    player = new Character(0.0, 0.0);
-    objects.push_back(new Box(0, -1, 0.5, 0.5));
-    physics = new PhysicsController(-0.005, -0.005);
     frame = 0;
+    physics = new PhysicsController(-0.005, -0.005);
+    player = new Character(0.0, 0.0);
+    objects.push_back(new Box(0, -2, 1, 1.5));
     keyStates = new bool[256];
     for (int i=0; i<256; i++) {
         keyStates[i] = false;

@@ -12,7 +12,7 @@ Character::Character(){
     this->vy = 0;
     this->jumpTime = 0;
     this->frame = Frame(0.0, 0.0, .1, .2);
-    this->frame = Frame(0.0, 0.0, .1, .2);
+    this->hitbox = Frame(0.0, 0.0, .1, .2);
 }
 
 Character::Character(float x, float y){
@@ -20,7 +20,7 @@ Character::Character(float x, float y){
     this->vy = 0;
     this->jumpTime = 0;
     this->frame = Frame(x, y, .1, .2);
-    this->frame = Frame(x, y, .1, .2);
+    this->hitbox = Frame(x, y, .1, .2);
 }
 
 void Character::setPosition(float x, float y){
@@ -70,11 +70,12 @@ Frame Character::getHitbox() {
 }
 
 Side Character::collidesWith(Object *other) {
-    return this->hitbox.collidesWith(other->getHitbox());
+    return hitbox.collidesWith(other->getHitbox());
 }
 
 void Character::handleCollisionWith(Object *other) {
     Side collision = collidesWith(other);
+    Side collision2 = other->collidesWith(this);
     if (collision != NoSide) {
         switch (collision) {
             case TopSide:
@@ -92,6 +93,28 @@ void Character::handleCollisionWith(Object *other) {
                 break;
             case RightSide:
                 frame.x = other->getHitbox().getMinX() - frame.width;
+                vx = 0;
+                break;
+            default:
+                break;
+        }
+    } else if (collision2 != NoSide) {
+        switch (collision2) {
+            case TopSide:
+                frame.y = other->getHitbox().getMaxY();
+                vy = 0;
+                jumpTime = 0;
+                break;
+            case BottomSide:
+                frame.y = other->getHitbox().getMinY() - frame.height;
+                vy = 0;
+                break;
+            case LeftSide:
+                frame.x = other->getHitbox().getMinX() - frame.width;
+                vx = 0;
+                break;
+            case RightSide:
+                frame.x = other->getHitbox().getMaxX();
                 vx = 0;
                 break;
             default:

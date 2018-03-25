@@ -19,13 +19,12 @@ enum Side { TopSide, BottomSide, RightSide, LeftSide, NoSide };
 class Frame {
 public:
     float x, y, width, height;
-    
     Frame();
     Frame(float x, float y, float width, float height);
-    float getMinX() { return this->x; }
-    float getMinY() { return this->y; }
-    float getMaxX() { return this->x + this->width; }
-    float getMaxY() { return this->y + this->height; }
+    float getMinX() { return x; }
+    float getMinY() { return y; }
+    float getMaxX() { return (x + width); }
+    float getMaxY() { return (y + height); }
     void draw();
     
     Side collidesWith(Frame f);

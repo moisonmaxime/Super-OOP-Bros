@@ -69,7 +69,7 @@ Side Frame::collidesWith(Frame f) {
         if (f.getMinY() >= this->getMinY() && f.getMinY() <= this->getMaxY()) {
             // bottomRight = true;
             float distX = abs(f.getMaxX() - this->getMinX());
-            float distY = abs(f.getMaxY() - this->getMinY());
+            float distY = abs(f.getMinY() - this->getMaxY());
             if (distX < distY) {
                 if (distX < dist) {
                     side = LeftSide;
@@ -99,7 +99,6 @@ Side Frame::collidesWith(Frame f) {
             }
         }
     }
-    
     return side;
 }
 
