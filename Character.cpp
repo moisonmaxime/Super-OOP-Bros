@@ -136,25 +136,6 @@ void Character::calculateNextFrame() {
     x += vx;
     y += vy;
     
-    if (y <= -1) {
-        y = -1;
-        vy = 0;
-        jumpTime = 0; // Put in function called touch ground (:
-    }
-    if (y >= 1-frame.height) {
-        y = 1-frame.height;
-        vy = 0;
-    }
-    
-    if (x <= -1) {
-        x = -1;
-        vx = 0;
-    }
-    if (x >= 1-frame.width) {
-        x = 1-frame.width;
-        vx = 0;
-    }
-    
     // update frames
     this->frame.x = x;
     this->frame.y = y;
