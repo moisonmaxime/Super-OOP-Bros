@@ -20,7 +20,7 @@ public:
     float getY();
     Frame getHitbox();
     void setPosition(float x, float y);
-    bool collidesWith(Object* other);
+    Side collidesWith(Object* other);
     void draw();
 };
 

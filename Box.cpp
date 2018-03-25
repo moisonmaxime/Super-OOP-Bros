@@ -34,7 +34,7 @@ void Box::setPosition(float x, float y) {
     this->hitbox.y = y;
 }
 
-bool Box::collidesWith(Object* other) {
+Side Box::collidesWith(Object* other) {
     return this->hitbox.collidesWith(other->getHitbox());
 }
 
