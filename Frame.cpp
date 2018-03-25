@@ -26,23 +26,81 @@ bool Frame::contains(float x, float y) {
     return (this->x <= x && x <= this->x + this->width) && (this->y <= y && y <= this->y + this->height);
 }
 
-bool Frame::collidesWith(Frame f) {
-    float xCorners[] = {this->x, this->x + this->width};
-    float yCorners[] = {this->y, this->y + this->height};
-    float xCornersOther[] = {f.x, f.x + f.width};
-    float yCornersOther[] = {f.y, f.y + f.height};
+Side Frame::collidesWith(Frame f) {
+    Side side = Side::NoSide;
+    float dist = std::numeric_limits<float>::max();
     
-    for (int i=0; i<2; i++) {
-        if (f.contains(xCorners[i], yCorners[i]))
-            return true;
-        if (f.contains(xCorners[(i+1) %2], yCorners[i]))
-            return true;
-        if (this->contains(xCornersOther[i], yCornersOther[i]))
-            return true;
-        if (this->contains(xCornersOther[(i+1) %2], yCornersOther[i]))
-            return true;
+    if (f.getMinX() >= this->getMinX() && f.getMinX() <= this->getMaxX()) {
+        if (f.getMinY() >= this->getMinY() && f.getMinY() <= this->getMaxY()) {
+            // bottomLeft = true;
+            float distX = abs(f.getMinX() - this->getMaxX());
+            float distY = abs(f.getMinY() - this->getMaxY());
+            if (distX < distY) {
+                if (distX < dist) {
+                    side = RightSide;
+                    dist = distX;
+                }
+            } else {
+                if (distY < dist) {
+                    side = TopSide;
+                    dist = distY;
+                }
+            }
+        }
+        if (f.getMaxY() >= this->getMinY() && f.getMaxY() <= this->getMaxY()) {
+            // topLeft = true;
+            float distX = abs(f.getMinX() - this->getMaxX());
+            float distY = abs(f.getMaxY() - this->getMinY());
+            if (distX < distY) {
+                if (distX < dist) {
+                    side = RightSide;
+                    dist = distX;
+                }
+            } else {
+                if (distY < dist) {
+                    side = BottomSide;
+                    dist = distY;
+                }
+            }
+        }
     }
-    return false;
+    
+    if (f.getMaxX() >= this->getMinX() && f.getMaxX() <= this->getMaxX()) {
+        if (f.getMinY() >= this->getMinY() && f.getMinY() <= this->getMaxY()) {
+            // bottomRight = true;
+            float distX = abs(f.getMaxX() - this->getMinX());
+            float distY = abs(f.getMaxY() - this->getMinY());
+            if (distX < distY) {
+                if (distX < dist) {
+                    side = LeftSide;
+                    dist = distX;
+                }
+            } else {
+                if (distY < dist) {
+                    side = TopSide;
+                    dist = distY;
+                }
+            }
+        }
+        if (f.getMaxY() >= this->getMinY() && f.getMaxY() <= this->getMaxY()) {
+            // topRight = true;
+            float distX = abs(f.getMaxX() - this->getMinX());
+            float distY = abs(f.getMaxY() - this->getMinY());
+            if (distX < distY) {
+                if (distX < dist) {
+                    side = LeftSide;
+                    dist = distX;
+                }
+            } else {
+                if (distY < dist) {
+                    side = BottomSide;
+                    dist = distY;
+                }
+            }
+        }
+    }
+    
+    return side;
 }
 
 void Frame::draw(){

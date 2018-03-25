@@ -10,6 +10,11 @@
 #define Frame_hpp
 
 #include "GlutApp.hpp"
+#include <math.h>
+#include <limits>
+
+enum Corner { TopLeft, TopRight, BottomRight, BottomLeft, NoCorner };
+enum Side { TopSide, BottomSide, RightSide, LeftSide, NoSide };
 
 class Frame {
 public:
@@ -17,9 +22,13 @@ public:
     
     Frame();
     Frame(float x, float y, float width, float height);
+    float getMinX() { return this->x; }
+    float getMinY() { return this->y; }
+    float getMaxX() { return this->x + this->width; }
+    float getMaxY() { return this->y + this->height; }
     void draw();
     
-    bool collidesWith(Frame f);
+    Side collidesWith(Frame f);
     bool contains(float x, float y);
 };
 
