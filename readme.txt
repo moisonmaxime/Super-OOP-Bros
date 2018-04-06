@@ -1,4 +1,4 @@
-#Deliverable No. 1 - Proposal
+# Deliverable No. 1 - Proposal
 
 link on ShareLaTeX - https://www.sharelatex.com/6257649535zzgfynvtmfcy
 
