@@ -103,7 +103,7 @@ Side Frame::collidesWith(Frame f) {
 }
 
 void Frame::draw(){
-    glColor3f(.1, .1, .1);
+    glColor3f(1, 1, 1);
     glBegin(GL_POLYGON);
     glVertex2f(x, y);
     glVertex2f(x+width, y);

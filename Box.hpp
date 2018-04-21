@@ -18,6 +18,8 @@ public:
     Box(float x, float y, float width, float height);
     float getX();
     float getY();
+    float getW();
+    float getH();
     Frame getHitbox();
     void setPosition(float x, float y);
     Side collidesWith(Object* other);

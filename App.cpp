@@ -11,20 +11,13 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
     super_OOP_Bros = Game();
 }
 
-void wait ( int seconds )
-{
-    clock_t endwait;
-    endwait = clock () + seconds * CLOCKS_PER_SEC ;
-    while (clock() < endwait) {}
-}
-
 void App::draw() {
     
     // Clear the screen
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     // Set background color to sky blue
-    glClearColor(0.26, 0.78, 0.95, 1.0);
+    glClearColor(1, 1, 1, 1);
     
     // Set up the transformations stack
     glMatrixMode(GL_MODELVIEW);

@@ -11,8 +11,9 @@
 
 Game::Game(){
     frame = 0;
+    bg = new Background("bg.bmp");
     physics = new PhysicsController(-0.005, -0.005);
-    player = new Character(0.0, 0.0);
+    player = new Character(0.0, -.8);
     objects.push_back(new Box(-1, -1, 0.12, 0.24));
     objects.push_back(new Box(0, 0, 0.12, 0.24));
     objects.push_back(new Box(0.5, 0.5, 0.12, 0.24));
@@ -24,6 +25,7 @@ Game::Game(){
     for (int i=0; i<256; i++) {
         keyStates[i] = false;
     }
+    speed = .01;
 }
 
 void Game::keyDown(int key) {
@@ -46,7 +48,7 @@ void Game::calculateNextFrame() {
         player->move(Direction::Left);
     }
     
-    if (keyStates[32] && player->getVY() >= 0){
+    if (keyStates[32]){
         player->jump();
     }
     
@@ -67,4 +69,6 @@ void Game::draw(){
     calculateNextFrame();
     frame++;
     if (frame == 31){ frame = 0; }
+    bg->draw();
+    bg->incProgress(speed);
 }

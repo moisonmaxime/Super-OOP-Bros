@@ -6,6 +6,7 @@
 #include "Character.hpp"
 #include "Box.hpp"
 #include "PhysicsController.hpp"
+#include "Background.hpp"
 
 using namespace std;
 
@@ -15,6 +16,9 @@ class Game{
     Character* player;
     PhysicsController* physics;
     vector<Box*> objects;
+    Background* bg;
+    float speed;
+    
 public:
     Game();
     void keyDown(int key);

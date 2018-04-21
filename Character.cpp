@@ -13,14 +13,18 @@ Character::Character(){
     this->jumpTime = 0;
     this->frame = Frame(0.0, 0.0, .1, .2);
     this->hitbox = Frame(0.0, 0.0, .1, .2);
+    this->texture = new TexRect("flappy.bmp", "fireball.bmp", 6, 6, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
+    this->dead = false;
 }
 
-Character::Character(float x, float y){
+Character::Character(float x, float y){//add filename todo
     this->vx = 0;
     this->vy = 0;
     this->jumpTime = 0;
     this->frame = Frame(x, y, .1, .2);
     this->hitbox = Frame(x, y, .1, .2);
+    this->texture = new TexRect("flappy.bmp", "fireball.bmp", 6, 6, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
+    this->dead = false;
 }
 
 void Character::setPosition(float x, float y){
@@ -63,6 +67,8 @@ void Character::attack(){
 
 void Character::die(){
     // todo
+    this->dead = true;
+    texture->explode(this->texture);
 }
 
 Frame Character::getHitbox() {
@@ -81,6 +87,7 @@ void Character::handleCollisionWith(Object *other) {
             case TopSide:
                 frame.y = other->getHitbox().getMinY() - frame.height;
                 vy = 0;
+                this->die();//todo: put these this->die lines everywhere lol
                 break;
             case BottomSide:
                 frame.y = other->getHitbox().getMaxY();
@@ -90,6 +97,7 @@ void Character::handleCollisionWith(Object *other) {
             case LeftSide:
                 frame.x = other->getHitbox().getMaxX();
                 vx = 0;
+                this->die();
                 break;
             case RightSide:
                 frame.x = other->getHitbox().getMinX() - frame.width;
@@ -144,5 +152,6 @@ void Character::calculateNextFrame() {
 }
 
 void Character::draw() {
-    frame.draw();
+    //frame.draw(); //this draws the hitbox
+    texture->draw();
 }
