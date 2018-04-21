@@ -38,7 +38,7 @@ TexRect::TexRect (const char* filename1, const char* filename2, int rows, int co
     curr_col = 1;
     
     exploding1 = false;
-    complete = false;
+    complete = true;
 }
 
 bool TexRect::done() {
@@ -89,6 +89,11 @@ void TexRect::draw(){
     glEnd();
     
     glDisable(GL_TEXTURE_2D);
+    
+    if(exploding1 && !complete){
+        this->advance();
+    }
+    
 }
 
 void TexRect::incY(){
@@ -126,6 +131,7 @@ bool TexRect::contains(float x, float y){
 
 void TexRect::explode(TexRect* sprite){
     exploding1 = true;
+    complete = false;
     
 }
 

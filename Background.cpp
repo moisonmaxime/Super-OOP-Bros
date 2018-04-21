@@ -89,16 +89,16 @@ void Background::draw(){
 }
 
 void Background::incProgress(float speed){
+    if (progress<=-2){
+        progress = tex3+1;
+    }
+    if (tex2<=-2){
+        tex2 = progress+1;
+    }
+    if (tex3<=-2){
+        tex3 = tex2+1;
+    }
     progress -= speed/3.0;
     tex3 -= speed/3.0;
     tex2 -= speed/3.0;
-    if (progress<=-2){
-        progress = 1;
-    }
-    if (tex2<=-2){
-        tex2 = 1;
-    }
-    if (tex3<=-2){
-        tex3 = 1;
-    }
 }

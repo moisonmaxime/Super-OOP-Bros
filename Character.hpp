@@ -11,10 +11,10 @@ class Character: public MovingObject{
 	float vx, vy;   // Velocity
     float jumpTime;
     Frame frame, hitbox;
-    TexRect* texture; 
     bool dead;
     
 public:
+    TexRect* texture; 
     Character();
     Character(float x, float y);
     

@@ -7,13 +7,13 @@
 #include "Box.hpp"
 #include "PhysicsController.hpp"
 #include "Background.hpp"
+#include "GlutApp.hpp"
 
 using namespace std;
 
 class Game{
     int frame;
     bool* keyStates;
-    Character* player;
     PhysicsController* physics;
     vector<Box*> objects;
     Background* bg;
@@ -21,6 +21,7 @@ class Game{
     
 public:
     Game();
+    Character* player;
     void keyDown(int key);
     void keyUp(int key);
     void calculateNextFrame();

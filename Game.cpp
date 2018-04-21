@@ -9,7 +9,23 @@
 #include "Game.hpp"
 #include <iostream>
 
+static Game* singleton;
+
+void advanceAnimation(int i){
+    if (!(singleton->player->texture->done())){ //This is causing a segmentation fault
+        singleton->player->texture->advance();
+        glutPostRedisplay();
+        glutTimerFunc(32, advanceAnimation, i);
+    }
+    //else{
+    //    delete singleton->sprites[i];
+    //    singleton->sprites.erase(singleton->sprites.begin()+i);
+    //}
+}
+
 Game::Game(){
+    
+    singleton = this; 
     frame = 0;
     bg = new Background("bg.bmp");
     physics = new PhysicsController(-0.005, -0.005);
@@ -40,6 +56,9 @@ void Game::keyUp(int key) {
 }
 
 void Game::calculateNextFrame() {
+    if(!(player->texture->done())){
+        //advanceAnimation(0);
+    }
     
     if (keyStates[100]){
         player->move(Direction::Right);
