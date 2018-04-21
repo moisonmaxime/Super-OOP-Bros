@@ -14,7 +14,7 @@ TexRect::TexRect (const char* filename1, const char* filename2, int rows, int co
     gluBuild2DMipmaps(GL_TEXTURE_2D, 3, theTexMap1.GetNumCols(), theTexMap1.GetNumRows(),
                       GL_RGB, GL_UNSIGNED_BYTE, theTexMap1.ImageData() );
     this->texture_id1 = texture_id1;
-    
+    this->texture_id = texture_id1;
     //Animation
     RgbImage theTexMap2( filename2 );
     
@@ -47,19 +47,20 @@ bool TexRect::done() {
 
 
 void TexRect::draw(){
-    texture_id = texture_id1;
-    int cols = 1;
-    int rows = 1;
-    //else we are drawing an animation
-    if(exploding1){
-        texture_id = texture_id2;
-        cols = this->animatedCols;
-        rows = this->animatedRows;
-    }
-    
+ 
     glBindTexture( GL_TEXTURE_2D, texture_id );
     glEnable(GL_TEXTURE_2D);
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+    
+    float cols, rows;
+    if(exploding1){
+        cols = this->animatedCols;
+        rows = this->animatedRows;
+    }
+    else{
+        cols = 1;
+        rows = 1;
+    }
     
     float xinc = 1.0/cols;
     float yinc = 1.0/rows;
@@ -93,6 +94,9 @@ void TexRect::draw(){
     if(exploding1 && !complete){
         this->advance();
     }
+    else if(exploding1 && complete){
+        this->reset();
+    }
     
 }
 
@@ -121,7 +125,12 @@ void TexRect::advance(){
 }
 
 void TexRect::reset(){
-    complete = false;
+    complete = true;
+    curr_row = 1;
+    curr_col = 1;
+    exploding1 = false;
+    texture_id = texture_id1;
+
 }
 
 bool TexRect::contains(float x, float y){
@@ -131,7 +140,8 @@ bool TexRect::contains(float x, float y){
 
 void TexRect::explode(TexRect* sprite){
     exploding1 = true;
-    complete = false;
+    texture_id = texture_id2;
+    complete = false;        
     
 }
 
