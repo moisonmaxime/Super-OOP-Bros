@@ -2,6 +2,33 @@
 
 link on ShareLaTeX - https://www.sharelatex.com/6257649535zzgfynvtmfcy
 
+# Implimentation improvement(s)/change(s):
+
+- In game.hpp I added a speed (float). Pass this speed into the function that draws the hitboxes (green tubes still not implimented). This is how much to move the tubes to the left of the screen. (x -= speed). By default this will move the tubes a little bit faster than the background. That is not an accident. This is important for the paralax affect. 
+
+- (IMPORTANT): The texRect constructor does NOT take in floats for the constructor anymore. It takes in float POINTERS. This improves performance a little bit, because the hitboxes are constantly changing, so rather than send in the cordinants to the texture, we can simply print the texture using the pointer to the hitboxes. Much simpler and less resource intensive this way.
+
+# Todo:
+
+- Bird needs to stay in center of screen.. Just remove left and right buttons..
+
+- Bird needs to be animated to tilt up and down and to flap its wings.
+
+- Bird and other sprites need transparancy (Angelo has not yet showed us transparancy.)
+
+- Hitboxes need to print the Green tubes (the BMP is already in sprites-work)
+
+- Instead of bird exploding, we need the bird to do a different animation when it dies.
+
+- Maybe some audio?
+
+- Make randomizer to arrange the hitboxes and create full maps autonimously.
+
+- Timer to keep track of the distance travelled.
+
+- Print text to screen (Score and Lives, Etc.)
+
+- Add more if necessary
 
 
 FREEGLUTAPP
