@@ -12,6 +12,10 @@ link on ShareLaTeX - https://www.sharelatex.com/6257649535zzgfynvtmfcy
 
 - Bird needs to stay in center of screen.. Just remove left and right buttons..
 
+- Physics needs to be changed a tiny bit to allow jumps when not on the floor.
+
+- bird needs to "die()" when in contact with hitbox on all 4 sides (Only the top causes "die()" right now).
+
 - Bird needs to be animated to tilt up and down and to flap its wings.
 
 - Bird and other sprites need transparancy (Angelo has not yet showed us transparancy.)
