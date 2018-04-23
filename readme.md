@@ -22,6 +22,8 @@ link on ShareLaTeX - https://www.sharelatex.com/6257649535zzgfynvtmfcy
 
 - Hitboxes need to print the Green tubes (the BMP is already in sprites-work)
 
+- Floor needs to be printed as a hitbox (The floor BMP is in the directory)
+
 - Instead of bird exploding, we need the bird to do a different animation when it dies.
 
 - Maybe some audio?
