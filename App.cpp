@@ -44,6 +44,8 @@ void App::mouseDown(float x, float y){
 void App::keyPress(unsigned char key) {
     if (key == ' ')
         super_OOP_Bros.jumpPress();
+    if (key == 3)
+        exit(0);
 }
 
 void App::keyUp(unsigned char key) { }
