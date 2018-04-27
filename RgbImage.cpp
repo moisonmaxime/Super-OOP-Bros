@@ -44,7 +44,7 @@ RgbImage::RgbImage( int numRows, int numCols )
     }
     // Zero out the image
     unsigned char* c = ImagePtr;
-    int rowLen = GetNumBytesPerRow();
+    int rowLen = int(GetNumBytesPerRow());
     for ( int i=0; i<NumRows; i++ ) {
         for ( int j=0; j<rowLen; j++ ) {
             *(c++) = 0;
@@ -114,7 +114,7 @@ bool RgbImage::LoadBmpFile( const char* filename )
             *cPtr = fgetc( infile );      // Red color value
             cPtr += 3;
         }
-        int k=3*NumCols;               // Num bytes already read
+        int k = 3 * int(NumCols);               // Num bytes already read
         for ( ; k<GetNumBytesPerRow(); k++ ) {
             fgetc( infile );            // Read and ignore padding;
             *(cPtr++) = 0;
@@ -191,7 +191,7 @@ bool RgbImage::WriteBmpFile( const char* filename )
     
     fputc('B',outfile);
     fputc('M',outfile);
-    int rowLen = GetNumBytesPerRow();
+    int rowLen = int(GetNumBytesPerRow());
     writeLong( 40+14+NumRows*rowLen, outfile );   // Length of file
     writeShort( 0, outfile );               // Reserved for future use
     writeShort( 0, outfile );
@@ -220,7 +220,7 @@ bool RgbImage::WriteBmpFile( const char* filename )
             cPtr+=3;
         }
         // Pad row to word boundary
-        int k=3*NumCols;               // Num bytes already read
+        int k = 3 * int(NumCols);               // Num bytes already read
         for ( ; k<GetNumBytesPerRow(); k++ ) {
             fputc( 0, outfile );            // Read and ignore padding;
             cPtr++;
@@ -337,15 +337,15 @@ bool RgbImage::LoadFromOpenglBuffer()               // Load the bitmap from the 
         }
     }
     assert ( vWidth>=NumCols && vHeight>=NumRows );
-    int oldGlRowLen;
+    int oldGlRowLen = 0;
     if ( vWidth>=NumCols ) {
         glGetIntegerv( GL_UNPACK_ROW_LENGTH, &oldGlRowLen );
-        glPixelStorei( GL_UNPACK_ROW_LENGTH, NumCols );
+        glPixelStorei( GL_UNPACK_ROW_LENGTH, int(NumCols));
     }
     glPixelStorei(GL_UNPACK_ALIGNMENT, 4);
     
     // Get the frame buffer data.
-    glReadPixels( 0, 0, NumCols, NumRows, GL_RGB, GL_UNSIGNED_BYTE, ImagePtr);
+    glReadPixels( 0, 0, int(NumCols), int(NumRows), GL_RGB, GL_UNSIGNED_BYTE, ImagePtr);
     
     // Restore the row length in glPixelStorei  (really ought to restore alignment too).
     if ( vWidth>=NumCols ) {

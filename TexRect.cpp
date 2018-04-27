@@ -11,9 +11,8 @@ TexRect::TexRect (const char* filename1, const char* filename2, int rows, int co
     glGenTextures( 1, &texture_id1 );
     glBindTexture( GL_TEXTURE_2D, texture_id1 );
     
-    gluBuild2DMipmaps(GL_TEXTURE_2D, 3, theTexMap1.GetNumCols(), theTexMap1.GetNumRows(),
+    gluBuild2DMipmaps(GL_TEXTURE_2D, 3, int(theTexMap1.GetNumCols()), int(theTexMap1.GetNumRows()),
                       GL_RGB, GL_UNSIGNED_BYTE, theTexMap1.ImageData() );
-    this->texture_id1 = texture_id1;
     this->texture_id = texture_id1;
     //Animation
     RgbImage theTexMap2( filename2 );
@@ -21,9 +20,9 @@ TexRect::TexRect (const char* filename1, const char* filename2, int rows, int co
     glGenTextures( 1, &texture_id2 );
     glBindTexture( GL_TEXTURE_2D, texture_id2 );
     
-    gluBuild2DMipmaps(GL_TEXTURE_2D, 3, theTexMap2.GetNumCols(), theTexMap2.GetNumRows(),
+    gluBuild2DMipmaps(GL_TEXTURE_2D, 3, int(theTexMap2.GetNumCols()), int(theTexMap2.GetNumRows()),
                       GL_RGB, GL_UNSIGNED_BYTE, theTexMap2.ImageData() );
-    this->texture_id2 = texture_id2;
+    //this->texture_id2 = texture_id2;
     
     //Default values
     this->animatedRows = rows;

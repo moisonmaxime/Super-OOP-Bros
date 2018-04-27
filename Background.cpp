@@ -11,9 +11,9 @@ Background::Background (const char* filename){
     glGenTextures( 1, &texture_id );
     glBindTexture( GL_TEXTURE_2D, texture_id );
     
-    gluBuild2DMipmaps(GL_TEXTURE_2D, 3, theTexMap.GetNumCols(), theTexMap.GetNumRows(),
+    gluBuild2DMipmaps(GL_TEXTURE_2D, 3, int(theTexMap.GetNumCols()), int(theTexMap.GetNumRows()),
                       GL_RGB, GL_UNSIGNED_BYTE, theTexMap.ImageData() );
-    this->texture_id = texture_id;
+    //this->texture_id = texture_id;
     
     //Default values
     this->progress = -1.0f;
