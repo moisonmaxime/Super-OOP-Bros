@@ -22,8 +22,7 @@ class Game{
 public:
     Game();
     Character* player;
-    void keyDown(int key);
-    void keyUp(int key);
+    void jumpPress();
     void calculateNextFrame();
     void draw();
 };

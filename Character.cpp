@@ -49,10 +49,7 @@ void Character::setVY(float vy){
 
 
 void Character::jump() {
-    if (vy >= 0 && jumpTime <= 10) {
-        vy = 0.07;
-    }
-    jumpTime++;
+    vy = 0.07;
 }
 
 void Character::move(Direction direction) {
@@ -75,59 +72,13 @@ Frame Character::getHitbox() {
     return this->hitbox;
 }
 
-Side Character::collidesWith(Object *other) {
+bool Character::collidesWith(Object *other) {
     return hitbox.collidesWith(other->getHitbox());
 }
 
 void Character::handleCollisionWith(Object *other) {
-    Side collision = collidesWith(other);
-    Side collision2 = other->collidesWith(this);
-    if (collision != NoSide) {
-        switch (collision) {
-            case TopSide:
-                frame.y = other->getHitbox().getMinY() - frame.height;
-                vy = 0;
-                this->die();//todo: put these this->die lines everywhere lol
-                break;
-            case BottomSide:
-                frame.y = other->getHitbox().getMaxY();
-                vy = 0;
-                jumpTime = 0;
-                break;
-            case LeftSide:
-                frame.x = other->getHitbox().getMaxX();
-                vx = 0;
-                this->die();
-                break;
-            case RightSide:
-                frame.x = other->getHitbox().getMinX() - frame.width;
-                vx = 0;
-                break;
-            default:
-                break;
-        }
-    } else if (collision2 != NoSide) {
-        switch (collision2) {
-            case TopSide:
-                frame.y = other->getHitbox().getMaxY();
-                vy = 0;
-                jumpTime = 0;
-                break;
-            case BottomSide:
-                frame.y = other->getHitbox().getMinY() - frame.height;
-                vy = 0;
-                break;
-            case LeftSide:
-                frame.x = other->getHitbox().getMinX() - frame.width;
-                vx = 0;
-                break;
-            case RightSide:
-                frame.x = other->getHitbox().getMaxX();
-                vx = 0;
-                break;
-            default:
-                break;
-        }
+    if (collidesWith(other)) {
+        // Handle collision with object
     }
 }
 

@@ -16,12 +16,10 @@
 
 class PhysicsController {
     float gravity;
-    float drag;
     void applyGravity(MovingObject* obj);
-    void applyDrag(MovingObject* obj);
 public:
     PhysicsController();
-    PhysicsController(float drag, float gravity);
+    PhysicsController(float gravity);
     void applyforces(MovingObject* obj);
 };
 

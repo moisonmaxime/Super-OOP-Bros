@@ -31,7 +31,7 @@ public:
     void setVX(float vx);
     void setVY(float vy);
     
-    Side collidesWith(Object* other);
+    bool collidesWith(Object* other);
     void handleCollisionWith(Object *other);
     
     void jump();

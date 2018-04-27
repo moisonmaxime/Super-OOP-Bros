@@ -41,19 +41,9 @@ void App::mouseDown(float x, float y){
     redraw();
 }
 
-void App::mouseDrag(float x, float y){
-    // Update app state
-    mx = x;
-    my = y;
-    
-    // Redraw the scene
-    redraw();
-}
-
 void App::keyPress(unsigned char key) {
-    super_OOP_Bros.keyDown(key);
+    if (key == ' ')
+        super_OOP_Bros.jumpPress();
 }
 
-void App::keyUp(unsigned char key) {
-    super_OOP_Bros.keyUp(key);
-}
+void App::keyUp(unsigned char key) { }

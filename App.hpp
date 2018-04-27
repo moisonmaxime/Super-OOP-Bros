@@ -21,7 +21,6 @@ public:
     void keyPress(unsigned char key);
     void keyUp(unsigned char key);
     void mouseDown(float x, float y);
-    void mouseDrag(float x, float y);
 };
 
 #endif

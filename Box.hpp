@@ -22,7 +22,7 @@ public:
     float getH();
     Frame getHitbox();
     void setPosition(float x, float y);
-    Side collidesWith(Object* other);
+    bool collidesWith(Object* other);
     void draw();
 };
 

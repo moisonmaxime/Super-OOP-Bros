@@ -26,80 +26,27 @@ bool Frame::contains(float x, float y) {
     return (this->x <= x && x <= this->x + this->width) && (this->y <= y && y <= this->y + this->height);
 }
 
-Side Frame::collidesWith(Frame f) {
-    Side side = Side::NoSide;
-    float dist = std::numeric_limits<float>::max();
+bool Frame::collidesWith(Frame f) {
     
-    if (f.getMinX() >= this->getMinX() && f.getMinX() <= this->getMaxX()) {
-        if (f.getMinY() >= this->getMinY() && f.getMinY() <= this->getMaxY()) {
-            // bottomLeft = true;
-            float distX = abs(f.getMinX() - this->getMaxX());
-            float distY = 0.2 * abs(f.getMinY() - this->getMaxY());
-            if (distX < distY) {
-                if (distX < dist) {
-                    side = RightSide;
-                    dist = distX;
-                }
-            } else {
-                if (distY < dist) {
-                    side = TopSide;
-                    dist = distY;
-                }
-            }
-        }
-        if (f.getMaxY() >= this->getMinY() && f.getMaxY() <= this->getMaxY()) {
-            // topLeft = true;
-            float distX = abs(f.getMinX() - this->getMaxX());
-            float distY = 0.2 * abs(f.getMaxY() - this->getMinY());
-            if (distX < distY) {
-                if (distX < dist) {
-                    side = RightSide;
-                    dist = distX;
-                }
-            } else {
-                if (distY < dist) {
-                    side = BottomSide;
-                    dist = distY;
-                }
-            }
-        }
-    }
+    if (contains(f.getMinX(), f.getMinY()))
+        return true;
+    if (contains(f.getMinX(), f.getMaxY()))
+        return true;
+    if (contains(f.getMaxX(), f.getMinY()))
+        return true;
+    if (contains(f.getMaxX(), f.getMaxY()))
+        return true;
     
-    if (f.getMaxX() >= this->getMinX() && f.getMaxX() <= this->getMaxX()) {
-        if (f.getMinY() >= this->getMinY() && f.getMinY() <= this->getMaxY()) {
-            // bottomRight = true;
-            float distX = abs(f.getMaxX() - this->getMinX());
-            float distY = 0.2 * abs(f.getMinY() - this->getMaxY());
-            if (distX < distY) {
-                if (distX < dist) {
-                    side = LeftSide;
-                    dist = distX;
-                }
-            } else {
-                if (distY < dist) {
-                    side = TopSide;
-                    dist = distY;
-                }
-            }
-        }
-        if (f.getMaxY() >= this->getMinY() && f.getMaxY() <= this->getMaxY()) {
-            // topRight = true;
-            float distX = abs(f.getMaxX() - this->getMinX());
-            float distY = 0.2 * abs(f.getMaxY() - this->getMinY());
-            if (distX < distY) {
-                if (distX < dist) {
-                    side = LeftSide;
-                    dist = distX;
-                }
-            } else {
-                if (distY < dist) {
-                    side = BottomSide;
-                    dist = distY;
-                }
-            }
-        }
-    }
-    return side;
+    if (f.contains(getMinX(), getMinY()))
+        return true;
+    if (f.contains(getMinX(), getMaxY()))
+        return true;
+    if (f.contains(getMaxX(), getMinY()))
+        return true;
+    if (f.contains(getMaxX(), getMaxY()))
+        return true;
+    
+    return false;
 }
 
 void Frame::draw(){

@@ -27,7 +27,7 @@ public:
     float getMaxY() { return (y + height); }
     void draw();
     
-    Side collidesWith(Frame f);
+    bool collidesWith(Frame f);
     bool contains(float x, float y);
 };
 
