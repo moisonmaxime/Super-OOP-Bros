@@ -25,6 +25,14 @@ float Box::getY() {
     return this->hitbox.y;
 }
 
+float Box::getW() {
+    return this->hitbox.width;
+}
+
+float Box::getH() {
+    return this->hitbox.height;
+}
+
 Frame Box::getHitbox() {
     return this->hitbox;
 }
@@ -39,7 +47,7 @@ Side Box::collidesWith(Object* other) {
 }
 
 void Box::draw() {
-    glColor3f(1, 0, 0);
+    glColor3f(1, 1, 1);
     glBegin(GL_POLYGON);
     glVertex2f(hitbox.x, hitbox.y);
     glVertex2f(hitbox.x+hitbox.width, hitbox.y);
