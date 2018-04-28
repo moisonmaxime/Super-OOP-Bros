@@ -15,9 +15,12 @@
 static Game* singleton;
 
 void advanceAnimation(int i){
-    singleton->player->advance();
-    glutPostRedisplay();
-    glutTimerFunc(32, advanceAnimation, i);
+    //if (!singleton->player->done()){
+        singleton->player->advance();
+        glutPostRedisplay();
+        glutTimerFunc(32, advanceAnimation, i);
+    std::cout << "test" << std::endl;
+    //}
 }
 
 Game::Game() {
@@ -41,7 +44,7 @@ void Game::jumpPress() {
 void Game::calculateNextFrame() {
     physics->applyforces(player);
     player->calculateNextFrame();
-    
+    player->advance();
     for (auto it = objects.cbegin(); it != objects.cend(); it++)
         player->handleCollisionWith(*it);
 }
@@ -49,10 +52,10 @@ void Game::calculateNextFrame() {
 void Game::draw(){
     for (auto it = objects.cbegin(); it != objects.cend(); it++)
         (*it)->draw();
-    player->draw();
     calculateNextFrame();
     frame++;
     if (frame == 31){ frame = 0; }
     bg->draw();
+    player->draw();
     bg->incProgress(speed);
 }
