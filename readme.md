@@ -3,8 +3,8 @@
 link on ShareLaTeX - https://www.sharelatex.com/6257649535zzgfynvtmfcy
 
 # Dependancies required for this to work:
-- SOIL: `sudo apt-get install libsoil-dev`
-
+- SOIL: for linux`sudo apt-get install libsoil-dev`
+- SOIL: for mac'brew install libsoil-dev`
 
 # Implimentation improvement(s)/change(s):
 
@@ -14,15 +14,8 @@ link on ShareLaTeX - https://www.sharelatex.com/6257649535zzgfynvtmfcy
 
 # Todo:
 
-- Bird needs to stay in center of screen.. Just remove left and right buttons..
 
-- Physics needs to be changed a tiny bit to allow jumps when not on the floor.
-
-- bird needs to "die()" when in contact with hitbox on all 4 sides (Only the top causes "die()" right now).
-
-- Bird needs to be animated to tilt up and down and to flap its wings.
-
-- Bird and other sprites need transparancy (Angelo has not yet showed us transparancy.)
+- bird needs to "die()" when in contact with hitbox on all 4 sides
 
 - Hitboxes need to print the Green tubes (the BMP is already in sprites-work)
 
@@ -34,7 +27,7 @@ link on ShareLaTeX - https://www.sharelatex.com/6257649535zzgfynvtmfcy
 
 - Make randomizer to arrange the hitboxes and create full maps autonimously.
 
-- Timer to keep track of the distance travelled.
+- Timer/pace-keeper to keep track of the distance travelled.
 
 - Print text to screen (Score and Lives, Etc.)
 
