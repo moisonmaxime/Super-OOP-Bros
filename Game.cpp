@@ -15,15 +15,9 @@
 static Game* singleton;
 
 void advanceAnimation(int i){
-    if (!(singleton->player->texture->done())){ //This is causing a segmentation fault
-        singleton->player->texture->advance();
-        glutPostRedisplay();
-        glutTimerFunc(32, advanceAnimation, i);
-    }
-    //else{
-    //    delete singleton->sprites[i];
-    //    singleton->sprites.erase(singleton->sprites.begin()+i);
-    //}
+    singleton->player->advance();
+    glutPostRedisplay();
+    glutTimerFunc(32, advanceAnimation, i);
 }
 
 Game::Game() {

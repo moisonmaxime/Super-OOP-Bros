@@ -17,7 +17,7 @@ CFLAGS   = -w $(OPTFLAGS)
 ifeq ($(strip $(OS)),Darwin)
 	LDFLAGS = -framework GLUT -framework OpenGL
 else
-	LDFLAGS = -lGL -lglut -lGLU
+	LDFLAGS = -lGL -lglut -lGLU -LSOIL/lib/ubuntu -lSOIL 
 endif
 
 #######################################################################

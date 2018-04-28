@@ -6,6 +6,7 @@
 //  Copyright © 2018 Maxime Moison. All rights reserved.
 //
 #include "Character.hpp"
+#include<iostream>
 
 Character::Character(){
     this->vx = 0;
@@ -13,7 +14,8 @@ Character::Character(){
     this->jumpTime = 0;
     this->frame = Frame(0.0, 0.0, .1, .2);
     this->hitbox = Frame(0.0, 0.0, .1, .2);
-    this->texture = new TexRect("flappy.bmp", "fireball.bmp", 6, 6, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
+    this->flyingTex = new AnimatedRect("mushroom.png", 1, 1, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
+    this->deadTex = new AnimatedRect("mushroom.png", 1, 1, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
     this->dead = false;
 }
 
@@ -23,7 +25,8 @@ Character::Character(float x, float y){//add filename todo
     this->jumpTime = 0;
     this->frame = Frame(x, y, .1, .2);
     this->hitbox = Frame(x, y, .1, .2);
-    this->texture = new TexRect("flappy.bmp", "fireball.bmp", 6, 6, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
+    this->flyingTex = new AnimatedRect("mushroom.png", 1, 1, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
+    this->deadTex = new AnimatedRect("mushroom.png", 2, 2, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
     this->dead = false;
 }
 
@@ -65,7 +68,7 @@ void Character::attack(){
 void Character::die(){
     // todo
     this->dead = true;
-    texture->explode(this->texture);
+    //texture->explode(this->texture);
 }
 
 Frame Character::getHitbox() {
@@ -102,7 +105,21 @@ void Character::calculateNextFrame() {
     this->hitbox.y = y;
 }
 
+void Character::advance(){
+    if(!dead){
+        flyingTex->advance();
+    }
+    else{
+        deadTex->advance();
+    }
+}
+
 void Character::draw() {
     //frame.draw(); //this draws the hitbox
-    texture->draw();
+    if(!dead){
+        flyingTex->draw();
+    }
+    else{
+        deadTex->draw();
+    }
 }

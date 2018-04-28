@@ -2,6 +2,10 @@
 
 link on ShareLaTeX - https://www.sharelatex.com/6257649535zzgfynvtmfcy
 
+# Dependancies required for this to work:
+- SOIL: `sudo apt-get install libsoil-dev`
+
+
 # Implimentation improvement(s)/change(s):
 
 - In game.hpp I added a speed (float). Pass this speed into the function that draws the hitboxes (green tubes still not implimented). This is how much to move the tubes to the left of the screen. (x -= speed). By default this will move the tubes a little bit faster than the background. That is not an accident. This is important for the paralax affect. 

@@ -3,7 +3,7 @@
 
 #include "Frame.hpp"
 #include "MovingObject.hpp"
-#include "TexRect.h"
+#include "AnimatedRect.h"
 
 enum Direction { Left=-1, Right=1};
 
@@ -14,7 +14,8 @@ class Character: public MovingObject{
     bool dead;
     
 public:
-    TexRect* texture; 
+    AnimatedRect* flyingTex; 
+    AnimatedRect* deadTex; 
     Character();
     Character(float x, float y);
     
@@ -39,6 +40,7 @@ public:
     void attack();
     void die();
     void calculateNextFrame();
+    void advance();
     void draw();
 };
 
