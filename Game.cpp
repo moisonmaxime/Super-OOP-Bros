@@ -10,7 +10,7 @@
 #include <iostream>
 
 #define DEFAULT_SPEED 0.01
-#define GRAVITY -0.003
+#define GRAVITY -0.002
 
 static Game* singleton;
 

@@ -52,7 +52,7 @@ void Character::setVY(float vy){
 
 
 void Character::jump() {
-    vy = 0.07;
+    vy = 0.04;
 }
 
 void Character::move(Direction direction) {
