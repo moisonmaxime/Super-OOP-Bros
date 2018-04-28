@@ -2,12 +2,13 @@
 #include<iostream>
 
 AnimatedRect::AnimatedRect (const char* filename, int rows, int cols, float *x, float *y, float *w, float *h){
-    
-glClearColor (0.0, 0.0, 0.0, 0.0);
+
+    glClearColor (0.0, 0.0, 0.0, 0.0);
     glShadeModel(GL_FLAT);
     glEnable(GL_DEPTH_TEST);
     
-    texture_map_id = SOIL_load_OGL_texture (
+    texture_map_id = SOIL_load_OGL_texture
+    (
      filename,
      SOIL_LOAD_AUTO,
      SOIL_CREATE_NEW_ID,
@@ -20,7 +21,6 @@ glClearColor (0.0, 0.0, 0.0, 0.0);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
     
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-   
     
     this->rows = rows;
     this->cols = cols;
@@ -44,22 +44,18 @@ bool AnimatedRect::done() {
 
 void AnimatedRect::draw(){
     if (animating){
-        glBindTexture( GL_TEXTURE_2D, texture_map_id );
+      glBindTexture( GL_TEXTURE_2D, texture_map_id );
         glEnable(GL_TEXTURE_2D);
-        //glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-        
-        std::cout << *y << std::endl;
+        glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
         
         float xinc = 1.0/cols;
         float yinc = 1.0/rows;
-        
         
         float top = 1 - yinc * (curr_row - 1);
         float bottom = 1 - yinc * curr_row;
 
         float left = xinc * (curr_col - 1);
         float right = xinc * curr_col;
-
 
         glBegin(GL_QUADS);
         glColor4f(1, 1, 1, 1);

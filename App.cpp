@@ -14,7 +14,7 @@ App::App(const char* label, int x, int y, int w, int h): GlutApp(label, x, y, w,
 void App::draw() {
     
     // Clear the screen
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT);
     
     // Set background color to sky blue
     glClearColor(1.0, 1.0, 1.0, 1.0);
