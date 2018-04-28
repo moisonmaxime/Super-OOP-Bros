@@ -17,7 +17,7 @@ void App::draw() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     // Set background color to sky blue
-    glClearColor(1, 1, 1, 1);
+    glClearColor(1.0, 1.0, 1.0, 1.0);
     
     // Set up the transformations stack
     glMatrixMode(GL_MODELVIEW);

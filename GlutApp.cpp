@@ -1,4 +1,4 @@
-#include "GlutApp.hpp"
+#include "GlutApp.h"
 
 // Make this static so that it will not be accessible in other source files
 static GlutApp* app;
@@ -26,11 +26,12 @@ GlutApp::GlutApp(const char* label, int x, int y, int w, int h) {
     glutMouseFunc(mouseCB);
     glutMotionFunc(motionCB);
     glutKeyboardFunc(keyboardCB);
+    glutKeyboardUpFunc(keyUpCB);
     glutSpecialFunc(specialCB);
+    glutSpecialUpFunc(specialUpCB);
     glutIdleFunc(idleCB);
     glutReshapeFunc(reshapeCB);
     glutPassiveMotionFunc(passiveCB);
-    glutKeyboardUpFunc(keyboardUpCB);
 }
 
 void GlutApp::windowToScene ( float& x, float &y )
@@ -74,11 +75,6 @@ void GlutApp::resize ( int w, int h ) {
 }
 
 void GlutApp::keyPress(unsigned char key){
-    // Exit the application when any key is pressed
-    exit(0);
-}
-
-void GlutApp::keyUp(unsigned char key){
     // Exit the application when any key is pressed
     exit(0);
 }
@@ -166,12 +162,15 @@ void GlutApp::keyboardCB(unsigned char key, int x, int y){
     app->keyPress(key);
 }
 
-void GlutApp::keyboardUpCB(unsigned char key, int x, int y){
-    // When a key is pressed, call our keypress handler
+void GlutApp::keyUpCB(unsigned char key, int x, int y){
     app->keyUp(key);
 }
 
 void GlutApp::specialCB(int key, int x, int y){
     // When a special key is pressed, call our handler for special keys
     app->specialKeyPress(key);
+}
+
+void GlutApp::specialUpCB(int key, int x, int y){
+    app->specialKeyUp(key);
 }
