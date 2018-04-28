@@ -26,7 +26,7 @@ void advanceAnimation(int i){
 Game::Game() {
     singleton = this; 
     frame = 0;
-    bg = new Background("bg.bmp");
+    bg = new Background("images/bg.bmp");
     physics = new PhysicsController(GRAVITY);
     player = new Character(-0.5, 0.6);
     objects.push_back(new Box(-1, -1.25, 2, 0.27));
