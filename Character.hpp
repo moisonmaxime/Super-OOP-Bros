@@ -9,7 +9,6 @@ enum Direction { Left=-1, Right=1};
 
 class Character: public MovingObject{
 	float vx, vy;   // Velocity
-    float jumpTime;
     Frame frame, hitbox;
     bool dead;
     

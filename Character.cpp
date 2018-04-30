@@ -11,7 +11,6 @@
 Character::Character(){
     this->vx = 0;
     this->vy = 0;
-    this->jumpTime = 0;
     this->frame = Frame(0.0, 0.0, .1, .2);
     this->hitbox = Frame(0.0, 0.0, .1, .2);
     this->flyingTex = new AnimatedRect("images/flappy2.png", 1, 7, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
@@ -22,7 +21,6 @@ Character::Character(){
 Character::Character(float x, float y){//add filename todo
     this->vx = 0;
     this->vy = 0;
-    this->jumpTime = 0;
     this->frame = Frame(x, y, .1, .2);
     this->hitbox = Frame(x, y, .1, .2);
     this->flyingTex = new AnimatedRect("images/flappy2.png", 1, 7, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
@@ -92,6 +90,9 @@ float Character::getVY(){ return this->vy; }
 
 void Character::calculateNextFrame() {
     // implement velocity handling
+    if (getY() < 0)
+        jump();
+    
     float x = this->frame.x;
     float y = this->frame.y;
     
