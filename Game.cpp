@@ -30,6 +30,7 @@ Game::Game() {
     physics = new PhysicsController(GRAVITY);
     player = new Character(-0.5, 0.6);
     speed = DEFAULT_SPEED;
+    pipes.push_back(new Pipe(0.5, 0, 0.25));
 }
 
 void Game::jumpPress() {
@@ -45,8 +46,8 @@ void Game::calculateNextFrame() {
 }
 
 void Game::draw(){
-//    for (auto it = objects.cbegin(); it != objects.cend(); it++)
-//        (*it)->draw();
+    for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
+        (*it)->draw();
     calculateNextFrame();
     frame++;
     if (frame == 31){ frame = 0; }

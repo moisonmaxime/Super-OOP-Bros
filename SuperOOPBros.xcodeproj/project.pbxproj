@@ -15,7 +15,7 @@
 		1B115E732096CBE600C484FE /* AnimatedRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B115E712096CBE500C484FE /* AnimatedRect.cpp */; };
 		1B115E842096CDA000C484FE /* libSOIL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B115E832096CDA000C484FE /* libSOIL.a */; };
 		1B115E862096CDD400C484FE /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B115E852096CDD300C484FE /* CoreFoundation.framework */; };
-		1B115E892096D50D00C484FE /* TexRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B115E882096D50D00C484FE /* TexRect.cpp */; };
+		1B115E8C2096D76400C484FE /* Pipe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B115E8A2096D76400C484FE /* Pipe.cpp */; };
 		1B5C34B62093951500CD85B6 /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C34B52093951500CD85B6 /* Background.cpp */; };
 		1B5C34B92093953100CD85B6 /* RgbImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C34B72093953100CD85B6 /* RgbImage.cpp */; };
 		1BA312DC2065737B00C4662A /* PhysicsController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BA312DA2065737B00C4662A /* PhysicsController.cpp */; };
@@ -49,8 +49,8 @@
 		1B115E722096CBE500C484FE /* AnimatedRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedRect.h; sourceTree = "<group>"; };
 		1B115E832096CDA000C484FE /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = SOIL/lib/macOS/libSOIL.a; sourceTree = "<group>"; };
 		1B115E852096CDD300C484FE /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		1B115E872096D50D00C484FE /* TexRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TexRect.h; sourceTree = "<group>"; };
-		1B115E882096D50D00C484FE /* TexRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TexRect.cpp; sourceTree = "<group>"; };
+		1B115E8A2096D76400C484FE /* Pipe.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Pipe.cpp; sourceTree = "<group>"; };
+		1B115E8B2096D76400C484FE /* Pipe.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Pipe.hpp; sourceTree = "<group>"; };
 		1B5C34B42093951500CD85B6 /* Background.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Background.hpp; sourceTree = "<group>"; };
 		1B5C34B52093951500CD85B6 /* Background.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Background.cpp; sourceTree = "<group>"; };
 		1B5C34B72093953100CD85B6 /* RgbImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RgbImage.cpp; sourceTree = "<group>"; };
@@ -101,10 +101,10 @@
 				1BD2B1B9206441AC00BB5D4F /* Character.cpp */,
 				1B5C34B72093953100CD85B6 /* RgbImage.cpp */,
 				1B5C34B82093953100CD85B6 /* RgbImage.h */,
-				1B115E882096D50D00C484FE /* TexRect.cpp */,
-				1B115E872096D50D00C484FE /* TexRect.h */,
-				1B115E712096CBE500C484FE /* AnimatedRect.cpp */,
+				1B115E8B2096D76400C484FE /* Pipe.hpp */,
+				1B115E8A2096D76400C484FE /* Pipe.cpp */,
 				1B115E722096CBE500C484FE /* AnimatedRect.h */,
+				1B115E712096CBE500C484FE /* AnimatedRect.cpp */,
 				1BA312DB2065737B00C4662A /* PhysicsController.hpp */,
 				1BA312DA2065737B00C4662A /* PhysicsController.cpp */,
 				1799B7E41E5E3A83006D7CBD /* GlutApp.hpp */,
@@ -191,8 +191,8 @@
 				1799B7E81E5ECD67006D7CBD /* App.cpp in Sources */,
 				1B5C34B92093953100CD85B6 /* RgbImage.cpp in Sources */,
 				1B115E732096CBE600C484FE /* AnimatedRect.cpp in Sources */,
+				1B115E8C2096D76400C484FE /* Pipe.cpp in Sources */,
 				173FEF0C1AA63AC4006CCB85 /* app_main.cpp in Sources */,
-				1B115E892096D50D00C484FE /* TexRect.cpp in Sources */,
 				1BA312DC2065737B00C4662A /* PhysicsController.cpp in Sources */,
 				1799B7E51E5E3A83006D7CBD /* GlutApp.cpp in Sources */,
 				1BD2B1BD206451F900BB5D4F /* Frame.cpp in Sources */,

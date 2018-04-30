@@ -14,8 +14,9 @@ class Character: public MovingObject{
     
 public:
     AnimatedRect* flyingTex; 
-    AnimatedRect* deadTex; 
+    AnimatedRect* deadTex;
     Character();
+    ~Character();
     Character(float x, float y);
     
     float getX();

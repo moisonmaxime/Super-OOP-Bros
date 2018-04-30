@@ -28,6 +28,11 @@ Character::Character(float x, float y){//add filename todo
     this->dead = false;
 }
 
+Character::~Character() {
+    delete flyingTex;
+    delete deadTex;
+}
+
 void Character::setPosition(float x, float y){
     this->frame.x = x;
     this->frame.y = y;
