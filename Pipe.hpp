@@ -23,9 +23,9 @@
 #include "Frame.hpp"
 #include "Object.hpp"
 
-#define TOP_HEIGHT 1
-#define BOTTOM_HEIGHT 1
-#define WIDTH 0.2
+#define TOP_HEIGHT 121.0/260.0
+#define BOTTOM_HEIGHT 135.0/260.0
+#define WIDTH 26.0/260.0
 
 class Pipe {
     GLuint top_texture_id, bottom_texture_id;

@@ -39,9 +39,7 @@ Pipe::Pipe(float x, float y, float h) {
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 }
 
-Pipe::~Pipe() {
-    
-}
+Pipe::~Pipe() { }
 
 bool Pipe::collidesWith(Object* object) {
     return false;
@@ -52,8 +50,8 @@ void Pipe::draw() {
     float topMinY = y + h/2.0;
     float topMaxY = topMinY + TOP_HEIGHT;
     
-    float bottomMinY = y - h/2.0;
-    float bottomMaxY = bottomMinY + BOTTOM_HEIGHT;
+    float bottomMaxY = y - h/2.0;
+    float bottomMinY = bottomMaxY - BOTTOM_HEIGHT;
     
     float minX = x - WIDTH/2.0;
     float maxX = x + WIDTH/2.0;
