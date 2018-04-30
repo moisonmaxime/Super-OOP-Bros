@@ -17,7 +17,6 @@
 		1B115E862096CDD400C484FE /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B115E852096CDD300C484FE /* CoreFoundation.framework */; };
 		1B5C34B62093951500CD85B6 /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C34B52093951500CD85B6 /* Background.cpp */; };
 		1B5C34B92093953100CD85B6 /* RgbImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C34B72093953100CD85B6 /* RgbImage.cpp */; };
-		1B9FBC742067158C00E9FF10 /* Box.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B9FBC722067158C00E9FF10 /* Box.cpp */; };
 		1BA312DC2065737B00C4662A /* PhysicsController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BA312DA2065737B00C4662A /* PhysicsController.cpp */; };
 		1BD2B1B82064404F00BB5D4F /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2B1B72064404F00BB5D4F /* Game.cpp */; };
 		1BD2B1BA206441AC00BB5D4F /* Character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2B1B9206441AC00BB5D4F /* Character.cpp */; };
@@ -54,8 +53,6 @@
 		1B5C34B72093953100CD85B6 /* RgbImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RgbImage.cpp; sourceTree = "<group>"; };
 		1B5C34B82093953100CD85B6 /* RgbImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgbImage.h; sourceTree = "<group>"; };
 		1B9FBC712067101100E9FF10 /* Object.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Object.hpp; sourceTree = "<group>"; };
-		1B9FBC722067158C00E9FF10 /* Box.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Box.cpp; sourceTree = "<group>"; };
-		1B9FBC732067158C00E9FF10 /* Box.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Box.hpp; sourceTree = "<group>"; };
 		1BA312D820656E5400C4662A /* MovingObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MovingObject.hpp; sourceTree = "<group>"; };
 		1BA312DA2065737B00C4662A /* PhysicsController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsController.cpp; sourceTree = "<group>"; };
 		1BA312DB2065737B00C4662A /* PhysicsController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PhysicsController.hpp; sourceTree = "<group>"; };
@@ -91,16 +88,14 @@
 				1799B7E61E5ECD67006D7CBD /* App.cpp */,
 				1BD2B1B12064343600BB5D4F /* Game.hpp */,
 				1BD2B1B72064404F00BB5D4F /* Game.cpp */,
-				1B9FBC712067101100E9FF10 /* Object.hpp */,
 				1B5C34B52093951500CD85B6 /* Background.cpp */,
 				1B5C34B42093951500CD85B6 /* Background.hpp */,
-				1B9FBC732067158C00E9FF10 /* Box.hpp */,
-				1B9FBC722067158C00E9FF10 /* Box.cpp */,
+				1BD2B1BC206451F900BB5D4F /* Frame.hpp */,
+				1BD2B1BB206451F900BB5D4F /* Frame.cpp */,
+				1B9FBC712067101100E9FF10 /* Object.hpp */,
 				1BA312D820656E5400C4662A /* MovingObject.hpp */,
 				1BD2B1B02064343000BB5D4F /* Character.hpp */,
 				1BD2B1B9206441AC00BB5D4F /* Character.cpp */,
-				1BD2B1BC206451F900BB5D4F /* Frame.hpp */,
-				1BD2B1BB206451F900BB5D4F /* Frame.cpp */,
 				1B5C34B72093953100CD85B6 /* RgbImage.cpp */,
 				1B5C34B82093953100CD85B6 /* RgbImage.h */,
 				1B115E712096CBE500C484FE /* AnimatedRect.cpp */,
@@ -191,7 +186,6 @@
 				1799B7E81E5ECD67006D7CBD /* App.cpp in Sources */,
 				1B5C34B92093953100CD85B6 /* RgbImage.cpp in Sources */,
 				1B115E732096CBE600C484FE /* AnimatedRect.cpp in Sources */,
-				1B9FBC742067158C00E9FF10 /* Box.cpp in Sources */,
 				173FEF0C1AA63AC4006CCB85 /* app_main.cpp in Sources */,
 				1BA312DC2065737B00C4662A /* PhysicsController.cpp in Sources */,
 				1799B7E51E5E3A83006D7CBD /* GlutApp.cpp in Sources */,

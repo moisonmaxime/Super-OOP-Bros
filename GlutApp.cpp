@@ -154,7 +154,7 @@ void GlutApp::passiveCB (int x, int y){
     app->windowToScene(mx, my);
     
     // Call mouse motion handler
-    app->mouseMove(mx, my);
+    // app->mouseMove(mx, my);
 }
 
 void GlutApp::keyboardCB(unsigned char key, int x, int y){

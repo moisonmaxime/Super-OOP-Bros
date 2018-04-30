@@ -29,11 +29,6 @@ Game::Game() {
     bg = new Background("images/bg.bmp");
     physics = new PhysicsController(GRAVITY);
     player = new Character(-0.5, 0.6);
-    objects.push_back(new Box(-1, -1.25, 2, 0.27));
-    keyStates = new bool[256];
-    for (int i=0; i<256; i++) {
-        keyStates[i] = false;
-    }
     speed = DEFAULT_SPEED;
 }
 
@@ -45,13 +40,13 @@ void Game::calculateNextFrame() {
     physics->applyforces(player);
     player->calculateNextFrame();
     player->advance();
-    for (auto it = objects.cbegin(); it != objects.cend(); it++)
-        player->handleCollisionWith(*it);
+//    for (auto it = objects.cbegin(); it != objects.cend(); it++)
+//        player->handleCollisionWith(*it);
 }
 
 void Game::draw(){
-    for (auto it = objects.cbegin(); it != objects.cend(); it++)
-        (*it)->draw();
+//    for (auto it = objects.cbegin(); it != objects.cend(); it++)
+//        (*it)->draw();
     calculateNextFrame();
     frame++;
     if (frame == 31){ frame = 0; }

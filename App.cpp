@@ -32,7 +32,7 @@ void App::draw() {
     redraw();
 }
 
-void App::mouseDown(float x, float y){
+void App::mouseDown(float x, float y) {
     // Update app state
     mx = x;
     my = y;
