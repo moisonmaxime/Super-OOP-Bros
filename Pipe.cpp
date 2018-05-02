@@ -7,7 +7,8 @@
 //
 
 #include "Pipe.hpp"
-
+#include <math.h>
+#define RAND_MAX 0x7fffffff
 
 Pipe::Pipe(float x, float y, float h) {
     
@@ -106,10 +107,18 @@ void Pipe::updateX(double x) {
     this->x = x;
 }
 
-void Pipe::move() {
+void Pipe::move(float speed) {
+    
     moving = true;
     if(moving) {
-        x -= 0.005;
+        x -= speed;
+    }
+    if(x <= -2) {
+        x += 3.2;
+        y = pow(-1, (rand() % 2)) * (double)rand() / RAND_MAX;
+        if(y >= 0.7) {
+            y = y - 0.3;
+        }
     }
 }
 

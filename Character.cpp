@@ -13,7 +13,7 @@ Character::Character(){
     this->vy = 0;
     this->frame = Frame(0.0, 0.0, .1, .2);
     this->hitbox = Frame(0.0, 0.0, .1, .2);
-    this->flyingTex = new AnimatedRect("images/flappy2.png", 1, 7, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
+    this->flyingTex = new AnimatedRect("images/angelo.png", 1, 7, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
     this->deadTex = new AnimatedRect("images/mushroom.png", 1, 7, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
     this->dead = false;
 }
@@ -23,7 +23,7 @@ Character::Character(float x, float y){//add filename todo
     this->vy = 0;
     this->frame = Frame(x, y, .1, .2);
     this->hitbox = Frame(x, y, .1, .2);
-    this->flyingTex = new AnimatedRect("images/flappy2.png", 1, 7, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
+    this->flyingTex = new AnimatedRect("images/angelo.png", 1, 7, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
     this->deadTex = new AnimatedRect("images/mushroom.png", 1, 1, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
     this->dead = false;
 }

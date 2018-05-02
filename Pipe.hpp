@@ -36,7 +36,7 @@ public:
     ~Pipe();
     bool collidesWith(Object* object);
     void draw();
-    void move();
+    void move(float);
     void updateX(double);
     void randomY();
 };

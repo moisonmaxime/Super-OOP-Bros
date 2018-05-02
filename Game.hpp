@@ -9,8 +9,8 @@
 #include "Background.hpp"
 #include "GlutApp.hpp"
 #include "Pipe.hpp"
-#include "TexRect.h"
 #include "AnimatedRect2.h"
+#include "Ground.hpp"
 
 using namespace std;
 
@@ -19,14 +19,12 @@ class Game{
     PhysicsController* physics;
     Background* bg;
     float speed;
-    Background* gr;
+    Ground* gr;
+    vector<Pipe*> pipes;
+    Character* player;
     
 public:
     Game();
-    vector<Pipe*> pipes;
-    vector<TexRect*> ground;
-    vector<AnimatedRect2*> mushroom;
-    Character* player;
     void jumpPress();
     void calculateNextFrame();
     void draw();
