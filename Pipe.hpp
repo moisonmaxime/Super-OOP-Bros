@@ -30,11 +30,15 @@
 class Pipe {
     GLuint top_texture_id, bottom_texture_id;
     float x, y, h;
+    bool moving;
 public:
     Pipe(float x, float y, float h);
     ~Pipe();
     bool collidesWith(Object* object);
     void draw();
+    void move(float);
+    void updateX(double);
+    void randomY();
 };
 
 #endif /* Pipe_hpp */

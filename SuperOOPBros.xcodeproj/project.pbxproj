@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C452559209A58C30058F8A4 /* Ground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C452557209A58C30058F8A4 /* Ground.cpp */; };
+		0C5369CE209A25AC00FC0E7D /* AnimatedRect2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C5369CC209A25AC00FC0E7D /* AnimatedRect2.cpp */; };
 		173FEF0C1AA63AC4006CCB85 /* app_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 173FEF0B1AA63AC4006CCB85 /* app_main.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		173FEF161AA63B1B006CCB85 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 173FEF151AA63B1B006CCB85 /* OpenGL.framework */; };
 		173FEF181AA63B22006CCB85 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 173FEF171AA63B22006CCB85 /* GLUT.framework */; };
@@ -37,6 +39,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C452557209A58C30058F8A4 /* Ground.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Ground.cpp; sourceTree = "<group>"; };
+		0C452558209A58C30058F8A4 /* Ground.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Ground.hpp; sourceTree = "<group>"; };
+		0C5369CB209A259400FC0E7D /* AnimatedRect2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimatedRect2.h; sourceTree = "<group>"; };
+		0C5369CC209A25AC00FC0E7D /* AnimatedRect2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AnimatedRect2.cpp; sourceTree = "<group>"; };
 		173FEF011AA63A07006CCB85 /* SuperOOPBros */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SuperOOPBros; sourceTree = BUILT_PRODUCTS_DIR; };
 		173FEF0B1AA63AC4006CCB85 /* app_main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = app_main.cpp; sourceTree = "<group>"; };
 		173FEF151AA63B1B006CCB85 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -91,12 +97,16 @@
 				1799B7E61E5ECD67006D7CBD /* App.cpp */,
 				1BD2B1B12064343600BB5D4F /* Game.hpp */,
 				1BD2B1B72064404F00BB5D4F /* Game.cpp */,
+				0C5369CB209A259400FC0E7D /* AnimatedRect2.h */,
+				0C5369CC209A25AC00FC0E7D /* AnimatedRect2.cpp */,
 				1B5C34B52093951500CD85B6 /* Background.cpp */,
 				1B5C34B42093951500CD85B6 /* Background.hpp */,
 				1BD2B1BC206451F900BB5D4F /* Frame.hpp */,
 				1BD2B1BB206451F900BB5D4F /* Frame.cpp */,
 				1B9FBC712067101100E9FF10 /* Object.hpp */,
 				1BA312D820656E5400C4662A /* MovingObject.hpp */,
+				0C452557209A58C30058F8A4 /* Ground.cpp */,
+				0C452558209A58C30058F8A4 /* Ground.hpp */,
 				1BD2B1B02064343000BB5D4F /* Character.hpp */,
 				1BD2B1B9206441AC00BB5D4F /* Character.cpp */,
 				1B5C34B72093953100CD85B6 /* RgbImage.cpp */,
@@ -193,12 +203,14 @@
 				1B115E732096CBE600C484FE /* AnimatedRect.cpp in Sources */,
 				1B115E8C2096D76400C484FE /* Pipe.cpp in Sources */,
 				173FEF0C1AA63AC4006CCB85 /* app_main.cpp in Sources */,
+				0C5369CE209A25AC00FC0E7D /* AnimatedRect2.cpp in Sources */,
 				1BA312DC2065737B00C4662A /* PhysicsController.cpp in Sources */,
 				1799B7E51E5E3A83006D7CBD /* GlutApp.cpp in Sources */,
 				1BD2B1BD206451F900BB5D4F /* Frame.cpp in Sources */,
 				1B5C34B62093951500CD85B6 /* Background.cpp in Sources */,
 				1BD2B1BA206441AC00BB5D4F /* Character.cpp in Sources */,
 				1BD2B1B82064404F00BB5D4F /* Game.cpp in Sources */,
+				0C452559209A58C30058F8A4 /* Ground.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

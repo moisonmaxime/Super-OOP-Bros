@@ -1,5 +1,13 @@
-#ifndef Background_hpp
-#define Background_hpp
+//
+//  Ground.hpp
+//  SuperOOPBros
+//
+//  Created by Giovanni Gonzalez on 5/2/18.
+//  Copyright © 2018 Maxime Moison. All rights reserved.
+//
+
+#ifndef Ground_hpp
+#define Ground_hpp
 
 #if defined WIN32
 #include <freeglut.h>
@@ -11,15 +19,15 @@
 
 #include "RgbImage.h"
 
-class Background {
+class Ground {
     float progress;
     float tex2;
     float tex3;
-
+    
     GLuint texture_id;
     
 public:
-    Background(const char*);
+    Ground(const char*);
     
     void draw();
     
@@ -27,4 +35,4 @@ public:
     
 };
 
-#endif
+#endif /* Ground_hpp */

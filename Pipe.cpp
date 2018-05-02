@@ -7,7 +7,8 @@
 //
 
 #include "Pipe.hpp"
-
+#include <math.h>
+#define RAND_MAX 0x7fffffff
 
 Pipe::Pipe(float x, float y, float h) {
     
@@ -37,6 +38,8 @@ Pipe::Pipe(float x, float y, float h) {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+    
+    moving = false;
 }
 
 Pipe::~Pipe() { }
@@ -48,10 +51,10 @@ bool Pipe::collidesWith(Object* object) {
 void Pipe::draw() {
     
     float topMinY = y + h/2.0;
-    float topMaxY = topMinY + TOP_HEIGHT;
+    float topMaxY = 1; /*topMinY + TOP_HEIGHT;*/ //Should be 1
     
     float bottomMaxY = y - h/2.0;
-    float bottomMinY = bottomMaxY - BOTTOM_HEIGHT;
+    float bottomMinY = -1; /*bottomMaxY - BOTTOM_HEIGHT*/ //Should be -1
     
     float minX = x - WIDTH/2.0;
     float maxX = x + WIDTH/2.0;
@@ -99,3 +102,27 @@ void Pipe::draw() {
     
     glDisable(GL_TEXTURE_2D);
 }
+
+void Pipe::updateX(double x) {
+    this->x = x;
+}
+
+void Pipe::move(float speed) {
+    
+    moving = true;
+    if(moving) {
+        x -= speed;
+    }
+    if(x <= -2) {
+        x += 3.2;
+        y = pow(-1, (rand() % 2)) * (double)rand() / RAND_MAX;
+        if(y >= 0.7) {
+            y = y - 0.3;
+        }
+    }
+}
+
+void randomY() {
+    
+}
+

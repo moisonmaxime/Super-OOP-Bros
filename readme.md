@@ -2,6 +2,10 @@
 
 link on ShareLaTeX - https://www.sharelatex.com/6257649535zzgfynvtmfcy
 
+# Dependancies required for this to work:
+- SOIL: for linux`sudo apt-get install libsoil-dev`
+- SOIL: for mac'brew install libsoil-dev`
+
 # Implimentation improvement(s)/change(s):
 
 - In game.hpp I added a speed (float). Pass this speed into the function that draws the hitboxes (green tubes still not implimented). This is how much to move the tubes to the left of the screen. (x -= speed). By default this will move the tubes a little bit faster than the background. That is not an accident. This is important for the paralax affect. 
@@ -13,17 +17,19 @@ link on ShareLaTeX - https://www.sharelatex.com/6257649535zzgfynvtmfcy
 
 - bird needs to "die()" when in contact with hitbox on all 4 sides
 
-- Tubes need to be implimented so that scaling is cleaner
+- Hitboxes need to print the Green tubes (the BMP is already in sprites-work)
+
+- Floor needs to be printed as a hitbox (The floor BMP is in the directory)
 
 - Instead of bird exploding, we need the bird to do a different animation when it dies.
 
 - Maybe some audio?
 
+- Make randomizer to arrange the hitboxes and create full maps autonimously.
+
 - Timer/pace-keeper to keep track of the distance travelled.
 
 - Print text to screen (Score and Lives, Etc.)
-
-- Lots of powerups/powerdowns
 
 - Add more if necessary
 

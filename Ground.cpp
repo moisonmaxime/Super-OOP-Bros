@@ -1,6 +1,14 @@
-#include "Background.hpp"
+//
+//  Ground.cpp
+//  SuperOOPBros
+//
+//  Created by Giovanni Gonzalez on 5/2/18.
+//  Copyright © 2018 Maxime Moison. All rights reserved.
+//
 
-Background::Background (const char* filename){
+#include "Ground.hpp"
+
+Ground::Ground (const char* filename){
     glClearColor (0.0, 0.0, 0.0, 0.0);
     glShadeModel(GL_FLAT);
     glEnable(GL_DEPTH_TEST);
@@ -21,7 +29,7 @@ Background::Background (const char* filename){
     this->tex3 = 1.0f;
 }
 
-void Background::draw(){
+void Ground::draw(){
     
     glBindTexture( GL_TEXTURE_2D, texture_id );
     glEnable(GL_TEXTURE_2D);
@@ -40,10 +48,10 @@ void Background::draw(){
     glVertex2f(progress, -1);
     
     glTexCoord2f(left, top);
-    glVertex2f(progress, 1);
+    glVertex2f(progress, -.9);
     
     glTexCoord2f(right, top);
-    glVertex2f(progress+1, 1);
+    glVertex2f(progress+1, -.9);
     
     glTexCoord2f(right, bottom);
     glVertex2f(progress+1, -1);
@@ -57,10 +65,10 @@ void Background::draw(){
     glVertex2f(tex2, -1);
     
     glTexCoord2f(left, top);
-    glVertex2f(tex2, 1);
+    glVertex2f(tex2, -.9);
     
     glTexCoord2f(right, top);
-    glVertex2f(tex2+1, 1);
+    glVertex2f(tex2+1, -.9);
     
     glTexCoord2f(right, bottom);
     glVertex2f(tex2+1, -1);
@@ -74,10 +82,10 @@ void Background::draw(){
     glVertex2f(tex3, -1);
     
     glTexCoord2f(left, top);
-    glVertex2f(tex3, 1);
+    glVertex2f(tex3, -.9);
     
     glTexCoord2f(right, top);
-    glVertex2f(tex3+1, 1);
+    glVertex2f(tex3+1, -.9);
     
     glTexCoord2f(right, bottom);
     glVertex2f(tex3+1, -1);
@@ -88,7 +96,7 @@ void Background::draw(){
     glDisable(GL_TEXTURE_2D);
 }
 
-void Background::incProgress(float speed){
+void Ground::incProgress(float speed){
     if (progress<=-2){
         progress = tex3+1;
     }
@@ -98,7 +106,7 @@ void Background::incProgress(float speed){
     if (tex3<=-2){
         tex3 = tex2+1;
     }
-    progress -= speed/3.0;
-    tex3 -= speed/3.0;
-    tex2 -= speed/3.0;
+    progress -= speed;
+    tex3 -= speed;
+    tex2 -= speed;
 }
