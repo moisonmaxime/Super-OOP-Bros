@@ -9,22 +9,28 @@
 #include "Background.hpp"
 #include "GlutApp.hpp"
 #include "Pipe.hpp"
+#include "TexRect.h"
+#include "AnimatedRect2.h"
 
 using namespace std;
 
 class Game{
     int frame;
-    vector<Pipe*> pipes;
     PhysicsController* physics;
     Background* bg;
     float speed;
+    Background* gr;
     
 public:
     Game();
+    vector<Pipe*> pipes;
+    vector<TexRect*> ground;
+    vector<AnimatedRect2*> mushroom;
     Character* player;
     void jumpPress();
     void calculateNextFrame();
     void draw();
+    void loop();
 };
 
 #endif
