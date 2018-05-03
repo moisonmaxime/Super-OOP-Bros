@@ -20,14 +20,7 @@ Pipe::Pipe(float x, float y, float h) {
     glEnable(GL_DEPTH_TEST);
     
     top_texture_id = SOIL_load_OGL_texture (
-                                            "TopPipe.png",
-                                            SOIL_LOAD_AUTO,
-                                            SOIL_CREATE_NEW_ID,
-                                            SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT
-                                            );
-    
-    bottom_texture_id = SOIL_load_OGL_texture (
-                                            "BottomPipe.png",
+                                            "TopPipeLongx10.png",
                                             SOIL_LOAD_AUTO,
                                             SOIL_CREATE_NEW_ID,
                                             SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT
@@ -35,7 +28,19 @@ Pipe::Pipe(float x, float y, float h) {
     
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+    
+    bottom_texture_id = SOIL_load_OGL_texture (
+                                            "BottomPipeLongx10.png",
+                                            SOIL_LOAD_AUTO,
+                                            SOIL_CREATE_NEW_ID,
+                                            SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT
+                                            );
+    
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 }
 
@@ -48,10 +53,10 @@ bool Pipe::collidesWith(Object* object) {
 void Pipe::draw() {
     
     float topMinY = y + h/2.0;
-    float topMaxY = topMinY + TOP_HEIGHT;
+    float topMaxY = topMinY + HEIGHT;
     
     float bottomMaxY = y - h/2.0;
-    float bottomMinY = bottomMaxY - BOTTOM_HEIGHT;
+    float bottomMinY = bottomMaxY - HEIGHT;
     
     float minX = x - WIDTH/2.0;
     float maxX = x + WIDTH/2.0;
