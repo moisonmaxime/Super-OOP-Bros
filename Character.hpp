@@ -19,8 +19,10 @@ public:
     ~Character();
     Character(float x, float y);
     
-    float getX();
-    float getY();
+    float getMinX();
+    float getMaxX();
+    float getMinY();
+    float getMaxY();
     Frame getHitbox();
     float getVX();
     float getVY();

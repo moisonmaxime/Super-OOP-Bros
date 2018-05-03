@@ -88,14 +88,17 @@ void Character::handleCollisionWith(Object *other) {
     }
 }
 
-float Character::getX(){ return this->frame.x; }
-float Character::getY(){ return this->frame.y; }
+float Character::getMinX() { return this->frame.x; }
+float Character::getMaxX() { return this->frame.y + this->frame.width; }
+float Character::getMinY() { return this->frame.y; }
+float Character::getMaxY() { return this->frame.y + this->frame.height; }
+
 float Character::getVX(){ return this->vx; }
 float Character::getVY(){ return this->vy; }
 
 void Character::calculateNextFrame() {
     // implement velocity handling
-    if (getY() < 0)
+    if (getMinY() < 0)
         jump();
     
     float x = this->frame.x;

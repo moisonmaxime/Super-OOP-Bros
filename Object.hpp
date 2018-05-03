@@ -13,8 +13,10 @@
 
 class Object {
 public:
-    virtual float getX() = 0;
-    virtual float getY() = 0;
+    virtual float getMinX() = 0;
+    virtual float getMaxX() = 0;
+    virtual float getMinY() = 0;
+    virtual float getMaxY() = 0;
     virtual Frame getHitbox() = 0;
     virtual void setPosition(float x, float y) = 0;
     virtual bool collidesWith(Object* other) = 0;

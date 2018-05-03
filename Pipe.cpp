@@ -47,6 +47,18 @@ Pipe::Pipe(float x, float y, float h) {
 Pipe::~Pipe() { }
 
 bool Pipe::collidesWith(Object* object) {
+    float minX = x - WIDTH/2.0;
+    float maxX = x + WIDTH/2.0;
+    float bottomMaxY = y - h/2.0;
+    float topMinY = y + h/2.0;
+    
+    if ((object->getMinX() < minX && maxX < object->getMinX()) || (object->getMaxX() < minX && maxX < object->getMaxX())) {
+        if (object->getMinY() < bottomMaxY)
+            return true;
+        if (object->getMaxY() > topMinY)
+            return true;
+    }
+    
     return false;
 }
 
