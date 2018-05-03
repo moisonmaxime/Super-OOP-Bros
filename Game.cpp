@@ -40,6 +40,8 @@ void Game::jumpPress() {
 void Game::calculateNextFrame() {
     physics->applyforces(player);
     player->calculateNextFrame();
+    for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
+        (*it)->calculateNextFrame();
     player->advance();
 //    for (auto it = objects.cbegin(); it != objects.cend(); it++)
 //        player->handleCollisionWith(*it);

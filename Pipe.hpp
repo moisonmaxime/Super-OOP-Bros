@@ -29,12 +29,15 @@
 #define HEIGHT 242.0 * SCALE * YOVERDX
 #define WIDTH 26.0 * SCALE
 
+#define SPEED 0.005
+
 class Pipe {
     GLuint top_texture_id, bottom_texture_id;
     float x, y, h;
 public:
     Pipe(float x, float y, float h);
     ~Pipe();
+    void calculateNextFrame();
     bool collidesWith(Object* object);
     void draw();
 };

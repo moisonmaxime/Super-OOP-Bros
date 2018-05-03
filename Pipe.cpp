@@ -62,6 +62,12 @@ bool Pipe::collidesWith(Object* object) {
     return false;
 }
 
+void Pipe::calculateNextFrame() {
+    x -= SPEED;
+    if (x < -1.5)
+        x = 1.5;
+}
+
 void Pipe::draw() {
     
     float topMinY = y + h/2.0;
