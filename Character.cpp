@@ -8,14 +8,15 @@
 #include "Character.hpp"
 #include<iostream>
 
+static Character* self;
+
+static void animate(int i) {
+    self->advance();
+    glutTimerFunc(32, animate, i);
+}
+
 Character::Character(){
-    this->vx = 0;
-    this->vy = 0;
-    this->frame = Frame(0.0, 0.0, .1, .2);
-    this->hitbox = Frame(0.0, 0.0, .1, .2);
-    this->flyingTex = new AnimatedRect("images/flappy2.png", 1, 7, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
-    this->deadTex = new AnimatedRect("images/mushroom.png", 1, 7, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
-    this->dead = false;
+    Character(0, 0);
 }
 
 Character::Character(float x, float y){//add filename todo
@@ -26,6 +27,8 @@ Character::Character(float x, float y){//add filename todo
     this->flyingTex = new AnimatedRect("images/flappy2.png", 1, 7, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
     this->deadTex = new AnimatedRect("images/mushroom.png", 1, 1, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
     this->dead = false;
+    self = this;
+    animate(0);
 }
 
 Character::~Character() {
@@ -89,7 +92,7 @@ void Character::handleCollisionWith(Object *other) {
 }
 
 float Character::getMinX() { return this->frame.x; }
-float Character::getMaxX() { return this->frame.y + this->frame.width; }
+float Character::getMaxX() { return this->frame.x + this->frame.width; }
 float Character::getMinY() { return this->frame.y; }
 float Character::getMaxY() { return this->frame.y + this->frame.height; }
 
@@ -98,7 +101,7 @@ float Character::getVY(){ return this->vy; }
 
 void Character::calculateNextFrame() {
     // implement velocity handling
-    if (getMinY() < 0)
+    if (getMinY() < -1)
         jump();
     
     float x = this->frame.x;
