@@ -67,10 +67,8 @@ void Pipe::calculateNextFrame() {
     x -= DEFAULT_SPEED;
     if (x < -1.5) {
         x = 1.5;
-        
         float minY = -0.95 + h/2;
         float maxY = 0.95 - h/2;
-        
         y = minY + (rand()/(RAND_MAX/(maxY-minY)));
     }
 }
