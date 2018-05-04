@@ -18,7 +18,7 @@
  *
  */
 
-#include "RgbImage.h"
+#include "RgbImage.hpp"
 
 #ifndef RGBIMAGE_DONT_USE_OPENGL
 

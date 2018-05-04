@@ -9,7 +9,7 @@
 #include <GL/freeglut.h>
 #endif
 
-#include "RgbImage.h"
+#include "RgbImage.hpp"
 
 class Background {
     float progress;
