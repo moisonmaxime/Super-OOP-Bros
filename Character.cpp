@@ -101,8 +101,8 @@ float Character::getVY(){ return this->vy; }
 
 void Character::calculateNextFrame() {
     // implement velocity handling
-    if (getMinY() < -.93)
-        jump();
+//    if (getMinY() < -.93)
+//        jump();
     
     float x = this->frame.x;
     float y = this->frame.y;

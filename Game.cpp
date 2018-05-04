@@ -37,7 +37,7 @@ void Game::calculateNextFrame() {
     bg->incProgress(speed);
     gr->incProgress(speed);
     player->calculateNextFrame();
-    if (player->getMinY() < -1)
+    if (player->getMinY() < -0.90)
         this->endGame();
     for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
         (*it)->calculateNextFrame();
