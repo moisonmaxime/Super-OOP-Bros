@@ -63,7 +63,7 @@ bool Pipe::collidesWith(Object* object) {
 }
 
 void Pipe::calculateNextFrame() {
-    x -= SPEED;
+    x -= DEFAULT_SPEED;
     if (x < -1.5) {
         x = 1.5;
         

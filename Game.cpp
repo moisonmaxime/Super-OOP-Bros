@@ -9,8 +9,8 @@
 #include "Game.hpp"
 #include <iostream>
 
-#define DEFAULT_SPEED 0.01
-#define GRAVITY -0.002
+//#define DEFAULT_SPEED 0.01
+//#define GRAVITY -0.002
 
 static Game* singleton;
 
@@ -28,7 +28,7 @@ Game::Game() {
     frame = 0;
     bg = new Background("images/bg.bmp");
     gr = new Ground("ground.fw.bmp");
-    physics = new PhysicsController(GRAVITY);
+    physics = new PhysicsController(DEFAULT_GRAVITY);
     player = new Character(-0.5, 0.6);
     speed = DEFAULT_SPEED;
     pipes.push_back(new Pipe(1, 0.4, 0.6));

@@ -11,8 +11,9 @@
 
 #include "MovingObject.hpp"
 
-#define DEFAULT_GRAVITY -9.8
+#define DEFAULT_GRAVITY -.002
 #define DEFAULT_DRAG -1
+#define DEFAULT_SPEED 0.012
 
 class PhysicsController {
     float gravity;

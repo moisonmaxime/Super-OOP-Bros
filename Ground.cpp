@@ -106,7 +106,7 @@ void Ground::incProgress(float speed){
     if (tex3<=-2){
         tex3 = tex2+1;
     }
-    progress -= speed/2;
-    tex3 -= speed/2;
-    tex2 -= speed/2;
+    progress -= speed;
+    tex3 -= speed;
+    tex2 -= speed;
 }
