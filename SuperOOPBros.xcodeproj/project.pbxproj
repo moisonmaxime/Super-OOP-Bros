@@ -57,7 +57,7 @@
 		1B5C34B42093951500CD85B6 /* Background.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Background.hpp; sourceTree = "<group>"; };
 		1B5C34B52093951500CD85B6 /* Background.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Background.cpp; sourceTree = "<group>"; };
 		1B5C34B72093953100CD85B6 /* RgbImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RgbImage.cpp; sourceTree = "<group>"; };
-		1B5C34B82093953100CD85B6 /* RgbImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgbImage.h; sourceTree = "<group>"; };
+		1B5C34B82093953100CD85B6 /* RgbImage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RgbImage.hpp; sourceTree = "<group>"; };
 		1B9FBC712067101100E9FF10 /* Object.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Object.hpp; sourceTree = "<group>"; };
 		1BA312D820656E5400C4662A /* MovingObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MovingObject.hpp; sourceTree = "<group>"; };
 		1BA312DA2065737B00C4662A /* PhysicsController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsController.cpp; sourceTree = "<group>"; };
@@ -94,18 +94,18 @@
 				1799B7E61E5ECD67006D7CBD /* App.cpp */,
 				1BD2B1B12064343600BB5D4F /* Game.hpp */,
 				1BD2B1B72064404F00BB5D4F /* Game.cpp */,
-				0CABECC7209C49D6001C7CE5 /* Ground.cpp */,
 				0CABECC6209C49D6001C7CE5 /* Ground.hpp */,
-				1B5C34B52093951500CD85B6 /* Background.cpp */,
+				0CABECC7209C49D6001C7CE5 /* Ground.cpp */,
 				1B5C34B42093951500CD85B6 /* Background.hpp */,
+				1B5C34B52093951500CD85B6 /* Background.cpp */,
 				1BD2B1BC206451F900BB5D4F /* Frame.hpp */,
 				1BD2B1BB206451F900BB5D4F /* Frame.cpp */,
 				1B9FBC712067101100E9FF10 /* Object.hpp */,
 				1BA312D820656E5400C4662A /* MovingObject.hpp */,
 				1BD2B1B02064343000BB5D4F /* Character.hpp */,
 				1BD2B1B9206441AC00BB5D4F /* Character.cpp */,
+				1B5C34B82093953100CD85B6 /* RgbImage.hpp */,
 				1B5C34B72093953100CD85B6 /* RgbImage.cpp */,
-				1B5C34B82093953100CD85B6 /* RgbImage.h */,
 				1B115E8B2096D76400C484FE /* Pipe.hpp */,
 				1B115E8A2096D76400C484FE /* Pipe.cpp */,
 				1B115E722096CBE500C484FE /* AnimatedRect.h */,
