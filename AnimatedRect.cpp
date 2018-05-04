@@ -2,7 +2,7 @@
 #include<iostream>
 
 AnimatedRect::AnimatedRect (const char* filename, int rows, int cols, float *x, float *y, float *w, float *h){
-
+    
     glClearColor (0.0, 0.0, 0.0, 0.0);
     glShadeModel(GL_FLAT);
     glEnable(GL_DEPTH_TEST);
@@ -44,7 +44,7 @@ bool AnimatedRect::done() {
 
 void AnimatedRect::draw(){
     if (animating){
-      glBindTexture( GL_TEXTURE_2D, texture_map_id );
+        glBindTexture( GL_TEXTURE_2D, texture_map_id );
         glEnable(GL_TEXTURE_2D);
         glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
         
@@ -53,26 +53,22 @@ void AnimatedRect::draw(){
         
         float top = 1 - yinc * (curr_row - 1);
         float bottom = 1 - yinc * curr_row;
-
+        
         float left = xinc * (curr_col - 1);
         float right = xinc * curr_col;
-
+        
         glBegin(GL_QUADS);
         glColor4f(1, 1, 1, 1);
         glTexCoord2f(left, bottom);
         glVertex2f(*x, *y);
-
         glTexCoord2f(left, top);
         glVertex2f(*x, *y + *h);
-
         glTexCoord2f(right, top);
         glVertex2f(*x+*w, *y + *h);
-
         glTexCoord2f(right, bottom);
         glVertex2f(*x+*w, *y);
-
         glEnd();
-
+        
         glDisable(GL_TEXTURE_2D);
     }
 }

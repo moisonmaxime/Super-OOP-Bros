@@ -44,10 +44,12 @@ void App::mouseDown(float x, float y) {
 void App::keyPress(unsigned char key) {
     if (key == ' ')
         super_OOP_Bros.jumpPress();
-    if (key == 27)
+    if (key == 3 || key == 'q' || key == 27)
         exit(0);
-    if (key == 3)
-        exit(0);
+    if (key == 'r')
+        super_OOP_Bros.resume();
+    if (key == 'p')
+        super_OOP_Bros.pause();
 }
 
 void App::keyUp(unsigned char key) { }

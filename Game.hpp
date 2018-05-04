@@ -20,12 +20,16 @@ class Game{
     Background* bg;
     Ground* gr;
     float speed;
+    bool isPlaying;
     
+    void endGame();
 public:
     Game();
     Character* player;
     void jumpPress();
     void calculateNextFrame();
+    void resume();
+    void pause();
     void draw();
 };
 

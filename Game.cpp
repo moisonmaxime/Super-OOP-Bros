@@ -14,17 +14,8 @@
 
 static Game* singleton;
 
-void advanceAnimation(int i){
-    //if (!singleton->player->done()){
-        singleton->player->advance();
-        glutPostRedisplay();
-        glutTimerFunc(32, advanceAnimation, i);
-    std::cout << "test" << std::endl;
-    //}
-}
-
 Game::Game() {
-    singleton = this; 
+    singleton = this;
     frame = 0;
     bg = new Background("images/bg.bmp");
     gr = new Ground("ground.fw.bmp");
@@ -34,6 +25,7 @@ Game::Game() {
     pipes.push_back(new Pipe(1, 0.4, 0.6));
     pipes.push_back(new Pipe(2, 0.6, 0.6));
     pipes.push_back(new Pipe(3, -.5, 0.6));
+    isPlaying = true;
 }
 
 void Game::jumpPress() {
@@ -42,23 +34,43 @@ void Game::jumpPress() {
 
 void Game::calculateNextFrame() {
     physics->applyforces(player);
+    bg->incProgress(speed);
     player->calculateNextFrame();
+    if (player->getMinY() < -1)
+        this->endGame();
     for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
         (*it)->calculateNextFrame();
-    player->advance();
-//    for (auto it = objects.cbegin(); it != objects.cend(); it++)
-//        player->handleCollisionWith(*it);
+    for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
+        if ((*it)->collidesWith(player))
+            this->endGame();
+}
+
+void Game::resume() {
+    isPlaying = true;
+}
+
+void Game::pause() {
+    isPlaying = false;
+}
+
+void Game::endGame() {
+    isPlaying = false;
 }
 
 void Game::draw(){
-    calculateNextFrame();
-    frame++;
-    if (frame == 31){ frame = 0; }
-    bg->draw();
-    for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
-        (*it)->draw();
-    player->draw();
-    gr->draw();
-    bg->incProgress(speed);
-    gr->incProgress(speed);
+    if (isPlaying) {
+        calculateNextFrame();
+        bg->draw();
+        for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
+            (*it)->draw();
+        player->draw();
+        bg->incProgress(speed);
+        gr->incProgress(speed);
+    } else {
+        bg->draw();
+        for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
+            (*it)->draw();
+        player->draw();
+        
+    }
 }
