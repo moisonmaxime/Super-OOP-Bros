@@ -29,7 +29,7 @@
 #define HEIGHT 242.0 * SCALE * YOVERDX
 #define WIDTH 26.0 * SCALE
 
-#define SPEED 0.005
+#define SPEED 0.01
 
 class Pipe {
     GLuint top_texture_id, bottom_texture_id;

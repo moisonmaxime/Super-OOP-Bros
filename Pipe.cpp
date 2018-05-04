@@ -32,11 +32,11 @@ Pipe::Pipe(float x, float y, float h) {
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
     
     bottom_texture_id = SOIL_load_OGL_texture (
-                                            "BottomPipeLongx10.png",
-                                            SOIL_LOAD_AUTO,
-                                            SOIL_CREATE_NEW_ID,
-                                            SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT
-                                            );
+                                               "BottomPipeLongx10.png",
+                                               SOIL_LOAD_AUTO,
+                                               SOIL_CREATE_NEW_ID,
+                                               SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT
+                                               );
     
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -52,10 +52,11 @@ bool Pipe::collidesWith(Object* object) {
     float bottomMaxY = y - h/2.0;
     float topMinY = y + h/2.0;
     
-    if ((object->getMinX() < minX && maxX < object->getMinX()) || (object->getMaxX() < minX && maxX < object->getMaxX())) {
-        if (object->getMinY() < bottomMaxY)
+    if ((minX < object->getMinX()+0.02 && object->getMinX()+0.02 < maxX)
+        || (minX < object->getMaxX()-0.02  && object->getMaxX()-0.02 < maxX)) {
+        if (object->getMinY()+0.02 < bottomMaxY)
             return true;
-        if (object->getMaxY() > topMinY)
+        if (object->getMaxY()-0.02 > topMinY)
             return true;
     }
     
@@ -64,8 +65,8 @@ bool Pipe::collidesWith(Object* object) {
 
 void Pipe::calculateNextFrame() {
     x -= SPEED;
-    if (x < -1.5)
-        x = 1.5;
+    if (x < -1-WIDTH)
+        x = 1+WIDTH;
 }
 
 void Pipe::draw() {
@@ -78,7 +79,6 @@ void Pipe::draw() {
     
     float minX = x - WIDTH/2.0;
     float maxX = x + WIDTH/2.0;
-    
     
     glBindTexture( GL_TEXTURE_2D, top_texture_id );
     glEnable(GL_TEXTURE_2D);
