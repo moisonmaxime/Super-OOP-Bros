@@ -68,14 +68,10 @@ void Pipe::calculateNextFrame() {
     if (x < -1-WIDTH) {
         x = 1+WIDTH;
         
-        y = pow(-1, (rand() % 2)) * (double)rand() / RAND_MAX;
-        if(y >= 0.61) {
-            y = y - .7;
-        }
+        float minY = -0.95 + h/2;
+        float maxY = 0.95 - h/2;
         
-        if(y <= -.51) {
-            y = y + .6;
-        }
+        y = minY + (rand()/(RAND_MAX/(maxY-minY)));
     }
 }
 

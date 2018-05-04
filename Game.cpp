@@ -23,8 +23,8 @@ Game::Game() {
     player = new Character(-0.5, 0.6);
     speed = DEFAULT_SPEED;
     pipes.push_back(new Pipe(1, 0.4, 0.6));
-    pipes.push_back(new Pipe(2, 0.6, 0.6));
-    pipes.push_back(new Pipe(3, -.5, 0.6));
+    pipes.push_back(new Pipe(2+WIDTH, 0.6, 0.6));
+    pipes.push_back(new Pipe(3+WIDTH, -.5, 0.6));
     isPlaying = true;
 }
 
