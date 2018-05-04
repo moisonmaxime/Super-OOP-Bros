@@ -35,6 +35,7 @@ void Game::jumpPress() {
 void Game::calculateNextFrame() {
     physics->applyforces(player);
     bg->incProgress(speed);
+    gr->incProgress(speed);
     player->calculateNextFrame();
     if (player->getMinY() < -1)
         this->endGame();
@@ -64,6 +65,7 @@ void Game::draw(){
         for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
             (*it)->draw();
         player->draw();
+        gr->draw();
         bg->incProgress(speed);
         gr->incProgress(speed);
     } else {
@@ -71,6 +73,7 @@ void Game::draw(){
         for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
             (*it)->draw();
         player->draw();
+        gr->draw();
         
     }
 }

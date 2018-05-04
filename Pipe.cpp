@@ -65,8 +65,8 @@ bool Pipe::collidesWith(Object* object) {
 
 void Pipe::calculateNextFrame() {
     x -= DEFAULT_SPEED;
-    if (x < -1-WIDTH) {
-        x = 1+WIDTH;
+    if (x < -1.5) {
+        x = 1.5;
         
         float minY = -0.95 + h/2;
         float maxY = 0.95 - h/2;
