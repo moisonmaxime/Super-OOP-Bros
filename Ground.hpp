@@ -23,16 +23,11 @@ class Ground {
     float progress;
     float tex2;
     float tex3;
-    
     GLuint texture_id;
-    
 public:
     Ground(const char*);
-    
     void draw();
-    
     void incProgress(float speed);
-    
 };
 
 #endif /* Ground_hpp */
