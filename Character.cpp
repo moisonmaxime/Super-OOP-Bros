@@ -55,7 +55,7 @@ void Character::setVY(float vy){
 
 
 void Character::jump() {
-    vy = 0.04;
+    vy = 0.03;
 }
 
 void Character::move(Direction direction) {
@@ -98,7 +98,7 @@ float Character::getVY(){ return this->vy; }
 
 void Character::calculateNextFrame() {
     // implement velocity handling
-    if (getMinY() < 0)
+    if (getMinY() < -.93)
         jump();
     
     float x = this->frame.x;

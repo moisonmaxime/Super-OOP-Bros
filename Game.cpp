@@ -27,10 +27,13 @@ Game::Game() {
     singleton = this; 
     frame = 0;
     bg = new Background("images/bg.bmp");
+    gr = new Ground("ground.fw.bmp");
     physics = new PhysicsController(GRAVITY);
     player = new Character(-0.5, 0.6);
     speed = DEFAULT_SPEED;
-    pipes.push_back(new Pipe(0, 0.4, 0.6));
+    pipes.push_back(new Pipe(1, 0.4, 0.6));
+    pipes.push_back(new Pipe(2, 0.6, 0.6));
+    pipes.push_back(new Pipe(3, -.5, 0.6));
 }
 
 void Game::jumpPress() {
@@ -55,5 +58,7 @@ void Game::draw(){
     for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
         (*it)->draw();
     player->draw();
+    gr->draw();
     bg->incProgress(speed);
+    gr->incProgress(speed);
 }

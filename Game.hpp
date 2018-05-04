@@ -9,6 +9,7 @@
 #include "Background.hpp"
 #include "GlutApp.hpp"
 #include "Pipe.hpp"
+#include "Ground.hpp"
 
 using namespace std;
 
@@ -17,6 +18,7 @@ class Game{
     vector<Pipe*> pipes;
     PhysicsController* physics;
     Background* bg;
+    Ground* gr;
     float speed;
     
 public:
