@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CABECC8209C49D6001C7CE5 /* Ground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CABECC7209C49D6001C7CE5 /* Ground.cpp */; };
 		173FEF0C1AA63AC4006CCB85 /* app_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 173FEF0B1AA63AC4006CCB85 /* app_main.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		173FEF161AA63B1B006CCB85 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 173FEF151AA63B1B006CCB85 /* OpenGL.framework */; };
 		173FEF181AA63B22006CCB85 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 173FEF171AA63B22006CCB85 /* GLUT.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0CABECC6209C49D6001C7CE5 /* Ground.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Ground.hpp; sourceTree = "<group>"; };
+		0CABECC7209C49D6001C7CE5 /* Ground.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ground.cpp; sourceTree = "<group>"; };
 		173FEF011AA63A07006CCB85 /* SuperOOPBros */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SuperOOPBros; sourceTree = BUILT_PRODUCTS_DIR; };
 		173FEF0B1AA63AC4006CCB85 /* app_main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = app_main.cpp; sourceTree = "<group>"; };
 		173FEF151AA63B1B006CCB85 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -91,6 +94,8 @@
 				1799B7E61E5ECD67006D7CBD /* App.cpp */,
 				1BD2B1B12064343600BB5D4F /* Game.hpp */,
 				1BD2B1B72064404F00BB5D4F /* Game.cpp */,
+				0CABECC7209C49D6001C7CE5 /* Ground.cpp */,
+				0CABECC6209C49D6001C7CE5 /* Ground.hpp */,
 				1B5C34B52093951500CD85B6 /* Background.cpp */,
 				1B5C34B42093951500CD85B6 /* Background.hpp */,
 				1BD2B1BC206451F900BB5D4F /* Frame.hpp */,
@@ -198,6 +203,7 @@
 				1BD2B1BD206451F900BB5D4F /* Frame.cpp in Sources */,
 				1B5C34B62093951500CD85B6 /* Background.cpp in Sources */,
 				1BD2B1BA206441AC00BB5D4F /* Character.cpp in Sources */,
+				0CABECC8209C49D6001C7CE5 /* Ground.cpp in Sources */,
 				1BD2B1B82064404F00BB5D4F /* Game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

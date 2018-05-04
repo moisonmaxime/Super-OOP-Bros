@@ -22,14 +22,13 @@
 
 #include "Frame.hpp"
 #include "Object.hpp"
+#include "PhysicsController.hpp"
 
 #define YOVERDX 16.0/9.0
 #define SCALE 1.0/260.0
 
 #define HEIGHT 242.0 * SCALE * YOVERDX
 #define WIDTH 26.0 * SCALE
-
-#define SPEED 0.01
 
 class Pipe {
     GLuint top_texture_id, bottom_texture_id;

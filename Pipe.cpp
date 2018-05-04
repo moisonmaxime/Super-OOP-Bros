@@ -64,9 +64,19 @@ bool Pipe::collidesWith(Object* object) {
 }
 
 void Pipe::calculateNextFrame() {
-    x -= SPEED;
-    if (x < -1-WIDTH)
+    x -= DEFAULT_SPEED;
+    if (x < -1-WIDTH) {
         x = 1+WIDTH;
+        
+        y = pow(-1, (rand() % 2)) * (double)rand() / RAND_MAX;
+        if(y >= 0.61) {
+            y = y - .7;
+        }
+        
+        if(y <= -.51) {
+            y = y + .6;
+        }
+    }
 }
 
 void Pipe::draw() {
