@@ -18,12 +18,16 @@ class Game{
     PhysicsController* physics;
     Background* bg;
     float speed;
+    bool isPlaying;
     
+    void endGame();
 public:
     Game();
     Character* player;
     void jumpPress();
     void calculateNextFrame();
+    void resume();
+    void pause();
     void draw();
 };
 
