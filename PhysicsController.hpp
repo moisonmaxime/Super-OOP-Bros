@@ -13,9 +13,7 @@
 
 #define DEFAULT_GRAVITY -.002
 #define DEFAULT_DRAG -1
-#define DEFAULT_SPEED 0.008
-#define SLOW_SPEED 0.0006
-//#define GAMESPEED DEFAULT_SPEED;
+#define DEFAULT_SPEED 0.012
 
 class PhysicsController {
     float gravity;
@@ -24,7 +22,6 @@ public:
     PhysicsController();
     PhysicsController(float gravity);
     void applyforces(MovingObject* obj);
-    void applyPowerUP(MovingObject* obj);
 };
 
 #endif /* PhysicsController_hpp */

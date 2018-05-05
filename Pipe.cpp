@@ -7,8 +7,7 @@
 //
 
 #include "Pipe.hpp"
-#include "Game.hpp"
-// #include "common.h"
+extern bool powerupEnabled;
 
 Pipe::Pipe(float x, float y, float h) {
 
@@ -65,14 +64,13 @@ bool Pipe::collidesWith(Object* object) {
 }
 
 void Pipe::calculateNextFrame() {
-     //cout << Common::slowPowrUP << '\n';
-      //if(!Common::slowPowrUP)
-        x -= DEFAULT_SPEED;
-      //else
-        //x-= SLOW_SPEED;
-
-    //  x -= gameSpeed;
-
+  if(powerupEnabled) {
+    x -= 0.003;
+    std::cout << "POWERUP_SPEED: " << 0.003 << '\n';
+  } else {
+    x -= DEFAULT_SPEED;
+    std::cout << "Default: " << DEFAULT_SPEED << '\n';
+  }
     if (x < -1.5) {
         x = 1.5;
         float minY = -0.95 + h/2;

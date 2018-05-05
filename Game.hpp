@@ -14,6 +14,7 @@
 
 using namespace std;
 
+
 class Game{
     int frame;
     vector<Pipe*> pipes;
@@ -23,7 +24,7 @@ class Game{
     Ground* gr;
     float speed;
     bool isPlaying;
-    float gameSpeed;
+
     void endGame();
 public:
     Game();

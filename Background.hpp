@@ -17,14 +17,14 @@ class Background {
     float tex3;
 
     GLuint texture_id;
-
+    
 public:
     Background(const char*);
-
+    
     void draw();
-
+    
     void incProgress(float speed);
-
+    
 };
 
 #endif

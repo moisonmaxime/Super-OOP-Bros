@@ -1,16 +1,7 @@
-//
-//  Game.cpp
-//  SuperOOPBros
-//
-//  Created by Maxime Moison on 3/22/18.
-//  Copyright © 2018 Maxime Moison. All rights reserved.
-//
-
 #include "Game.hpp"
 #include <iostream>
 
-
-
+extern bool powerupEnabled;
 //#define DEFAULT_SPEED 0.01
 //#define GRAVITY -0.002
 
@@ -27,10 +18,8 @@ Game::Game() {
     pipes.push_back(new Pipe(1, 0.4, 0.6));
     pipes.push_back(new Pipe(2+WIDTH, 0.6, 0.6));
     pipes.push_back(new Pipe(3+WIDTH, -0.5, 0.6));
-    powerups.push_back(new PowerUP(0.5,0.4,0.25));
+    powerups.push_back(new PowerUP(1, 0.4, 0.25));
     isPlaying = true;
-    //slowPowrUP = false;
-    //gameSpeed = DEFAULT_SPEED;
 }
 
 void Game::jumpPress() {
@@ -38,13 +27,14 @@ void Game::jumpPress() {
 }
 
 void Game::calculateNextFrame() {
-    //int delay_amnt = 0;
     physics->applyforces(player);
     bg->incProgress(speed);
     gr->incProgress(speed);
     player->calculateNextFrame();
+
     if (player->getMinY() < -1)
         this->endGame();
+
     for (auto it = pipes.cbegin(); it != pipes.cend(); it++) {
         (*it)->calculateNextFrame();
         if ((*it)->collidesWith(player))
@@ -52,18 +42,12 @@ void Game::calculateNextFrame() {
       }
 
     for (auto it = powerups.cbegin(); it != powerups.cend(); it++) {
-            (*it)->calculateNextFrame();
-            if ((*it)->collidesWith(player)) {
-                //Common::slowPowrUP = true;
-                //gameSpeed = SLOW_SPEED;
-
-                //physics->applyPowerUP(player);
-                //cout << "PowerUP: " << slowPowrUP << '\n';
-                cout << "PowerUP" << endl; 
-                //delete
-      }
+      (*it)->calculateNextFrame();
+      if ((*it)->collidesWith(player))
+        powerupEnabled = true;
+        cout << "Power UP: " << powerupEnabled << '\n';
     }
-  //  delay(delay_amnt);
+
 }
 
 void Game::resume() {
