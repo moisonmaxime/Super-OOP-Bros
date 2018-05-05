@@ -27,3 +27,11 @@ void PhysicsController::applyGravity(MovingObject* obj) {
         obj->setVY(obj->getVY() + gravity);
     }
 }
+
+void PhysicsController::applyPowerUP(MovingObject* obj) {
+  //times 2 gravity
+  if (obj->getVY() >= -0.2) {
+      obj->setVY(obj->getVY() + gravity*2);
+  }
+  //DEFAULT_SPEED = DEFAULT_SPEED/2;
+}

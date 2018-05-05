@@ -23,6 +23,7 @@
 #include "Frame.hpp"
 #include "Object.hpp"
 #include "PhysicsController.hpp"
+//#include "common.h"
 
 #define YOVERDX 16.0/9.0
 #define SCALE 1.0/260.0
@@ -30,10 +31,14 @@
 #define HEIGHT 242.0 * SCALE * YOVERDX
 #define WIDTH 26.0 * SCALE
 
+
 class Pipe {
     GLuint top_texture_id, bottom_texture_id;
     float x, y, h;
+    //bool slowPowrUP = false;
+
 public:
+
     Pipe(float x, float y, float h);
     ~Pipe();
     void calculateNextFrame();

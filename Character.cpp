@@ -15,7 +15,7 @@ static void animate(int i) {
     glutTimerFunc(32, animate, i);
 }
 
-Character::Character(){
+Character::Character() {
     Character(0, 0);
 }
 
@@ -103,13 +103,13 @@ void Character::calculateNextFrame() {
     // implement velocity handling
     if (getMinY() < -.93)
         jump();
-    
+
     float x = this->frame.x;
     float y = this->frame.y;
-    
+
     x += vx;
     y += vy;
-    
+
     // update frames
     this->frame.x = x;
     this->frame.y = y;
