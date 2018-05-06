@@ -132,7 +132,7 @@ void Character::draw() {
 }
 
 void Character::reset(){
-    this->setPosition(0, 0);
+    this->setPosition(-0.5, 0.6);
     this->setVelocity(0, 0);
     this->dead = false;
 }
