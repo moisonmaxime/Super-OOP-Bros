@@ -15,9 +15,8 @@ class Character: public MovingObject{
 public:
     AnimatedRect* flyingTex; 
     AnimatedRect* deadTex;
-    Character();
     ~Character();
-    Character(float x, float y);
+    Character(const char* filename1, const char* filename2, float x, float y);
     
     float getMinX();
     float getMaxX();
