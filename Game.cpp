@@ -48,6 +48,7 @@ void Game::calculateNextFrame() {
 
 void Game::resume() {
     isPlaying = true;
+    player->reset();
 }
 
 void Game::pause() {

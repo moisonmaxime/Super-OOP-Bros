@@ -43,6 +43,7 @@ public:
     void calculateNextFrame();
     void advance();
     void draw();
+    void reset();
 };
 
 #endif

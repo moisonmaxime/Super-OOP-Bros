@@ -130,3 +130,9 @@ void Character::draw() {
         deadTex->draw();
     }
 }
+
+void Character::reset(){
+    this->setPosition(0, 0);
+    this->setVelocity(0, 0);
+    this->dead = false;
+}
