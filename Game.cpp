@@ -20,7 +20,7 @@ Game::Game() {
     bg = new Background("images/bg.bmp");
     gr = new Ground("ground.fw.bmp");
     physics = new PhysicsController(DEFAULT_GRAVITY);
-    player = new Character(-0.5, 0.6);
+    player = new Character("images/flappy2.png", "images/fireball.bmp", -0.5, 0.6);
     speed = DEFAULT_SPEED;
     pipes.push_back(new Pipe(1, 0.4, 0.6));
     pipes.push_back(new Pipe(2+WIDTH, 0.6, 0.6));
@@ -47,7 +47,13 @@ void Game::calculateNextFrame() {
 }
 
 void Game::resume() {
+    pipes.clear();
+    pipes.push_back(new Pipe(1, 0.4, 0.6));
+    pipes.push_back(new Pipe(2+WIDTH, 0.6, 0.6));
+    pipes.push_back(new Pipe(3+WIDTH, -.5, 0.6));
+    player->reset();
     isPlaying = true;
+    
 }
 
 void Game::pause() {
@@ -55,6 +61,7 @@ void Game::pause() {
 }
 
 void Game::endGame() {
+    player->die();
     isPlaying = false;
 }
 
