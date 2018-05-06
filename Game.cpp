@@ -47,10 +47,9 @@ void Game::calculateNextFrame() {
 }
 
 void Game::resume() {
-    pipes.clear();
-    pipes.push_back(new Pipe(1, 0.4, 0.6));
-    pipes.push_back(new Pipe(2+WIDTH, 0.6, 0.6));
-    pipes.push_back(new Pipe(3+WIDTH, -.5, 0.6));
+    int i = 1;
+    for (auto it = pipes.cbegin(); it != pipes.cend(); it++, i++)
+        (*it)->setX((i+WIDTH));
     player->reset();
     isPlaying = true;
     

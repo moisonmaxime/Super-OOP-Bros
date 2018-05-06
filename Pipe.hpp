@@ -37,6 +37,7 @@ public:
     Pipe(float x, float y, float h);
     ~Pipe();
     void calculateNextFrame();
+    void setX(float x);
     bool collidesWith(Object* object);
     void draw();
 };
