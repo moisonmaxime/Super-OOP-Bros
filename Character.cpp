@@ -135,4 +135,6 @@ void Character::reset(){
     this->setPosition(-0.5, 0.6);
     this->setVelocity(0, 0);
     this->dead = false;
+    this->deadTex->reset();
+    this->flyingTex->reset();
 }

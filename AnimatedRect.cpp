@@ -101,6 +101,9 @@ void AnimatedRect::advance(int i){
 
 void AnimatedRect::reset(){
     complete = false;
+    animating = true;
+    curr_col = 1;
+    curr_row = 1;
 }
 
 void AnimatedRect::animate(){
