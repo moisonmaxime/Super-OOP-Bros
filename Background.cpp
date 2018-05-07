@@ -24,7 +24,6 @@ Background::Background (const char* filename){
     //Default values
     progress = -1;
     tex2 = -1+WIDTH;
-    tex3 = -1+2*WIDTH;
 }
 
 void Background::draw(){
@@ -73,38 +72,17 @@ void Background::draw(){
     
     glEnd();
     
-    //3rd tile
-    glBegin(GL_QUADS);
-    
-    glTexCoord2f(left, bottom);
-    glVertex2f(tex3, -1);
-    
-    glTexCoord2f(left, top);
-    glVertex2f(tex3, -1+HEIGHT);
-    
-    glTexCoord2f(right, top);
-    glVertex2f(tex3+WIDTH, -1+HEIGHT);
-    
-    glTexCoord2f(right, bottom);
-    glVertex2f(tex3+WIDTH, -1);
-    
-    glEnd();
-    
     
     glDisable(GL_TEXTURE_2D);
 }
 
 void Background::incProgress(float speed){
-    if (progress<=-2){
-        progress = tex3+WIDTH;
+    if (progress<=-1-WIDTH){
+        progress = tex2+WIDTH-.01;
     }
-    if (tex2<=-2){
-        tex2 = progress+WIDTH;
+    if (tex2<=-1-WIDTH){
+        tex2 = progress+WIDTH-.01;
     }
-    if (tex3<=-2){
-        tex3 = tex2+WIDTH;
-    }
-    progress -= speed/5.0;
-    tex3 -= speed/5.0;
-    tex2 -= speed/5.0;
+    progress -= speed/4.0;
+    tex2 -= speed/4.0;
 }

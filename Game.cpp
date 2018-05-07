@@ -15,7 +15,7 @@
 #define CHARACTER_IMAGE "images/flappy2.png"
 #define DEAD_CHARACTER_IMAGE "images/fireball.bmp"
 #define GROUND_IMAGE "ground.fw.bmp"
-#define BACKGROUND_IMAGE "images/bg.bmp"
+#define BACKGROUND_IMAGE "images/bg.png"
 
 static Game* singleton;
 
