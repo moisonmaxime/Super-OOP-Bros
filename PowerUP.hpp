@@ -23,8 +23,6 @@
 #define HEIGHT 242.0 * SCALE * YOVERDX
 #define WIDTH 26.0 * SCALE
 
-#define SPEED 0.005
-
 class PowerUP {
 protected:
     GLuint texture_id;

@@ -1,3 +1,6 @@
+#ifndef PowerUP_Slow_HPP
+#define PowerUP_Slow_HPP
+
 #include "PowerUP.hpp"
 
 class PowerUP_Slow: public PowerUP{ 
@@ -28,19 +31,18 @@ public:
 
 
     void calculateNextFrame() {
-      if(powerupEnabled) {
-        x -= 0.003;
-      } else {
+
         x -= DEFAULT_SPEED;
-      }
     
-      if (x < -1.5) {
+        if (x < -1.5) {
           x = 1.5;
           float minY = -0.95 + h/2;
           float maxY = 0.95 - h/2;
           y = minY + (rand()/(RAND_MAX/(maxY-minY)));
-      }
+        }
     }
     
     
 };
+
+#endif

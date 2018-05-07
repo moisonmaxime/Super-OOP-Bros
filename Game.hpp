@@ -15,13 +15,13 @@
 using namespace std;
 
 class Game{
+protected:
     int frame;
     vector<Pipe*> pipes;
     vector<PowerUP*> powerups;
     PhysicsController* physics;
     Background* bg;
     Ground* gr;
-    float speed;
     bool isPlaying;
     bool powerupEnabled;
     void endGame();

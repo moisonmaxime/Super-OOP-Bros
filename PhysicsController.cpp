@@ -11,10 +11,12 @@
 
 PhysicsController::PhysicsController() {
     this->gravity = DEFAULT_GRAVITY;
+    this->gameSpeed = DEFAULT_SPEED;
 }
 
-PhysicsController::PhysicsController(float gravity) {
+PhysicsController::PhysicsController(float gravity, float gameSpeed) {
     this->gravity = gravity;
+    this->gameSpeed = gameSpeed;
 }
 
 

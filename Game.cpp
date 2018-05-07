@@ -25,9 +25,8 @@ Game::Game() {
     frame = 0;
     bg = new Background(BACKGROUND_IMAGE);
     gr = new Ground(GROUND_IMAGE);
-    physics = new PhysicsController(DEFAULT_GRAVITY);
+    physics = new PhysicsController(DEFAULT_GRAVITY, DEFAULT_SPEED);
     player = new Character(CHARACTER_IMAGE, DEAD_CHARACTER_IMAGE, -0.5, 0.6);
-    speed = DEFAULT_SPEED;
     pipes.push_back(new Pipe(1, 0.4, 0.6));
     pipes.push_back(new Pipe(2+WIDTH, 0.6, 0.6));
     pipes.push_back(new Pipe(3+WIDTH, -.5, 0.6));
@@ -41,8 +40,8 @@ void Game::jumpPress() {
 
 void Game::calculateNextFrame() {
     physics->applyforces(player);
-    bg->incProgress(speed);
-    gr->incProgress(speed);
+    bg->incProgress(DEFAULT_SPEED);
+    gr->incProgress(DEFAULT_SPEED);
     player->calculateNextFrame();
     if (player->getMinY() < -0.90)
         this->endGame();
@@ -94,8 +93,6 @@ void Game::draw(){
             (*it)->draw();
         player->draw();
         gr->draw();
-        //bg->incProgress(speed);
-        //gr->incProgress(speed);
     } else {
         bg->draw();
         for (auto it = pipes.cbegin(); it != pipes.cend(); it++)

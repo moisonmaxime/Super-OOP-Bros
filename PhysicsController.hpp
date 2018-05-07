@@ -18,9 +18,10 @@
 class PhysicsController {
     float gravity;
     void applyGravity(MovingObject* obj);
+    float gameSpeed;
 public:
     PhysicsController();
-    PhysicsController(float gravity);
+    PhysicsController(float gravity, float speed);
     void applyforces(MovingObject* obj);
 };
 
