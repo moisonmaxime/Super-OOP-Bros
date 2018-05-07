@@ -1,14 +1,7 @@
-//
-//  Game.cpp
-//  SuperOOPBros
-//
-//  Created by Maxime Moison on 3/22/18.
-//  Copyright © 2018 Maxime Moison. All rights reserved.
-//
-
 #include "Game.hpp"
 #include <iostream>
 
+extern bool powerupEnabled;
 //#define DEFAULT_SPEED 0.01
 //#define GRAVITY -0.002
 
@@ -29,7 +22,8 @@ Game::Game() {
     speed = DEFAULT_SPEED;
     pipes.push_back(new Pipe(1, 0.4, 0.6));
     pipes.push_back(new Pipe(2+WIDTH, 0.6, 0.6));
-    pipes.push_back(new Pipe(3+WIDTH, -.5, 0.6));
+    pipes.push_back(new Pipe(3+WIDTH, -0.5, 0.6));
+    powerups.push_back(new PowerUP(1, 0.4, 0.25));
     isPlaying = true;
 }
 
@@ -42,13 +36,23 @@ void Game::calculateNextFrame() {
     bg->incProgress(speed);
     gr->incProgress(speed);
     player->calculateNextFrame();
-    if (player->getMinY() < -0.90)
+
+    if (player->getMinY() < -1)
         this->endGame();
-    for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
+
+    for (auto it = pipes.cbegin(); it != pipes.cend(); it++) {
         (*it)->calculateNextFrame();
-    for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
         if ((*it)->collidesWith(player))
             this->endGame();
+      }
+
+    for (auto it = powerups.cbegin(); it != powerups.cend(); it++) {
+      (*it)->calculateNextFrame();
+      if ((*it)->collidesWith(player))
+        powerupEnabled = true;
+        cout << "Power UP: " << powerupEnabled << '\n';
+    }
+
 }
 
 void Game::restart() {
@@ -79,6 +83,8 @@ void Game::draw(){
         bg->draw();
         for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
             (*it)->draw();
+        for (auto it = powerups.cbegin(); it != powerups.cend(); it++)
+            (*it)->draw();
         player->draw();
         gr->draw();
         //bg->incProgress(speed);
@@ -89,6 +95,6 @@ void Game::draw(){
             (*it)->draw();
         player->draw();
         gr->draw();
-        
+
     }
 }

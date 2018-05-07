@@ -1,0 +1,7 @@
+﻿App.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+App.obj : error LNK2019: unresolved external symbol "public: __thiscall Game::Game(void)" (??0Game@@QAE@XZ) referenced in function "public: __thiscall App::App(char const *,int,int,int,int)" (??0App@@QAE@PBDHHHH@Z)
+App.obj : error LNK2019: unresolved external symbol "public: void __thiscall Game::jumpPress(void)" (?jumpPress@Game@@QAEXXZ) referenced in function "public: virtual void __thiscall App::keyPress(unsigned char)" (?keyPress@App@@UAEXE@Z)
+App.obj : error LNK2019: unresolved external symbol "public: void __thiscall Game::resume(void)" (?resume@Game@@QAEXXZ) referenced in function "public: virtual void __thiscall App::keyPress(unsigned char)" (?keyPress@App@@UAEXE@Z)
+App.obj : error LNK2019: unresolved external symbol "public: void __thiscall Game::pause(void)" (?pause@Game@@QAEXXZ) referenced in function "public: virtual void __thiscall App::keyPress(unsigned char)" (?keyPress@App@@UAEXE@Z)
+App.obj : error LNK2019: unresolved external symbol "public: void __thiscall Game::draw(void)" (?draw@Game@@QAEXXZ) referenced in function "public: virtual void __thiscall App::draw(void)" (?draw@App@@UAEXXZ)
+obj\glutapp_Debug\glutapp.exe : fatal error LNK1120: 5 unresolved externals

@@ -15,7 +15,13 @@ static void animate(int i) {
     glutTimerFunc(32, animate, i);
 }
 
+//Character::Character() {
+//	Character(0, 0);
+//}
+
 Character::Character(const char* normalFileName, const char* deadFileName, float x, float y){
+
+Character::Character(float x, float y){//add filename todo
     this->vx = 0;
     this->vy = 0;
     this->frame = Frame(x, y, .1, .2);
@@ -95,16 +101,18 @@ float Character::getVX(){ return this->vx; }
 float Character::getVY(){ return this->vy; }
 
 void Character::calculateNextFrame() {
-    // implement velocity handling
-//    if (getMinY() < -.93)
-//        jump();
-    
+    // implement velocity handling    
+
+    if (getMinY() < -.93)
+        jump();
+
+
     float x = this->frame.x;
     float y = this->frame.y;
-    
+
     x += vx;
     y += vy;
-    
+
     // update frames
     this->frame.x = x;
     this->frame.y = y;
