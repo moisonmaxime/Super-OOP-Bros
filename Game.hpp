@@ -15,6 +15,8 @@ using namespace std;
 
 class Game{
     int frame;
+    int score;
+    Pipe* lastPipe;
     vector<Pipe*> pipes;
     PhysicsController* physics;
     Background* bg;
