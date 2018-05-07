@@ -131,6 +131,10 @@ void Character::draw() {
     }
 }
 
+bool Character::isDead(){
+    return this->dead;
+}
+
 void Character::reset(){
     this->setPosition(-0.5, 0.6);
     this->setVelocity(0, 0);

@@ -46,11 +46,15 @@ void Game::calculateNextFrame() {
             this->endGame();
 }
 
-void Game::resume() {
+void Game::restart() {
     int i = 1;
     for (auto it = pipes.cbegin(); it != pipes.cend(); it++, i++)
         (*it)->setX((i+WIDTH));
     player->reset();
+    isPlaying = true;
+}
+
+void Game::resume() {
     isPlaying = true;
     
 }
