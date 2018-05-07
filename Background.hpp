@@ -3,18 +3,24 @@
 
 #if defined WIN32
 #include <freeglut.h>
+#include "../windows/SOIL.h"
 #elif defined __APPLE__
 #include <GLUT/glut.h>
+#include <SOIL.h>
 #else
 #include <GL/freeglut.h>
+#include <SOIL.h>
 #endif
 
-#include "RgbImage.h"
+#define DXOVERY 9.0/16.0
+#define SCALE 2.2/512.0
+
+#define HEIGHT 512.0 * SCALE
+#define WIDTH 824.0 * SCALE * DXOVERY
 
 class Background {
     float progress;
     float tex2;
-    float tex3;
 
     GLuint texture_id;
     

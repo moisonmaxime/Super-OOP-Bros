@@ -77,7 +77,7 @@ void AnimatedRect::incY(){
     *y+=0.01;
 }
 
-void AnimatedRect::advance(){
+void AnimatedRect::advance(int i){
     if (curr_col < cols){
         curr_col++;
     }
@@ -87,6 +87,8 @@ void AnimatedRect::advance(){
             curr_col = 1;
         }
         else{
+            if(i != 0)
+                animating = false;
             curr_row = 1;
             curr_col = 1;
         }
@@ -99,6 +101,9 @@ void AnimatedRect::advance(){
 
 void AnimatedRect::reset(){
     complete = false;
+    animating = true;
+    curr_col = 1;
+    curr_row = 1;
 }
 
 void AnimatedRect::animate(){

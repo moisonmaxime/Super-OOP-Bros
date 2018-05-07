@@ -44,11 +44,17 @@ void App::mouseDown(float x, float y) {
 void App::keyPress(unsigned char key) {
     if (key == ' ')
         super_OOP_Bros.jumpPress();
-    if (key == 3 || key == 'q' || key == 27)
+    if (key == 3 || key == 'q' || key == 'Q' || key == 27)
         exit(0);
-    if (key == 'r')
-        super_OOP_Bros.resume();
-    if (key == 'p')
+    if (key == 'r' || key == 'R'){
+        if(super_OOP_Bros.player->isDead()){
+            super_OOP_Bros.restart();
+        }
+        else{
+            super_OOP_Bros.resume();
+        }
+    }
+    if (key == 'p' || key == 'P')
         super_OOP_Bros.pause();
 }
 

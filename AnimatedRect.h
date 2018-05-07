@@ -34,7 +34,7 @@ public:
     
     void draw();
     
-    void advance();
+    void advance(int=0);
     
     void incY();
     

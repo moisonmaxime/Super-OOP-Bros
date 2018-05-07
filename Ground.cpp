@@ -13,15 +13,20 @@ Ground::Ground (const char* filename){
     glShadeModel(GL_FLAT);
     glEnable(GL_DEPTH_TEST);
     
-    //Static image
-    RgbImage theTexMap( filename );
+    texture_id = SOIL_load_OGL_texture
+    (
+     filename,
+     SOIL_LOAD_AUTO,
+     SOIL_CREATE_NEW_ID,
+     SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT
+     );
     
-    glGenTextures( 1, &texture_id );
-    glBindTexture( GL_TEXTURE_2D, texture_id );
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     
-    gluBuild2DMipmaps(GL_TEXTURE_2D, 3, int(theTexMap.GetNumCols()), int(theTexMap.GetNumRows()),
-                      GL_RGB, GL_UNSIGNED_BYTE, theTexMap.ImageData() );
-    //this->texture_id = texture_id;
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    
+    glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
     
     //Default values
     this->progress = -1.0f;

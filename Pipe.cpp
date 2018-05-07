@@ -79,6 +79,10 @@ void Pipe::calculateNextFrame() {
     }
 }
 
+void Pipe::setX(float x){
+    this->x = x;
+}
+
 void Pipe::draw() {
 
     float topMinY = y + h/2.0;

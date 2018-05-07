@@ -15,17 +15,19 @@ static void animate(int i) {
     glutTimerFunc(32, animate, i);
 }
 
-Character::Character() {
-    Character(0, 0);
-}
+//Character::Character() {
+//	Character(0, 0);
+//}
+
+Character::Character(const char* normalFileName, const char* deadFileName, float x, float y){
 
 Character::Character(float x, float y){//add filename todo
     this->vx = 0;
     this->vy = 0;
     this->frame = Frame(x, y, .1, .2);
     this->hitbox = Frame(x, y, .1, .2);
-    this->flyingTex = new AnimatedRect("images/flappy2.png", 1, 7, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
-    this->deadTex = new AnimatedRect("images/mushroom.png", 1, 1, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
+    this->flyingTex = new AnimatedRect(normalFileName, 1, 7, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
+    this->deadTex = new AnimatedRect(deadFileName, 6, 6, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
     this->dead = false;
     self = this;
     animate(0);
@@ -74,7 +76,6 @@ void Character::attack(){
 void Character::die(){
     // todo
     this->dead = true;
-    //texture->explode(this->texture);
 }
 
 Frame Character::getHitbox() {
@@ -100,9 +101,11 @@ float Character::getVX(){ return this->vx; }
 float Character::getVY(){ return this->vy; }
 
 void Character::calculateNextFrame() {
-    // implement velocity handling
+    // implement velocity handling    
+
     if (getMinY() < -.93)
         jump();
+
 
     float x = this->frame.x;
     float y = this->frame.y;
@@ -122,7 +125,7 @@ void Character::advance(){
         flyingTex->advance();
     }
     else{
-        deadTex->advance();
+        deadTex->advance(1);
     }
 }
 
@@ -134,4 +137,16 @@ void Character::draw() {
     else{
         deadTex->draw();
     }
+}
+
+bool Character::isDead(){
+    return this->dead;
+}
+
+void Character::reset(){
+    this->setPosition(-0.5, 0.6);
+    this->setVelocity(0, 0);
+    this->dead = false;
+    this->deadTex->reset();
+    this->flyingTex->reset();
 }
