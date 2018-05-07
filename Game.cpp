@@ -81,8 +81,8 @@ void Game::draw(){
             (*it)->draw();
         player->draw();
         gr->draw();
-        bg->incProgress(speed);
-        gr->incProgress(speed);
+        //bg->incProgress(speed);
+        //gr->incProgress(speed);
     } else {
         bg->draw();
         for (auto it = pipes.cbegin(); it != pipes.cend(); it++)

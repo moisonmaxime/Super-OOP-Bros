@@ -17,14 +17,14 @@ Background::Background (const char* filename){
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D,GL_NEAREST, GL_NEAREST);
     
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
     
     //Default values
-    progress = -1.0f;
-    tex2 = 0.0f;
-    tex3 = 1.0f;
+    progress = -1;
+    tex2 = -1+WIDTH;
+    tex3 = -1+2*WIDTH;
 }
 
 void Background::draw(){
@@ -46,13 +46,13 @@ void Background::draw(){
     glVertex2f(progress, -1);
     
     glTexCoord2f(left, top);
-    glVertex2f(progress, 1);
+    glVertex2f(progress, -1+HEIGHT);
     
     glTexCoord2f(right, top);
-    glVertex2f(progress+1, 1);
+    glVertex2f(progress+WIDTH, -1+HEIGHT);
     
     glTexCoord2f(right, bottom);
-    glVertex2f(progress+1, -1);
+    glVertex2f(progress+WIDTH, -1);
     
     glEnd();
     
@@ -63,13 +63,13 @@ void Background::draw(){
     glVertex2f(tex2, -1);
     
     glTexCoord2f(left, top);
-    glVertex2f(tex2, 1);
+    glVertex2f(tex2, -1+HEIGHT);
     
     glTexCoord2f(right, top);
-    glVertex2f(tex2+1, 1);
+    glVertex2f(tex2+WIDTH, -1+HEIGHT);
     
     glTexCoord2f(right, bottom);
-    glVertex2f(tex2+1, -1);
+    glVertex2f(tex2+WIDTH, -1);
     
     glEnd();
     
@@ -80,13 +80,13 @@ void Background::draw(){
     glVertex2f(tex3, -1);
     
     glTexCoord2f(left, top);
-    glVertex2f(tex3, 1);
+    glVertex2f(tex3, -1+HEIGHT);
     
     glTexCoord2f(right, top);
-    glVertex2f(tex3+1, 1);
+    glVertex2f(tex3+WIDTH, -1+HEIGHT);
     
     glTexCoord2f(right, bottom);
-    glVertex2f(tex3+1, -1);
+    glVertex2f(tex3+WIDTH, -1);
     
     glEnd();
     
@@ -96,13 +96,13 @@ void Background::draw(){
 
 void Background::incProgress(float speed){
     if (progress<=-2){
-        progress = tex3+1;
+        progress = tex3+WIDTH;
     }
     if (tex2<=-2){
-        tex2 = progress+1;
+        tex2 = progress+WIDTH;
     }
     if (tex3<=-2){
-        tex3 = tex2+1;
+        tex3 = tex2+WIDTH;
     }
     progress -= speed/5.0;
     tex3 -= speed/5.0;
