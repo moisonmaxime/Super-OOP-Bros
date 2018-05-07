@@ -12,15 +12,20 @@
 //#define DEFAULT_SPEED 0.01
 //#define GRAVITY -0.002
 
+#define CHARACTER_IMAGE "images/flappy2.png"
+#define DEAD_CHARACTER_IMAGE "images/fireball.bmp"
+#define GROUND_IMAGE "ground.fw.bmp"
+#define BACKGROUND_IMAGE "images/bg.bmp"
+
 static Game* singleton;
 
 Game::Game() {
     singleton = this;
     frame = 0;
-    bg = new Background("images/bg.bmp");
-    gr = new Ground("ground.fw.bmp");
+    bg = new Background(BACKGROUND_IMAGE);
+    gr = new Ground(GROUND_IMAGE);
     physics = new PhysicsController(DEFAULT_GRAVITY);
-    player = new Character("images/flappy2.png", "images/fireball.bmp", -0.5, 0.6);
+    player = new Character(CHARACTER_IMAGE, DEAD_CHARACTER_IMAGE, -0.5, 0.6);
     speed = DEFAULT_SPEED;
     pipes.push_back(new Pipe(1, 0.4, 0.6));
     pipes.push_back(new Pipe(2+WIDTH, 0.6, 0.6));
@@ -46,12 +51,15 @@ void Game::calculateNextFrame() {
             this->endGame();
 }
 
-void Game::resume() {
-    pipes.clear();
-    pipes.push_back(new Pipe(1, 0.4, 0.6));
-    pipes.push_back(new Pipe(2+WIDTH, 0.6, 0.6));
-    pipes.push_back(new Pipe(3+WIDTH, -.5, 0.6));
+void Game::restart() {
+    int i = 1;
+    for (int i=0; i<3; i++)
+        pipes[i]->setX((i+1+WIDTH));
     player->reset();
+    isPlaying = true;
+}
+
+void Game::resume() {
     isPlaying = true;
     
 }

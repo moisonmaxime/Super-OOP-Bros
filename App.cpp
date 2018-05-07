@@ -46,8 +46,14 @@ void App::keyPress(unsigned char key) {
         super_OOP_Bros.jumpPress();
     if (key == 3 || key == 'q' || key == 27)
         exit(0);
-    if (key == 'r')
-        super_OOP_Bros.resume();
+    if (key == 'r'){
+        if(super_OOP_Bros.player->isDead()){
+            super_OOP_Bros.restart();
+        }
+        else{
+            super_OOP_Bros.resume();
+        }
+    }
     if (key == 'p')
         super_OOP_Bros.pause();
 }

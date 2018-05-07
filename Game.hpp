@@ -30,6 +30,7 @@ public:
     Character* player;
     void jumpPress();
     void calculateNextFrame();
+    void restart();
     void resume();
     void pause();
     void draw();

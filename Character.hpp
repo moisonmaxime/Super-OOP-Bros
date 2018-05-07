@@ -44,6 +44,7 @@ public:
     void advance();
     void draw();
     void reset();
+    bool isDead();
 };
 
 #endif
