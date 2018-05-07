@@ -104,7 +104,7 @@ void Background::incProgress(float speed){
     if (tex3<=-2){
         tex3 = tex2+1;
     }
-    progress -= speed/3.0;
-    tex3 -= speed/3.0;
-    tex2 -= speed/3.0;
+    progress -= speed/5.0;
+    tex3 -= speed/5.0;
+    tex2 -= speed/5.0;
 }
