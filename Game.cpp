@@ -40,33 +40,31 @@ void Game::jumpPress() {
 
 void Game::calculateNextFrame() {
     physics->applyforces(player);
-    bg->incProgress(DEFAULT_SPEED);
-    gr->incProgress(DEFAULT_SPEED);
+    bg->incProgress(physics->getSpeed());
+    gr->incProgress(physics->getSpeed());
     player->calculateNextFrame();
     if (player->getMinY() < -0.90)
         this->endGame();
     for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
-        (*it)->calculateNextFrame();
-    for (auto it = powerups.cbegin(); it != powerups.cend(); it++)
-            (*it)->draw();
+        (*it)->calculateNextFrame(physics);
     for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
         if ((*it)->collidesWith(player))
             this->endGame();
     for (auto it = powerups.cbegin(); it != powerups.cend(); it++) {
-      (*it)->calculateNextFrame();
+      (*it)->calculateNextFrame(physics);
       if ((*it)->collidesWith(player)){
-        powerupEnabled = true;
-        cout << "Power UP: " << powerupEnabled << '\n';
+          powerupEnabled = true;
+          physics->setSpeed(SLOW_SPEED);
       }
     }
 }
 
 void Game::restart() {
-    int i = 1;
     for (int i=0; i<3; i++)
         pipes[i]->setX((i+1+WIDTH));
     player->reset();
     isPlaying = true;
+    physics->setSpeed(DEFAULT_SPEED);
 }
 
 void Game::resume() {

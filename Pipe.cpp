@@ -63,8 +63,8 @@ bool Pipe::collidesWith(Object* object) {
     return false;
 }
 
-void Pipe::calculateNextFrame() {
-    x -= DEFAULT_SPEED;
+void Pipe::calculateNextFrame(PhysicsController* pc) {
+    x -= pc->getSpeed();
     if (x < -1.5) {
         x = 1.5;
         float minY = -0.95 + h/2;

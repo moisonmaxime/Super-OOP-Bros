@@ -29,3 +29,11 @@ void PhysicsController::applyGravity(MovingObject* obj) {
         obj->setVY(obj->getVY() + gravity);
     }
 }
+
+void PhysicsController::setSpeed(float gameSpeed=DEFAULT_SPEED){
+    this->gameSpeed = gameSpeed;
+}
+
+float PhysicsController::getSpeed(){
+    return this->gameSpeed;
+}

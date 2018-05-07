@@ -28,20 +28,10 @@ public:
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
         glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
     }
-
-
-    void calculateNextFrame() {
-
-        x -= DEFAULT_SPEED;
     
-        if (x < -1.5) {
-          x = 1.5;
-          float minY = -0.95 + h/2;
-          float maxY = 0.95 - h/2;
-          y = minY + (rand()/(RAND_MAX/(maxY-minY)));
-        }
+    void reset(PhysicsController* pc){
+        //reset is todo
     }
-    
     
 };
 

@@ -17,11 +17,11 @@
 #include "PhysicsController.hpp"
 #include "Character.hpp"
 
-#define YOVERDX 16.0/9.0
-#define SCALE 1.0/260.0
+#define YOVERDX 9.0/16.0
+#define SCALE 1.0/1024.0
 
-#define HEIGHT 242.0 * SCALE * YOVERDX
-#define WIDTH 26.0 * SCALE
+#define HEIGHT 142.0 * SCALE
+#define WIDTH 142.0 * SCALE * YOVERDX
 
 class PowerUP {
 protected:
@@ -32,7 +32,8 @@ public:
     void draw();
     ~PowerUP();
     bool collidesWith(Object* object);
-    virtual void calculateNextFrame() = 0;
+    void calculateNextFrame(PhysicsController* pc);
+    virtual void reset(PhysicsController* pc) = 0;
 };
 
 #endif /* PowerUP_hpp */

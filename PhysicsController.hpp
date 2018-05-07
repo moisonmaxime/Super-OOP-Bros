@@ -14,6 +14,7 @@
 #define DEFAULT_GRAVITY -.002
 #define DEFAULT_DRAG -1
 #define DEFAULT_SPEED 0.012
+#define SLOW_SPEED 0.004
 
 class PhysicsController {
     float gravity;
@@ -23,6 +24,8 @@ public:
     PhysicsController();
     PhysicsController(float gravity, float speed);
     void applyforces(MovingObject* obj);
+    void setSpeed(float);
+    float getSpeed();
 };
 
 #endif /* PhysicsController_hpp */
