@@ -15,13 +15,13 @@ static void animate(int i) {
     glutTimerFunc(32, animate, i);
 }
 
-Character::Character(const char* filename1, const char* filename2, float x, float y){//add filename todo
+Character::Character(const char* normalFileName, const char* deadFileName, float x, float y){
     this->vx = 0;
     this->vy = 0;
     this->frame = Frame(x, y, .1, .2);
     this->hitbox = Frame(x, y, .1, .2);
-    this->flyingTex = new AnimatedRect(filename1, 1, 7, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
-    this->deadTex = new AnimatedRect(filename2, 6, 6, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
+    this->flyingTex = new AnimatedRect(normalFileName, 1, 7, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
+    this->deadTex = new AnimatedRect(deadFileName, 6, 6, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
     this->dead = false;
     self = this;
     animate(0);
