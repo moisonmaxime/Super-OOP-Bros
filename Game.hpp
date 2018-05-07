@@ -10,18 +10,20 @@
 #include "GlutApp.hpp"
 #include "Pipe.hpp"
 #include "Ground.hpp"
+#include "PowerUP_Slow.hpp"
 
 using namespace std;
 
 class Game{
     int frame;
     vector<Pipe*> pipes;
+    vector<PowerUP*> powerups;
     PhysicsController* physics;
     Background* bg;
     Ground* gr;
     float speed;
     bool isPlaying;
-    
+    bool powerupEnabled;
     void endGame();
 public:
     Game();

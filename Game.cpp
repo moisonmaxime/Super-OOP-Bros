@@ -16,6 +16,7 @@
 #define DEAD_CHARACTER_IMAGE "images/fireball.bmp"
 #define GROUND_IMAGE "ground.fw.bmp"
 #define BACKGROUND_IMAGE "images/bg.png"
+#define POWERUP_SLOW "images/snail.png"
 
 static Game* singleton;
 
@@ -30,6 +31,7 @@ Game::Game() {
     pipes.push_back(new Pipe(1, 0.4, 0.6));
     pipes.push_back(new Pipe(2+WIDTH, 0.6, 0.6));
     pipes.push_back(new Pipe(3+WIDTH, -.5, 0.6));
+    powerups.push_back(new PowerUP_Slow(POWERUP_SLOW, 1, 1, 1.0, 0.4, 0.25));
     isPlaying = true;
 }
 
@@ -46,9 +48,18 @@ void Game::calculateNextFrame() {
         this->endGame();
     for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
         (*it)->calculateNextFrame();
+    for (auto it = powerups.cbegin(); it != powerups.cend(); it++)
+            (*it)->draw();
     for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
         if ((*it)->collidesWith(player))
             this->endGame();
+    for (auto it = powerups.cbegin(); it != powerups.cend(); it++) {
+      (*it)->calculateNextFrame();
+      if ((*it)->collidesWith(player)){
+        powerupEnabled = true;
+        cout << "Power UP: " << powerupEnabled << '\n';
+      }
+    }
 }
 
 void Game::restart() {
@@ -79,6 +90,8 @@ void Game::draw(){
         bg->draw();
         for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
             (*it)->draw();
+        for (auto it = powerups.cbegin(); it != powerups.cend(); it++)
+            (*it)->draw();
         player->draw();
         gr->draw();
         //bg->incProgress(speed);
@@ -86,6 +99,8 @@ void Game::draw(){
     } else {
         bg->draw();
         for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
+            (*it)->draw();
+        for (auto it = powerups.cbegin(); it != powerups.cend(); it++)
             (*it)->draw();
         player->draw();
         gr->draw();
