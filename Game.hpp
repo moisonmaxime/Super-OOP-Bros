@@ -10,6 +10,7 @@
 #include "GlutApp.hpp"
 #include "Pipe.hpp"
 #include "Ground.hpp"
+#include "Counter.hpp"
 #include "PowerUP_Slow.hpp"
 #include "PowerUP_Bullet.hpp"
 
@@ -18,8 +19,6 @@ using namespace std;
 class Game{
 protected:
     int frame;
-    int score = 0;
-    int maxScore = 0;
     Pipe* lastPipe;
     vector<Pipe*> pipes;
     vector<PowerUP*> powerups;
@@ -28,6 +27,8 @@ protected:
     Ground* gr;
     bool isPlaying;
     void endGame();
+    Counter* counter;
+    
 public:
     Game();
     Character* player;

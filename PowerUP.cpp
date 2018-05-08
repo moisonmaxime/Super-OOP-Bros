@@ -51,8 +51,8 @@ void PowerUP::drawStatus(int i){
     float minY = .85;
     float maxY = .95;
 
-    float minX = .85 - i*.09;
-    float maxX = .95 - i*.09;
+    float minX = .9 - i*.05;
+    float maxX = .95 - i*.05;
 
     glBindTexture( GL_TEXTURE_2D, texture_id );
     glEnable(GL_TEXTURE_2D);
