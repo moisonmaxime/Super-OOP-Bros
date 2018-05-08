@@ -17,7 +17,6 @@
 		1B115E842096CDA000C484FE /* libSOIL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B115E832096CDA000C484FE /* libSOIL.a */; };
 		1B115E862096CDD400C484FE /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B115E852096CDD300C484FE /* CoreFoundation.framework */; };
 		1B115E8C2096D76400C484FE /* Pipe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B115E8A2096D76400C484FE /* Pipe.cpp */; };
-		1B39345E20A133220095ADC7 /* RgbImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B39345C20A133220095ADC7 /* RgbImage.cpp */; };
 		1B5C34B62093951500CD85B6 /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C34B52093951500CD85B6 /* Background.cpp */; };
 		1BA312DC2065737B00C4662A /* PhysicsController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BA312DA2065737B00C4662A /* PhysicsController.cpp */; };
 		1BD2B1B82064404F00BB5D4F /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2B1B72064404F00BB5D4F /* Game.cpp */; };
@@ -54,8 +53,6 @@
 		1B115E852096CDD300C484FE /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		1B115E8A2096D76400C484FE /* Pipe.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Pipe.cpp; sourceTree = "<group>"; };
 		1B115E8B2096D76400C484FE /* Pipe.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Pipe.hpp; sourceTree = "<group>"; };
-		1B39345C20A133220095ADC7 /* RgbImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RgbImage.cpp; sourceTree = "<group>"; };
-		1B39345D20A133220095ADC7 /* RgbImage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RgbImage.hpp; sourceTree = "<group>"; };
 		1B5C34B42093951500CD85B6 /* Background.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Background.hpp; sourceTree = "<group>"; };
 		1B5C34B52093951500CD85B6 /* Background.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Background.cpp; sourceTree = "<group>"; };
 		1B9FBC712067101100E9FF10 /* Object.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Object.hpp; sourceTree = "<group>"; };
@@ -108,8 +105,6 @@
 				1B115E8A2096D76400C484FE /* Pipe.cpp */,
 				1B115E722096CBE500C484FE /* AnimatedRect.h */,
 				1B115E712096CBE500C484FE /* AnimatedRect.cpp */,
-				1B39345D20A133220095ADC7 /* RgbImage.hpp */,
-				1B39345C20A133220095ADC7 /* RgbImage.cpp */,
 				1BA312DB2065737B00C4662A /* PhysicsController.hpp */,
 				1BA312DA2065737B00C4662A /* PhysicsController.cpp */,
 				1799B7E41E5E3A83006D7CBD /* GlutApp.hpp */,
@@ -204,7 +199,6 @@
 				1BD2B1BA206441AC00BB5D4F /* Character.cpp in Sources */,
 				0CABECC8209C49D6001C7CE5 /* Ground.cpp in Sources */,
 				1BD2B1B82064404F00BB5D4F /* Game.cpp in Sources */,
-				1B39345E20A133220095ADC7 /* RgbImage.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
