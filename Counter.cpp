@@ -41,6 +41,8 @@ void Counter::incScore(){
 
 void Counter::resetCurrentScore(){
     currentScore = 0;
+    curr_col = 0;
+    
 }
 
 void Counter::drawCurrentScore(){

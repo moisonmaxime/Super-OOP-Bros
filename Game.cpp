@@ -16,9 +16,10 @@
 #define DEAD_CHARACTER_IMAGE "images/fireball.png"
 #define GROUND_IMAGE "ground.fw.bmp"
 #define BACKGROUND_IMAGE "images/bg.png"
+#define NUMBERS "images/numbers.png"
 #define POWERUP_SLOW "images/snail.png"
 #define POWERUP_BULLET "images/bullet.png"
-#define NUMBERS "images/numbers.png"
+#define POWERUP_ROIDS "images/mushroom.png"
 
 static Game* singleton;
 
@@ -33,8 +34,9 @@ Game::Game() {
     pipes.push_back(new Pipe(1, 0.4, 0.6));
     pipes.push_back(new Pipe(2+WIDTH, 0.6, 0.6));
     pipes.push_back(new Pipe(3+WIDTH, -.5, 0.6));
-    powerups.push_back(new PowerUP_Slow(POWERUP_SLOW, 1, 1, 1.55, 0.4, 0.25, physics));
-    powerups.push_back(new PowerUP_Bullet(POWERUP_BULLET, 1, 1, .8, 0.4, 0.25, physics, player));
+    powerups.push_back(new PowerUP_Slow(POWERUP_SLOW, 1, 1, 3.55, 0.4, 0.25, physics, player));
+    powerups.push_back(new PowerUP_Bullet(POWERUP_BULLET, 1, 1, 2.55, 0.4, 0.25, physics, player));
+    powerups.push_back(new PowerUP_Roids(POWERUP_ROIDS, 1, 1, 1.55, 0.4, 0.25, physics, player));
     isPlaying = true;
     lastPipe = NULL;
 }
@@ -60,6 +62,7 @@ void Game::calculateNextFrame() {
         this->endGame();
     for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
         (*it)->calculateNextFrame(physics);
+    if(!(player->getState()))
     for (auto it = pipes.cbegin(); it != pipes.cend(); it++)
         if ((*it)->collidesWith(player))
             this->endGame();
@@ -74,8 +77,8 @@ void Game::calculateNextFrame() {
 void Game::restart() {
     for (int i=0; i<3; i++)
         pipes[i]->setX((i+1+WIDTH));
-    for (int i=0; i<2; i++)
-        powerups[i]->setX(i+1.55);
+    for (int i=0; i<3; i++)
+        powerups[i]->setX(i+2.55);
     counter->resetCurrentScore();
     physics->reset();
     player->reset();

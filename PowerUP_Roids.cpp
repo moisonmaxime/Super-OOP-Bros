@@ -6,20 +6,26 @@
 //  Copyright © 2018 Maxime Moison. All rights reserved.
 //
 
-#include "PowerUP_Slow.hpp"
+#include "PowerUP_Roids.hpp"
 
-static PowerUP_Slow* power;
+static PowerUP_Roids* power;
 
 static void timedPowerReset(int i) {
+    //todo draw powerup on corner of screen
     power->reset();
 }
 
-PowerUP_Slow::PowerUP_Slow(const char* filename, int rows, int cols, float x, float y, float h, PhysicsController* pc, Character* player) {
-    this->player = player;
+static void waitToMakeMortal(int i){
+    power->makeMortal();
+}
+
+PowerUP_Roids::PowerUP_Roids(const char* filename, int rows, int cols, float x, float y, float h, PhysicsController* pc, Character* player) {
+    
     power = this;
     this->hitbox = Frame(x, y, WIDTH_POWERUP, HEIGHT_POWERUP);
     this->pc = pc;
-    this->powerupEnabled = false;
+    this->player = player;
+    powerupEnabled = false;
     
     glClearColor (0.0, 0.0, 0.0, 0.0);
     glShadeModel(GL_FLAT);
@@ -38,15 +44,24 @@ PowerUP_Slow::PowerUP_Slow(const char* filename, int rows, int cols, float x, fl
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 }
 
-void PowerUP_Slow::reset(){
+void PowerUP_Roids::reset(){
     powerupEnabled = false;
+    power->player->setJumpForce(DEFAULT_JUMP);
+    power->pc->setGravity(DEFAULT_GRAVITY);
     power->pc->setSpeed(DEFAULT_SPEED);
+    glutTimerFunc(.3, waitToMakeMortal, 0);
 }
 
-void PowerUP_Slow::apply(){
-   // if(!(power->player->getState())){     
-        powerupEnabled = true;
-        power->pc->setSpeed(SLOW_SPEED);
-        glutTimerFunc(POWERUP_TIME, timedPowerReset, 0);
-    //}
+void PowerUP_Roids::makeMortal(){
+    power->player->setState(MORTAL);
 }
+
+void PowerUP_Roids::apply(){
+    powerupEnabled = true;
+    power->pc->setGravity(LOW_GRAVITY);
+    power->player->setJumpForce(TINY_JUMP);
+    power->player->setState(INVINCIBLE);
+    power->pc->setSpeed(EXTREME_SPEED);
+    glutTimerFunc(POWERUP_TIME*.5, timedPowerReset, 0);
+}
+ 

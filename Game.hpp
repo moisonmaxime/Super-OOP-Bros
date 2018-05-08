@@ -13,6 +13,7 @@
 #include "Counter.hpp"
 #include "PowerUP_Slow.hpp"
 #include "PowerUP_Bullet.hpp"
+#include "PowerUP_Roids.hpp"
 
 using namespace std;
 

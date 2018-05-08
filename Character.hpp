@@ -7,6 +7,8 @@
 
 #define DEFAULT_JUMP 0.03
 #define TINY_JUMP 0.02
+#define INVINCIBLE true
+#define MORTAL false
 
 enum Direction { Left=-1, Right=1};
 
@@ -14,6 +16,7 @@ class Character: public MovingObject{
 	float vx, vy;   // Velocity
     Frame frame, hitbox;
     bool dead;
+    bool roids;
     float jumpForce;
     
 public:
@@ -41,6 +44,9 @@ public:
     void handleCollisionWith(Object *other);
     
     void setJumpForce(float);
+    void setState(bool);
+    bool getState();
+    
     void jump();
     void move(Direction direction);
     void attack();

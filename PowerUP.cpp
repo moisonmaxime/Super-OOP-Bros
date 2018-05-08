@@ -5,6 +5,9 @@ bool powerupEnabled = false;
 PowerUP::~PowerUP() { }
 
 bool PowerUP::collidesWith(Object* object) {
+    if(player->getState()){
+        return false;
+    }
     return this->hitbox.collidesWith(object->getHitbox());
 }
 

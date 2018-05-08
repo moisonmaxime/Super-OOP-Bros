@@ -16,6 +16,7 @@
 #define DEFAULT_DRAG -1
 #define DEFAULT_SPEED 0.012
 #define SLOW_SPEED 0.004
+#define EXTREME_SPEED 0.1
 
 class PhysicsController {
     float gravity;

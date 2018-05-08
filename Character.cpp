@@ -23,6 +23,7 @@ Character::Character(const char* normalFileName, const char* deadFileName, float
     this->flyingTex = new AnimatedRect(normalFileName, 1, 7, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
     this->deadTex = new AnimatedRect(deadFileName, 6, 6, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
     this->dead = false;
+    this->roids = false;
     self = this;
     jumpForce = DEFAULT_JUMP;
     animate(0);
@@ -58,6 +59,14 @@ void Character::jump() {
     vy = jumpForce;
 }
 
+void Character::setState(bool roids){
+    this->roids = roids;
+}
+
+bool Character::getState(){
+    return roids;
+}
+
 void Character::move(Direction direction) {
     if (vx <= 0.02 && vx >= -0.02) {
         vx += direction * 0.01;
@@ -84,6 +93,8 @@ Frame Character::getHitbox() {
 }
 
 bool Character::collidesWith(Object *other) {
+    if(roids)
+        return false;
     return hitbox.collidesWith(other->getHitbox());
 }
 
