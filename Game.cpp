@@ -52,7 +52,6 @@ void Game::calculateNextFrame() {
 }
 
 void Game::restart() {
-    int i = 1;
     for (int i=0; i<3; i++)
         pipes[i]->setX((i+1+WIDTH));
     player->reset();
