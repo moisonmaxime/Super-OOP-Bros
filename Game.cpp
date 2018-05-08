@@ -54,7 +54,6 @@ void Game::calculateNextFrame() {
       (*it)->calculateNextFrame(physics);
       if ((*it)->collidesWith(player)){
           powerupEnabled = true;
-          physics->setSpeed(SLOW_SPEED);
       }
     }
 }
