@@ -20,6 +20,9 @@
 		1B115E862096CDD400C484FE /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B115E852096CDD300C484FE /* CoreFoundation.framework */; };
 		1B115E8C2096D76400C484FE /* Pipe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B115E8A2096D76400C484FE /* Pipe.cpp */; };
 		1B5C34B62093951500CD85B6 /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C34B52093951500CD85B6 /* Background.cpp */; };
+		1B98BA6B20A20BA300D18C7D /* PowerUP_Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B98BA6720A20BA300D18C7D /* PowerUP_Bullet.cpp */; };
+		1B98BA6C20A20BA300D18C7D /* PowerUP_Roids.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B98BA6920A20BA300D18C7D /* PowerUP_Roids.cpp */; };
+		1B98BA6F20A20BBF00D18C7D /* Counter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B98BA6E20A20BBF00D18C7D /* Counter.cpp */; };
 		1BA312DC2065737B00C4662A /* PhysicsController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BA312DA2065737B00C4662A /* PhysicsController.cpp */; };
 		1BD2B1B82064404F00BB5D4F /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2B1B72064404F00BB5D4F /* Game.cpp */; };
 		1BD2B1BA206441AC00BB5D4F /* Character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2B1B9206441AC00BB5D4F /* Character.cpp */; };
@@ -61,6 +64,12 @@
 		1B115E8B2096D76400C484FE /* Pipe.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Pipe.hpp; sourceTree = "<group>"; };
 		1B5C34B42093951500CD85B6 /* Background.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Background.hpp; sourceTree = "<group>"; };
 		1B5C34B52093951500CD85B6 /* Background.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Background.cpp; sourceTree = "<group>"; };
+		1B98BA6720A20BA300D18C7D /* PowerUP_Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PowerUP_Bullet.cpp; sourceTree = "<group>"; };
+		1B98BA6820A20BA300D18C7D /* PowerUP_Bullet.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PowerUP_Bullet.hpp; sourceTree = "<group>"; };
+		1B98BA6920A20BA300D18C7D /* PowerUP_Roids.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PowerUP_Roids.cpp; sourceTree = "<group>"; };
+		1B98BA6A20A20BA300D18C7D /* PowerUP_Roids.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PowerUP_Roids.hpp; sourceTree = "<group>"; };
+		1B98BA6D20A20BBF00D18C7D /* Counter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Counter.hpp; sourceTree = "<group>"; };
+		1B98BA6E20A20BBF00D18C7D /* Counter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Counter.cpp; sourceTree = "<group>"; };
 		1B9FBC712067101100E9FF10 /* Object.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Object.hpp; sourceTree = "<group>"; };
 		1BA312D820656E5400C4662A /* MovingObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MovingObject.hpp; sourceTree = "<group>"; };
 		1BA312DA2065737B00C4662A /* PhysicsController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsController.cpp; sourceTree = "<group>"; };
@@ -97,6 +106,8 @@
 				1799B7E61E5ECD67006D7CBD /* App.cpp */,
 				1BD2B1B12064343600BB5D4F /* Game.hpp */,
 				1BD2B1B72064404F00BB5D4F /* Game.cpp */,
+				1B98BA6D20A20BBF00D18C7D /* Counter.hpp */,
+				1B98BA6E20A20BBF00D18C7D /* Counter.cpp */,
 				0CABECC6209C49D6001C7CE5 /* Ground.hpp */,
 				0CABECC7209C49D6001C7CE5 /* Ground.cpp */,
 				1B5C34B42093951500CD85B6 /* Background.hpp */,
@@ -113,6 +124,10 @@
 				1B01347020A1625A00E131BC /* PowerUP.cpp */,
 				1B01347220A1625B00E131BC /* PowerUP_Slow.hpp */,
 				1B01347420A1678300E131BC /* PowerUP_Slow.cpp */,
+				1B98BA6820A20BA300D18C7D /* PowerUP_Bullet.hpp */,
+				1B98BA6720A20BA300D18C7D /* PowerUP_Bullet.cpp */,
+				1B98BA6A20A20BA300D18C7D /* PowerUP_Roids.hpp */,
+				1B98BA6920A20BA300D18C7D /* PowerUP_Roids.cpp */,
 				1B115E722096CBE500C484FE /* AnimatedRect.h */,
 				1B115E712096CBE500C484FE /* AnimatedRect.cpp */,
 				1BA312DB2065737B00C4662A /* PhysicsController.hpp */,
@@ -202,6 +217,7 @@
 				1B115E732096CBE600C484FE /* AnimatedRect.cpp in Sources */,
 				1B115E8C2096D76400C484FE /* Pipe.cpp in Sources */,
 				173FEF0C1AA63AC4006CCB85 /* app_main.cpp in Sources */,
+				1B98BA6C20A20BA300D18C7D /* PowerUP_Roids.cpp in Sources */,
 				1BA312DC2065737B00C4662A /* PhysicsController.cpp in Sources */,
 				1799B7E51E5E3A83006D7CBD /* GlutApp.cpp in Sources */,
 				1BD2B1BD206451F900BB5D4F /* Frame.cpp in Sources */,
@@ -209,7 +225,9 @@
 				1B5C34B62093951500CD85B6 /* Background.cpp in Sources */,
 				1BD2B1BA206441AC00BB5D4F /* Character.cpp in Sources */,
 				0CABECC8209C49D6001C7CE5 /* Ground.cpp in Sources */,
+				1B98BA6F20A20BBF00D18C7D /* Counter.cpp in Sources */,
 				1B01347320A1625B00E131BC /* PowerUP.cpp in Sources */,
+				1B98BA6B20A20BA300D18C7D /* PowerUP_Bullet.cpp in Sources */,
 				1BD2B1B82064404F00BB5D4F /* Game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
