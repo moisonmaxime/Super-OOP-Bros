@@ -12,11 +12,11 @@
 #include <SOIL.h>
 #endif
 
-#define DXOVERY 9.0/16.0
-#define SCALE 2.2/512.0
+#define DXOVERY_BACKGROUND 9.0/16.0
+#define SCALE_BACKGROUND 2.2/512.0
 
-#define HEIGHT 512.0 * SCALE
-#define WIDTH 824.0 * SCALE * DXOVERY
+#define HEIGHT_BACKGROUND 512.0 * SCALE_BACKGROUND
+#define WIDTH_BACKGROUND 824.0 * SCALE_BACKGROUND * DXOVERY_BACKGROUND
 
 class Background {
     float progress;
