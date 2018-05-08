@@ -10,18 +10,9 @@ link on ShareLaTeX - https://www.sharelatex.com/6257649535zzgfynvtmfcy
 
 # Todo:
 
-- Instead of bird exploding, we need the bird to do a different animation when it dies.
-
 - Maybe some audio?
 
-- Timer/pace-keeper to keep track of the distance travelled.
-
-- Print text to screen (Score and Lives, Etc.)
-
-- Lots of powerups/powerdowns
-
-- Add more if necessary
-
+- Add more powerups/powerdowns
 
 FREEGLUTAPP
 -----------
