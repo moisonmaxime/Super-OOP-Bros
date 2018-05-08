@@ -38,6 +38,7 @@ public:
     void calculateNextFrame();
     virtual void reset() = 0;
     virtual void apply() = 0;
+    void setX(float);
 };
 
 #endif /* PowerUP_hpp */
