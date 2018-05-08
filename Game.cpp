@@ -34,9 +34,9 @@ Game::Game() {
     pipes.push_back(new Pipe(1, 0.4, 0.6));
     pipes.push_back(new Pipe(2+WIDTH, 0.6, 0.6));
     pipes.push_back(new Pipe(3+WIDTH, -.5, 0.6));
-    powerups.push_back(new PowerUP_Slow(POWERUP_SLOW, 1, 1, 3.55, 0.4, 0.25, physics, player));
-    powerups.push_back(new PowerUP_Bullet(POWERUP_BULLET, 1, 1, 2.55, 0.4, 0.25, physics, player));
-    powerups.push_back(new PowerUP_Roids(POWERUP_ROIDS, 1, 1, 1.55, 0.4, 0.25, physics, player));
+    powerups.push_back(new PowerUP_Slow(POWERUP_SLOW, 1, 1, 1.55, 0.4, 0.25, physics, player));
+    powerups.push_back(new PowerUP_Bullet(POWERUP_BULLET, 1, 1, 3.55, 0.4, 0.25, physics, player));
+    powerups.push_back(new PowerUP_Roids(POWERUP_ROIDS, 1, 1, 7.55, 0.4, 0.25, physics, player));
     isPlaying = true;
     lastPipe = NULL;
 }
@@ -78,7 +78,7 @@ void Game::restart() {
     for (int i=0; i<3; i++)
         pipes[i]->setX((i+1+WIDTH));
     for (int i=0; i<3; i++)
-        powerups[i]->setX(i+2.55);
+        powerups[i]->setX(i+3.55);
     counter->resetCurrentScore();
     physics->reset();
     player->reset();
