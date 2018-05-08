@@ -63,6 +63,12 @@ bool Pipe::collidesWith(Object* object) {
     return false;
 }
 
+bool Pipe::isBeingPassedBy(Object* object) {
+    float minX = x - WIDTH/2.0;
+    float maxX = x + WIDTH/2.0;
+    return (minX < object->getMinX()+0.02 && object->getMinX()+0.02 < maxX) || (minX < object->getMaxX()-0.02  && object->getMaxX()-0.02 < maxX);
+}
+
 void Pipe::calculateNextFrame() {
     x -= DEFAULT_SPEED;
     if (x < -1.5) {
