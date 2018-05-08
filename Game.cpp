@@ -30,7 +30,7 @@ Game::Game() {
     pipes.push_back(new Pipe(1, 0.4, 0.6));
     pipes.push_back(new Pipe(2+WIDTH, 0.6, 0.6));
     pipes.push_back(new Pipe(3+WIDTH, -.5, 0.6));
-    powerups.push_back(new PowerUP_Slow(POWERUP_SLOW, 1, 1, 1.0, 0.4, 0.25, physics));
+    powerups.push_back(new PowerUP_Slow(POWERUP_SLOW, 1, 1, 1.5, 0.4, 0.25, physics));
     isPlaying = true;
     lastPipe = NULL;
     score = 0;

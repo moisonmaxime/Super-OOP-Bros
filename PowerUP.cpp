@@ -10,6 +10,12 @@ bool PowerUP::collidesWith(Object* object) {
 
 void PowerUP::calculateNextFrame() {
     hitbox.x -= pc->getSpeed();
+    if(hitbox.x < -1.5) {
+        hitbox.x = 1.5;
+        float minY = -0.95 + hitbox.height/2;
+        float maxY = 0.95 - hitbox.height/2;
+        hitbox.y = minY + (rand()/(RAND_MAX/(maxY-minY)));
+    }
 }
 
 void PowerUP::draw() {
