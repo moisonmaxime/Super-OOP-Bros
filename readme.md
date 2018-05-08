@@ -10,9 +10,6 @@ link on ShareLaTeX - https://www.sharelatex.com/6257649535zzgfynvtmfcy
 
 # Todo:
 
-
-- bird needs to "die()" when in contact with Ground
-
 - Instead of bird exploding, we need the bird to do a different animation when it dies.
 
 - Maybe some audio?
