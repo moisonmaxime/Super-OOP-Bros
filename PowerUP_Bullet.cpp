@@ -6,20 +6,22 @@
 //  Copyright © 2018 Maxime Moison. All rights reserved.
 //
 
-#include "PowerUP_Slow.hpp"
+#include "PowerUP_Bullet.hpp"
 
-static PowerUP_Slow* power;
+static PowerUP_Bullet* power;
 
 static void timedPowerReset(int i) {
+    //todo draw powerup on corner of screen
     power->reset();
 }
 
-PowerUP_Slow::PowerUP_Slow(const char* filename, int rows, int cols, float x, float y, float h, PhysicsController* pc) {
+PowerUP_Bullet::PowerUP_Bullet(const char* filename, int rows, int cols, float x, float y, float h, PhysicsController* pc, Character* player) {
     
     power = this;
     this->hitbox = Frame(x, y, WIDTH_POWERUP, HEIGHT_POWERUP);
     this->pc = pc;
-    this->powerupEnabled = false;
+    this->player = player;
+    powerupEnabled = false;
     
     glClearColor (0.0, 0.0, 0.0, 0.0);
     glShadeModel(GL_FLAT);
@@ -38,13 +40,15 @@ PowerUP_Slow::PowerUP_Slow(const char* filename, int rows, int cols, float x, fl
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 }
 
-void PowerUP_Slow::reset(){
+void PowerUP_Bullet::reset(){
     powerupEnabled = false;
-    power->pc->setSpeed(DEFAULT_SPEED);
+    power->player->setJumpForce(DEFAULT_JUMP);
+    power->pc->setGravity(DEFAULT_GRAVITY);
 }
 
-void PowerUP_Slow::apply(){
+void PowerUP_Bullet::apply(){
     powerupEnabled = true;
-    power->pc->setSpeed(SLOW_SPEED);
-    glutTimerFunc(POWERUP_TIME, timedPowerReset, 0);
+    power->pc->setGravity(LOW_GRAVITY);
+    power->player->setJumpForce(TINY_JUMP);
+    glutTimerFunc(POWERUP_TIME*3, timedPowerReset, 0);
 }

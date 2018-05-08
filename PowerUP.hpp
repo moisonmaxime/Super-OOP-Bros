@@ -31,6 +31,7 @@ protected:
     Frame hitbox;
     bool powerupEnabled;
     PhysicsController* pc;
+    Character* player;
 public:
     void draw();
     ~PowerUP();
@@ -39,6 +40,8 @@ public:
     virtual void reset() = 0;
     virtual void apply() = 0;
     void setX(float);
+    bool enabled();
+    void drawStatus(int);
 };
 
 #endif /* PowerUP_hpp */

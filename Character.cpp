@@ -24,6 +24,7 @@ Character::Character(const char* normalFileName, const char* deadFileName, float
     this->deadTex = new AnimatedRect(deadFileName, 6, 6, &(this->frame.x), &(this->frame.y), &(this->frame.width), &(this->frame.height));
     this->dead = false;
     self = this;
+    jumpForce = DEFAULT_JUMP;
     animate(0);
 }
 
@@ -54,7 +55,7 @@ void Character::setVY(float vy){
 
 
 void Character::jump() {
-    vy = 0.03;
+    vy = jumpForce;
 }
 
 void Character::move(Direction direction) {
@@ -65,6 +66,12 @@ void Character::move(Direction direction) {
 
 void Character::attack(){
     // todo
+}
+
+void Character::setJumpForce(float jumpForce){
+    this->jumpForce = jumpForce;
+    if (vy > .02)
+        this->vy = vy/1.5;
 }
 
 void Character::die(){
@@ -141,4 +148,5 @@ void Character::reset(){
     this->dead = false;
     this->deadTex->reset();
     this->flyingTex->reset();
+    this->jumpForce = DEFAULT_JUMP;
 }

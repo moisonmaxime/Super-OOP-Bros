@@ -12,6 +12,7 @@
 #include "MovingObject.hpp"
 
 #define DEFAULT_GRAVITY -.002
+#define LOW_GRAVITY -.001
 #define DEFAULT_DRAG -1
 #define DEFAULT_SPEED 0.012
 #define SLOW_SPEED 0.004
@@ -25,7 +26,9 @@ public:
     PhysicsController(float gravity, float speed);
     void applyforces(MovingObject* obj);
     void setSpeed(float);
+    void setGravity(float);
     float getSpeed();
+    void reset();
 };
 
 #endif /* PhysicsController_hpp */

@@ -11,6 +11,7 @@
 #include "Pipe.hpp"
 #include "Ground.hpp"
 #include "PowerUP_Slow.hpp"
+#include "PowerUP_Bullet.hpp"
 
 using namespace std;
 
@@ -26,7 +27,6 @@ protected:
     Background* bg;
     Ground* gr;
     bool isPlaying;
-    bool powerupEnabled;
     void endGame();
 public:
     Game();

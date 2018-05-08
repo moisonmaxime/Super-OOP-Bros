@@ -15,7 +15,7 @@ PhysicsController::PhysicsController() {
 }
 
 PhysicsController::PhysicsController(float gravity, float gameSpeed) {
-    this->gravity = gravity;
+    this->gravity = -0.002;
     this->gameSpeed = gameSpeed;
 }
 
@@ -30,10 +30,19 @@ void PhysicsController::applyGravity(MovingObject* obj) {
     }
 }
 
+void PhysicsController::setGravity(float gravity){
+    this->gravity = gravity;
+}
+
 void PhysicsController::setSpeed(float gameSpeed=DEFAULT_SPEED){
     this->gameSpeed = gameSpeed;
 }
 
 float PhysicsController::getSpeed(){
     return this->gameSpeed;
+}
+
+void PhysicsController::reset(){
+    this->gravity = DEFAULT_GRAVITY;
+    this->gameSpeed = DEFAULT_SPEED;
 }

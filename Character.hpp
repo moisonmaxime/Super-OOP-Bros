@@ -5,12 +5,16 @@
 #include "MovingObject.hpp"
 #include "AnimatedRect.h"
 
+#define DEFAULT_JUMP 0.03
+#define TINY_JUMP 0.02
+
 enum Direction { Left=-1, Right=1};
 
 class Character: public MovingObject{
 	float vx, vy;   // Velocity
     Frame frame, hitbox;
     bool dead;
+    float jumpForce;
     
 public:
     AnimatedRect* flyingTex; 
@@ -36,6 +40,7 @@ public:
     bool collidesWith(Object* other);
     void handleCollisionWith(Object *other);
     
+    void setJumpForce(float);
     void jump();
     void move(Direction direction);
     void attack();

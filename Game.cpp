@@ -17,6 +17,7 @@
 #define GROUND_IMAGE "ground.fw.bmp"
 #define BACKGROUND_IMAGE "images/bg.png"
 #define POWERUP_SLOW "images/snail.png"
+#define POWERUP_BULLET "images/bullet.png"
 
 static Game* singleton;
 
@@ -31,6 +32,7 @@ Game::Game() {
     pipes.push_back(new Pipe(2+WIDTH, 0.6, 0.6));
     pipes.push_back(new Pipe(3+WIDTH, -.5, 0.6));
     powerups.push_back(new PowerUP_Slow(POWERUP_SLOW, 1, 1, 1.55, 0.4, 0.25, physics));
+    powerups.push_back(new PowerUP_Bullet(POWERUP_BULLET, 1, 1, .8, 0.4, 0.25, physics, player));
     isPlaying = true;
     lastPipe = NULL;
     score = 0;
@@ -68,7 +70,6 @@ void Game::calculateNextFrame() {
       (*it)->calculateNextFrame();
       if ((*it)->collidesWith(player)){
           (*it)->apply();
-          //powerupEnabled = true;
       }
     }
 }
@@ -76,13 +77,12 @@ void Game::calculateNextFrame() {
 void Game::restart() {
     for (int i=0; i<3; i++)
         pipes[i]->setX((i+1+WIDTH));
-    
-    powerups[0]->setX(1.55);
+    for (int i=0; i<2; i++)
+        powerups[i]->setX(i+1.55);
     score = 0;
-    
+    physics->reset();
     player->reset();
     isPlaying = true;
-    physics->setSpeed(DEFAULT_SPEED);
 }
 
 void Game::resume() {
@@ -108,6 +108,12 @@ void Game::draw(){
             (*it)->draw();
         for (auto it = powerups.cbegin(); it != powerups.cend(); it++)
             (*it)->draw();
+        int i = 0;
+        for (auto it = powerups.cbegin(); it != powerups.cend(); it++)
+            if((*it)->enabled()){
+                (*it)->drawStatus(i);
+                i++;
+            }
         player->draw();
         gr->draw();
     } else {
