@@ -49,6 +49,9 @@ void PowerUP::draw() {
 
 void PowerUP::setX(float value) {
     hitbox.x = value;
+    float minY = -0.95 + hitbox.height/2;
+    float maxY = 0.95 - hitbox.height/2;
+    hitbox.y = minY + (rand()/(RAND_MAX/(maxY-minY)));
 }
 
 

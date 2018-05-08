@@ -17,7 +17,8 @@ using namespace std;
 class Game{
 protected:
     int frame;
-    int score;
+    int score = 0;
+    int maxScore = 0;
     Pipe* lastPipe;
     vector<Pipe*> pipes;
     vector<PowerUP*> powerups;

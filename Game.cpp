@@ -30,7 +30,7 @@ Game::Game() {
     pipes.push_back(new Pipe(1, 0.4, 0.6));
     pipes.push_back(new Pipe(2+WIDTH, 0.6, 0.6));
     pipes.push_back(new Pipe(3+WIDTH, -.5, 0.6));
-    powerups.push_back(new PowerUP_Slow(POWERUP_SLOW, 1, 1, 1.5, 0.4, 0.25, physics));
+    powerups.push_back(new PowerUP_Slow(POWERUP_SLOW, 1, 1, 1.55, 0.4, 0.25, physics));
     isPlaying = true;
     lastPipe = NULL;
     score = 0;
@@ -50,7 +50,10 @@ void Game::calculateNextFrame() {
             if (*it != lastPipe) {
                 score++;
                 lastPipe = *it;
-                cout << score << endl;
+                //cout << score << endl;
+                if(score >= maxScore) {
+                    maxScore = score;
+                }
             }
         }
     }
@@ -74,7 +77,9 @@ void Game::restart() {
     for (int i=0; i<3; i++)
         pipes[i]->setX((i+1+WIDTH));
     
-    powerups[0]->setX(1.5);
+    powerups[0]->setX(1.55);
+    score = 0;
+    
     player->reset();
     isPlaying = true;
     physics->setSpeed(DEFAULT_SPEED);
@@ -92,6 +97,7 @@ void Game::pause() {
 void Game::endGame() {
     player->die();
     isPlaying = false;
+    cout << "Max Score: " << maxScore << endl;
 }
 
 void Game::draw(){
