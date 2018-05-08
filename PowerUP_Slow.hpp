@@ -8,9 +8,7 @@ class PowerUP_Slow: public PowerUP{
 public: 
     PowerUP_Slow(const char* filename, int rows, int cols, float x, float y, float h) {
 
-        this->x = x;
-        this->y = y;
-        this->h = h;
+        this->hitbox = Frame(x, y, WIDTH, HEIGHT);
 
         glClearColor (0.0, 0.0, 0.0, 0.0);
         glShadeModel(GL_FLAT);

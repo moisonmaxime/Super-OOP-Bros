@@ -5,43 +5,20 @@ bool powerupEnabled = false;
 PowerUP::~PowerUP() { }
 
 bool PowerUP::collidesWith(Object* object) {
-
-    float minY = y - HEIGHT/2.0;
-    float maxY = y + HEIGHT/2.0;
-    
-    float minX = x - WIDTH/2.0;
-    float maxX = x + WIDTH/2.0;
-    
-    if ((minX < object->getMinX()+0.02 && object->getMinX()+0.02 < maxX)
-        || (minX < object->getMaxX()-0.02  && object->getMaxX()-0.02 < maxX)) {
-        if (object->getMinY()+0.02 < minY)
-            return true;
-        if (object->getMaxY()-0.02 > maxY)
-            return true;
-    }
-    
-    return false;
+    return this->hitbox.collidesWith(object->getHitbox());
 }
 
 void PowerUP::calculateNextFrame(PhysicsController* pc) {
-
-    x -= pc->getSpeed();
-
-    if (x < -1.5) {
-      x = 1.5;
-      float minY = -0.95 + h/2;
-      float maxY = 0.95 - h/2;
-      y = minY + (rand()/(RAND_MAX/(maxY-minY)));
-    }
+    hitbox.x -= pc->getSpeed();
 }
 
 void PowerUP::draw() {
 
-    float minY = y - HEIGHT/2.0;
-    float maxY = y + HEIGHT/2.0;
+    float minY = hitbox.y;
+    float maxY = hitbox.y + hitbox.height;
 
-    float minX = x - WIDTH/2.0;
-    float maxX = x + WIDTH/2.0;
+    float minX = hitbox.x;
+    float maxX = hitbox.x + hitbox.width;
 
     glBindTexture( GL_TEXTURE_2D, texture_id );
     glEnable(GL_TEXTURE_2D);

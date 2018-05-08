@@ -26,9 +26,9 @@
 class PowerUP {
 protected:
     GLuint texture_id;
-    float x, y, h;
+    Frame hitbox;
     bool powerupEnabled;
-public:    
+public:
     void draw();
     ~PowerUP();
     bool collidesWith(Object* object);
