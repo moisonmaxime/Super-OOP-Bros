@@ -17,11 +17,11 @@
 #include "PhysicsController.hpp"
 #include "Character.hpp"
 
-#define YOVERDX 9.0/16.0
-#define SCALE 1.0/1024.0
+#define YOVERDX_POWERUP 9.0/16.0
+#define SCALE_POWERUP 1.0/1024.0
 
-#define HEIGHT 142.0 * SCALE
-#define WIDTH 142.0 * SCALE * YOVERDX
+#define HEIGHT_POWERUP 142.0 * SCALE_POWERUP
+#define WIDTH_POWERUP 142.0 * SCALE_POWERUP * YOVERDX_POWERUP
 
 class PowerUP {
 protected:

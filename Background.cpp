@@ -23,7 +23,7 @@ Background::Background (const char* filename){
     
     //Default values
     progress = -1;
-    tex2 = -1+WIDTH;
+    tex2 = -1+WIDTH_BACKGROUND;
 }
 
 void Background::draw(){
@@ -45,13 +45,13 @@ void Background::draw(){
     glVertex2f(progress, -1);
     
     glTexCoord2f(left, top);
-    glVertex2f(progress, -1+HEIGHT);
+    glVertex2f(progress, -1+HEIGHT_BACKGROUND);
     
     glTexCoord2f(right, top);
-    glVertex2f(progress+WIDTH, -1+HEIGHT);
+    glVertex2f(progress+WIDTH_BACKGROUND, -1+HEIGHT_BACKGROUND);
     
     glTexCoord2f(right, bottom);
-    glVertex2f(progress+WIDTH, -1);
+    glVertex2f(progress+WIDTH_BACKGROUND, -1);
     
     glEnd();
     
@@ -62,13 +62,13 @@ void Background::draw(){
     glVertex2f(tex2, -1);
     
     glTexCoord2f(left, top);
-    glVertex2f(tex2, -1+HEIGHT);
+    glVertex2f(tex2, -1+HEIGHT_BACKGROUND);
     
     glTexCoord2f(right, top);
-    glVertex2f(tex2+WIDTH, -1+HEIGHT);
+    glVertex2f(tex2+WIDTH_BACKGROUND, -1+HEIGHT_BACKGROUND);
     
     glTexCoord2f(right, bottom);
-    glVertex2f(tex2+WIDTH, -1);
+    glVertex2f(tex2+WIDTH_BACKGROUND, -1);
     
     glEnd();
     
@@ -77,11 +77,11 @@ void Background::draw(){
 }
 
 void Background::incProgress(float speed){
-    if (progress<=-1-WIDTH){
-        progress = tex2+WIDTH-.01;
+    if (progress<=-1-WIDTH_BACKGROUND){
+        progress = tex2+WIDTH_BACKGROUND-.01;
     }
-    if (tex2<=-1-WIDTH){
-        tex2 = progress+WIDTH-.01;
+    if (tex2<=-1-WIDTH_BACKGROUND){
+        tex2 = progress+WIDTH_BACKGROUND-.01;
     }
     progress -= speed/4.0;
     tex2 -= speed/4.0;
