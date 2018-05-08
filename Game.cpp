@@ -64,7 +64,8 @@ void Game::calculateNextFrame() {
     for (auto it = powerups.cbegin(); it != powerups.cend(); it++) {
       (*it)->calculateNextFrame(physics);
       if ((*it)->collidesWith(player)){
-          powerupEnabled = true;
+          (*it)->apply(physics);
+          //powerupEnabled = true;
       }
     }
 }
