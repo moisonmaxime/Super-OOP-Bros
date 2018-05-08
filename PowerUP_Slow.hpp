@@ -28,7 +28,13 @@ public:
     }
     
     void reset(PhysicsController* pc){
-        //reset is todo
+        pc->setSpeed(DEFAULT_SPEED);
+
+    }
+    
+    void apply(PhysicsController* pc){
+        
+        pc->setSpeed(SLOW_SPEED);
     }
     
 };

@@ -34,6 +34,7 @@ public:
     bool collidesWith(Object* object);
     void calculateNextFrame(PhysicsController* pc);
     virtual void reset(PhysicsController* pc) = 0;
+    virtual void apply(PhysicsController* pc) = 0;
 };
 
 #endif /* PowerUP_hpp */
