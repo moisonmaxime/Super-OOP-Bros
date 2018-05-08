@@ -73,6 +73,8 @@ void Game::calculateNextFrame() {
 void Game::restart() {
     for (int i=0; i<3; i++)
         pipes[i]->setX((i+1+WIDTH));
+    
+    powerups[0]->setX(1.5);
     player->reset();
     isPlaying = true;
     physics->setSpeed(DEFAULT_SPEED);

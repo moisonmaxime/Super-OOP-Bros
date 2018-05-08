@@ -45,7 +45,11 @@ void PowerUP::draw() {
     glEnd();
 
     glDisable(GL_TEXTURE_2D);
-
-
 }
+
+void PowerUP::setX(float value) {
+    hitbox.x = value;
+}
+
+
 
