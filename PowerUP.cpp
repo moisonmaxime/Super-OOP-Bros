@@ -8,7 +8,7 @@ bool PowerUP::collidesWith(Object* object) {
     return this->hitbox.collidesWith(object->getHitbox());
 }
 
-void PowerUP::calculateNextFrame(PhysicsController* pc) {
+void PowerUP::calculateNextFrame() {
     hitbox.x -= pc->getSpeed();
 }
 

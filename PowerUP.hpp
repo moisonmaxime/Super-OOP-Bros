@@ -28,13 +28,14 @@ protected:
     GLuint texture_id;
     Frame hitbox;
     bool powerupEnabled;
+    PhysicsController* pc;
 public:
     void draw();
     ~PowerUP();
     bool collidesWith(Object* object);
-    void calculateNextFrame(PhysicsController* pc);
-    virtual void reset(PhysicsController* pc) = 0;
-    virtual void apply(PhysicsController* pc) = 0;
+    void calculateNextFrame();
+    virtual void reset() = 0;
+    virtual void apply() = 0;
 };
 
 #endif /* PowerUP_hpp */

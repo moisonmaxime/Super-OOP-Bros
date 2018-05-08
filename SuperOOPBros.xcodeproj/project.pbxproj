@@ -14,6 +14,7 @@
 		1799B7E51E5E3A83006D7CBD /* GlutApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1799B7E31E5E3A83006D7CBD /* GlutApp.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		1799B7E81E5ECD67006D7CBD /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1799B7E61E5ECD67006D7CBD /* App.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		1B01347320A1625B00E131BC /* PowerUP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B01347020A1625A00E131BC /* PowerUP.cpp */; };
+		1B01347520A1678300E131BC /* PowerUP_Slow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B01347420A1678300E131BC /* PowerUP_Slow.cpp */; };
 		1B115E732096CBE600C484FE /* AnimatedRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B115E712096CBE500C484FE /* AnimatedRect.cpp */; };
 		1B115E842096CDA000C484FE /* libSOIL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B115E832096CDA000C484FE /* libSOIL.a */; };
 		1B115E862096CDD400C484FE /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B115E852096CDD300C484FE /* CoreFoundation.framework */; };
@@ -51,6 +52,7 @@
 		1B01347020A1625A00E131BC /* PowerUP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PowerUP.cpp; sourceTree = "<group>"; };
 		1B01347120A1625A00E131BC /* PowerUP.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PowerUP.hpp; sourceTree = "<group>"; };
 		1B01347220A1625B00E131BC /* PowerUP_Slow.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PowerUP_Slow.hpp; sourceTree = "<group>"; };
+		1B01347420A1678300E131BC /* PowerUP_Slow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PowerUP_Slow.cpp; sourceTree = "<group>"; };
 		1B115E712096CBE500C484FE /* AnimatedRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimatedRect.cpp; sourceTree = "<group>"; };
 		1B115E722096CBE500C484FE /* AnimatedRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedRect.h; sourceTree = "<group>"; };
 		1B115E832096CDA000C484FE /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = SOIL/lib/macOS/libSOIL.a; sourceTree = "<group>"; };
@@ -107,9 +109,10 @@
 				1BD2B1B9206441AC00BB5D4F /* Character.cpp */,
 				1B115E8B2096D76400C484FE /* Pipe.hpp */,
 				1B115E8A2096D76400C484FE /* Pipe.cpp */,
-				1B01347220A1625B00E131BC /* PowerUP_Slow.hpp */,
 				1B01347120A1625A00E131BC /* PowerUP.hpp */,
 				1B01347020A1625A00E131BC /* PowerUP.cpp */,
+				1B01347220A1625B00E131BC /* PowerUP_Slow.hpp */,
+				1B01347420A1678300E131BC /* PowerUP_Slow.cpp */,
 				1B115E722096CBE500C484FE /* AnimatedRect.h */,
 				1B115E712096CBE500C484FE /* AnimatedRect.cpp */,
 				1BA312DB2065737B00C4662A /* PhysicsController.hpp */,
@@ -202,6 +205,7 @@
 				1BA312DC2065737B00C4662A /* PhysicsController.cpp in Sources */,
 				1799B7E51E5E3A83006D7CBD /* GlutApp.cpp in Sources */,
 				1BD2B1BD206451F900BB5D4F /* Frame.cpp in Sources */,
+				1B01347520A1678300E131BC /* PowerUP_Slow.cpp in Sources */,
 				1B5C34B62093951500CD85B6 /* Background.cpp in Sources */,
 				1BD2B1BA206441AC00BB5D4F /* Character.cpp in Sources */,
 				0CABECC8209C49D6001C7CE5 /* Ground.cpp in Sources */,
