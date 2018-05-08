@@ -32,6 +32,8 @@ Game::Game() {
     pipes.push_back(new Pipe(3+WIDTH, -.5, 0.6));
     powerups.push_back(new PowerUP_Slow(POWERUP_SLOW, 1, 1, 1.0, 0.4, 0.25));
     isPlaying = true;
+    lastPipe = NULL;
+    score = 0;
 }
 
 void Game::jumpPress() {
@@ -43,6 +45,15 @@ void Game::calculateNextFrame() {
     bg->incProgress(physics->getSpeed());
     gr->incProgress(physics->getSpeed());
     player->calculateNextFrame();
+    for (auto it = pipes.cbegin(); it != pipes.cend(); it++) {
+        if ((*it)->isBeingPassedBy(player)) {
+            if (*it != lastPipe) {
+                score++;
+                lastPipe = *it;
+                cout << score << endl;
+            }
+        }
+    }
     if (player->getMinY() < -0.90)
         this->endGame();
     for (auto it = pipes.cbegin(); it != pipes.cend(); it++)

@@ -39,6 +39,7 @@ public:
     void calculateNextFrame(PhysicsController* pc);
     void setX(float x);
     bool collidesWith(Object* object);
+    bool isBeingPassedBy(Object* object);
     void draw();
 };
 
