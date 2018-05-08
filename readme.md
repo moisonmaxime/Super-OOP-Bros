@@ -10,9 +10,8 @@ link on ShareLaTeX - https://www.sharelatex.com/6257649535zzgfynvtmfcy
 
 # Todo:
 
+- Clean up code and make neater (remove unneeded things)
 - Maybe some audio?
-
-- Add more powerups/powerdowns
 
 FREEGLUTAPP
 -----------
