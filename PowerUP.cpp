@@ -8,8 +8,14 @@ bool PowerUP::collidesWith(Object* object) {
     return this->hitbox.collidesWith(object->getHitbox());
 }
 
-void PowerUP::calculateNextFrame(PhysicsController* pc) {
+void PowerUP::calculateNextFrame() {
     hitbox.x -= pc->getSpeed();
+    if(hitbox.x < -1.5) {
+        hitbox.x = 1.5;
+        float minY = -0.95 + hitbox.height/2;
+        float maxY = 0.95 - hitbox.height/2;
+        hitbox.y = minY + (rand()/(RAND_MAX/(maxY-minY)));
+    }
 }
 
 void PowerUP::draw() {

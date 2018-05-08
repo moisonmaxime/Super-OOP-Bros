@@ -30,7 +30,7 @@ Game::Game() {
     pipes.push_back(new Pipe(1, 0.4, 0.6));
     pipes.push_back(new Pipe(2+WIDTH, 0.6, 0.6));
     pipes.push_back(new Pipe(3+WIDTH, -.5, 0.6));
-    powerups.push_back(new PowerUP_Slow(POWERUP_SLOW, 1, 1, 1.0, 0.4, 0.25));
+    powerups.push_back(new PowerUP_Slow(POWERUP_SLOW, 1, 1, 1.5, 0.4, 0.25, physics));
     isPlaying = true;
     lastPipe = NULL;
     score = 0;
@@ -62,9 +62,9 @@ void Game::calculateNextFrame() {
         if ((*it)->collidesWith(player))
             this->endGame();
     for (auto it = powerups.cbegin(); it != powerups.cend(); it++) {
-      (*it)->calculateNextFrame(physics);
+      (*it)->calculateNextFrame();
       if ((*it)->collidesWith(player)){
-          (*it)->apply(physics);
+          (*it)->apply();
           //powerupEnabled = true;
       }
     }
