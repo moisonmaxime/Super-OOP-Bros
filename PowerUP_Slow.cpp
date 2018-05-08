@@ -43,5 +43,5 @@ void PowerUP_Slow::reset(){
 
 void PowerUP_Slow::apply(){
     power->pc->setSpeed(SLOW_SPEED);
-    glutTimerFunc(1000, timedPowerReset, 0);
+    glutTimerFunc(POWERUP_TIME, timedPowerReset, 0);
 }
