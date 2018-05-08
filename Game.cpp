@@ -13,7 +13,7 @@
 //#define GRAVITY -0.002
 
 #define CHARACTER_IMAGE "images/flappy2.png"
-#define DEAD_CHARACTER_IMAGE "images/fireball.bmp"
+#define DEAD_CHARACTER_IMAGE "images/fireball.png"
 #define GROUND_IMAGE "ground.fw.bmp"
 #define BACKGROUND_IMAGE "images/bg.png"
 #define POWERUP_SLOW "images/snail.png"

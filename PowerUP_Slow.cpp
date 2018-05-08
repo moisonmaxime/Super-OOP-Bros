@@ -17,7 +17,7 @@ static void timedPowerReset(int i) {
 PowerUP_Slow::PowerUP_Slow(const char* filename, int rows, int cols, float x, float y, float h, PhysicsController* pc) {
     
     power = this;
-    this->hitbox = Frame(x, y, WIDTH, HEIGHT);
+    this->hitbox = Frame(x, y, WIDTH_POWERUP, HEIGHT_POWERUP);
     this->pc = pc;
     
     glClearColor (0.0, 0.0, 0.0, 0.0);
