@@ -50,5 +50,5 @@ void PowerUP_Bullet::apply(){
     powerupEnabled = true;
     power->pc->setGravity(LOW_GRAVITY);
     power->player->setJumpForce(TINY_JUMP);
-    glutTimerFunc(POWERUP_TIME*3, timedPowerReset, 0);
+    glutTimerFunc(POWERUP_TIME*2.9, timedPowerReset, 0);
 }
