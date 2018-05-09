@@ -108,7 +108,7 @@ void Counter::drawCurrentScore(){
     glDisable(GL_TEXTURE_2D);
     
     // 10's spot
-    curr_col = currentScore/10 + 1;
+    curr_col = (currentScore/10)%10 + 1;
     
     glBindTexture( GL_TEXTURE_2D, texture_id );
     glEnable(GL_TEXTURE_2D);
@@ -192,7 +192,7 @@ void Counter::drawMaxScore(){
     glDisable(GL_TEXTURE_2D);
     
     // 10's spot
-    curr_col = maxScore/10 + 1;
+    curr_col = (maxScore/10)%10 + 1;
     
     glBindTexture( GL_TEXTURE_2D, texture_id );
     glEnable(GL_TEXTURE_2D);
