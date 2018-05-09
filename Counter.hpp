@@ -28,11 +28,13 @@ class Counter{
     int maxScore;
 public:
     Counter(const char* filename);
+    Counter(const char* filename, int maxScore);
     void incScore();
     void resetCurrentScore();
     void drawScores();
     void drawCurrentScore();
     void drawMaxScore();
+    int getMaxScore();
 };
 
 #endif

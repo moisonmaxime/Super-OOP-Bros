@@ -8,6 +8,7 @@
 
 #include "Game.hpp"
 #include <iostream>
+#include <fstream>
 
 //#define DEFAULT_SPEED 0.01
 //#define GRAVITY -0.002
@@ -28,7 +29,17 @@ Game::Game() {
     frame = 0;
     bg = new Background(BACKGROUND_IMAGE);
     gr = new Ground(GROUND_IMAGE);
-    counter = new Counter(NUMBERS);
+    if (doesFileExist("score.high"))
+    {
+        int score = 0;
+        ifstream read0;
+        read0.open("score.high");
+        read0 >> score;
+        read0.close();
+        counter = new Counter(NUMBERS, score);
+    }
+    else
+        counter = new Counter(NUMBERS);
     physics = new PhysicsController(DEFAULT_GRAVITY, DEFAULT_SPEED);
     player = new Character(CHARACTER_IMAGE, DEAD_CHARACTER_IMAGE, -0.5, 0.6);
     pipes.push_back(new Pipe(1, 0.4, 0.6));
@@ -97,6 +108,11 @@ void Game::pause() {
 void Game::endGame() {
     player->die();
     isPlaying = false;
+}
+
+bool Game::doesFileExist(const char* filename){
+    std::ifstream infile(filename);
+    return infile.good();
 }
 
 void Game::draw(){

@@ -32,6 +32,39 @@ Counter::Counter(const char* filename){
     maxScore = 0;
 }
 
+Counter::Counter(const char* filename, int maxScore)
+{
+    glClearColor (0.0, 0.0, 0.0, 0.0);
+    glShadeModel(GL_FLAT);
+    glEnable(GL_DEPTH_TEST);
+    
+    texture_id = SOIL_load_OGL_texture
+    (
+     filename,
+     SOIL_LOAD_AUTO,
+     SOIL_CREATE_NEW_ID,
+     SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT
+     );
+    
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    
+    glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+    
+    this->cols = 10;
+    
+    this->x = -1;
+    this->y = .7;
+    this->w = .03;
+    this->h = .15;
+    
+    curr_col = 1;
+    currentScore = 0;
+    this->maxScore = maxScore;
+}
+
 void Counter::incScore(){
     currentScore++;
     if (currentScore>maxScore){
@@ -209,6 +242,10 @@ void Counter::drawMaxScore(){
     glEnd();
 
     glDisable(GL_TEXTURE_2D);
+}
+
+int Counter::getMaxScore(){
+    return this->maxScore;
 }
 
 void Counter::drawScores(){

@@ -1,5 +1,6 @@
 #include "App.hpp"
 #include "Game.hpp"
+#include <fstream>
 #include <time.h>
 
 using namespace std;
@@ -44,8 +45,14 @@ void App::mouseDown(float x, float y) {
 void App::keyPress(unsigned char key) {
     if (key == ' ')
         super_OOP_Bros.jumpPress();
-    if (key == 3 || key == 'q' || key == 'Q' || key == 27)
+    if (key == 3 || key == 'q' || key == 'Q' || key == 27){
+        ofstream save;
+        save.open("score.high");
+        save << super_OOP_Bros.counter->getMaxScore();
+        save.close();
         exit(0);
+        
+    }
     if (key == 'r' || key == 'R'){
         if(super_OOP_Bros.player->isDead()){
             super_OOP_Bros.restart();

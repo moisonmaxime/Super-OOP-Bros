@@ -28,9 +28,9 @@ protected:
     Ground* gr;
     bool isPlaying;
     void endGame();
-    Counter* counter;
     
 public:
+    Counter* counter;
     Game();
     Character* player;
     void jumpPress();
@@ -39,6 +39,7 @@ public:
     void resume();
     void pause();
     void draw();
+    bool doesFileExist(const char*);
 };
 
 #endif
